@@ -15,15 +15,16 @@
 
             <StackPanel>
                 <TextBlock Text="Назва програми" FontSize="30" FontWeight="Bold" Margin="0 0 0 20"/>
+                <TextBlock x:Name="block" FontSize="16" FontWeight="Bold" Margin="0 0 0 20"/>
                 <Grid Margin="0 0 0 20">
                     <Button x:Name="RegisBut" HorizontalAlignment="Left" Content="Реєстрація"/>
                     <Button x:Name="LoginBut" HorizontalAlignment="Right" Content="Авторизація" Style="{StaticResource MaterialDesignFlatButton}" Click="Login_Click"/>
                 </Grid>
-                <TextBox x:Name="input_login" materialDesign:HintAssist.Hint="Введіть логін" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
-                <TextBox x:Name="input_email" materialDesign:HintAssist.Hint="Введіть email" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
-                <PasswordBox x:Name="input_password" materialDesign:HintAssist.Hint="Введіть пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"/>
-                <PasswordBox x:Name="input_passConf" materialDesign:HintAssist.Hint="Підтвердіть пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"/>
-                <Button x:Name="Register_ENTER" Content="Зареєструватися" Margin="0 20 0 0"/>
+                <TextBox x:Name="input_login" materialDesign:HintAssist.Hint="Введіть логін" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="Gray"/>
+                <TextBox x:Name="input_email" materialDesign:HintAssist.Hint="Введіть email" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="Gray"/>
+                <PasswordBox x:Name="input_password" materialDesign:HintAssist.Hint="Введіть пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" BorderBrush="Gray"/>
+                <PasswordBox x:Name="input_passConf" materialDesign:HintAssist.Hint="Підтвердіть пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" BorderBrush="Gray"/>
+                <Button x:Name="Register_ENTER" Click="Registration_Click" Content="Зареєструватися" Margin="0 20 0 0" Cursor="Hand"/>
             </StackPanel>
         </Border>
     </Grid>

@@ -34,5 +34,10 @@ namespace Application
         {
             NavigationService.Navigate(new Registration());
         }
+
+        private void input_login_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

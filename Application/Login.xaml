@@ -19,8 +19,8 @@
                     <Button x:Name="RegisBut" HorizontalAlignment="Left" Content="Реєстрація" Style="{StaticResource MaterialDesignFlatButton}" Click="RegisBut_Click"/>
                     <Button x:Name="LoginBut" HorizontalAlignment="Right" Content="Авторизація" />
                 </Grid>
-                <TextBox x:Name="input_login" materialDesign:HintAssist.Hint="Введіть логін або E-mail" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
-                <PasswordBox x:Name="input_password" Margin="0 0 0 20" materialDesign:HintAssist.Hint="Введіть пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"/>
+                <TextBox x:Name="input_login" materialDesign:HintAssist.Hint="Введіть логін або E-mail" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextChanged="input_login_TextChanged" BorderBrush="Gray"/>
+                <PasswordBox x:Name="input_password" Margin="0 0 0 20" materialDesign:HintAssist.Hint="Введіть пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" BorderBrush="Gray"/>
                 <Button x:Name="Register_ENTER" Content="Увійти" Margin="0 0 0 10" />
                 <Grid>
                     <CheckBox
