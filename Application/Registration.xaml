@@ -15,7 +15,7 @@
 
             <StackPanel>
                 <TextBlock Text="Назва програми" FontSize="30" FontWeight="Bold" Margin="0 0 0 20"/>
-                <TextBlock x:Name="block" FontSize="16" FontWeight="Bold" Margin="0 0 0 20"/>
+                <TextBox x:Name="block" FontSize="16" FontWeight="Bold" Margin="0 0 0 20"/>
                 <Grid Margin="0 0 0 20">
                     <Button x:Name="RegisBut" HorizontalAlignment="Left" Content="Реєстрація"/>
                     <Button x:Name="LoginBut" HorizontalAlignment="Right" Content="Авторизація" Style="{StaticResource MaterialDesignFlatButton}" Click="Login_Click"/>

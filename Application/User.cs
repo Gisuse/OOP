@@ -3,28 +3,33 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+
 
 namespace Application
 {
-    class User
+    public class User
     {
-        public int id { get; set; }
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
 
-        public int role { get; set; }
+        public string Id { get; set; }
 
-        public string email { get; set; }
-        public string password { get; set; }
-        public string login { get; set; }
+        public int Role { get; set; }
+
+        public string Email { get; set; }
+        public string Password { get; set; }
+        public string Login { get; set; }
 
         public User() { }
 
         public User(string email, string password, string login)
         {
-            this.role = role;
-            this.email = email;
-            this.password = password;
-            this.login = login;
-            this.role= 0;
+            this.Email = email;
+            this.Password = password;
+            this.Login = login;
+            this.Role = 0;
         }
     }
 }

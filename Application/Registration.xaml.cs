@@ -1,4 +1,7 @@
-﻿using System;
+﻿using MongoDB.Driver;
+using MongoDB.Driver.Core.Configuration;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Linq;
 
 namespace Application
 {
@@ -20,24 +24,13 @@ namespace Application
     /// </summary>
     public partial class Registration : Page
     {
-        ApplicationContext db;
+        DataAccess db;
 
+        private string str;
         public Registration()
         {
             InitializeComponent();
-
-            db = new ApplicationContext();
-
-            List<User> users = db.Users.ToList();
-
-            string str = "";
-
-            foreach (User user in users)
-            {
-                str += "Login: " + user.login + " | ";
-            }
-
-            block.Text = str;
+            db = new DataAccess();
         }
 
         private void Login_Click(object sender, RoutedEventArgs e)
@@ -86,11 +79,15 @@ namespace Application
             else
             {
                 User user = new User(email, password, login);
+                //Еслт совпадает email выкинуть соответствующую ошибку
+                db.CreateUser(user);
 
-                db.Users.Add(user);
-                db.SaveChanges();
+                input_login.Text = "";
+                input_email.Text = "";
+                input_password.Password = "";
+                input_passConf.Password = "";
 
-                MessageBox.Show("Заебок");
+                MessageBox.Show("Шедевр");
             }
         }
         
