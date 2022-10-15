@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Path = System.IO.Path;
+using Newtonsoft.Json;
 
 namespace Application
 {
@@ -66,6 +69,7 @@ namespace Application
             else
             {
                 var user = await db.FindUser(email, password);
+
                 // Сделать нормальную проверку и соответствуюзий результат
                 if (user.Count < 1)
                 {
@@ -74,6 +78,15 @@ namespace Application
                 }
                 else
                 {
+                    if (isRemember.IsChecked == true)
+                    {
+                        string fileName = Path.GetFullPath("UserData.json");
+
+                        string jsonString = JsonConvert.SerializeObject(user[0]);
+
+                        File.WriteAllText(fileName, jsonString);
+                    }
+
                     foreach (var p in user)
                     {
 
