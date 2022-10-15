@@ -8,13 +8,14 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         Height="600" Width="800">
     <Grid Background="#DADFF7">
-        <Border MinWidth="400" Margin="15" VerticalAlignment="center" Padding="30" MaxWidth="550" CornerRadius="15" Background="#A0C1D1">
+        <Border MinWidth="400" Margin="15,0,15,0" VerticalAlignment="Center" Padding="30" MaxWidth="550" CornerRadius="15" Background="#A0C1D1" Height="462">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="25" Color="#575366" ShadowDepth="3"/>
             </Border.Effect>
 
             <StackPanel>
                 <TextBlock Text="Назва програми" FontSize="30" FontWeight="Bold" Margin="0 0 0 20"/>
+                <TextBox x:Name="block" FontSize="30" FontWeight="Bold" Margin="0 0 0 20"/>
                 <Grid Margin="0 0 0 20">
                     <Button x:Name="RegisBut" HorizontalAlignment="Left" Content="Реєстрація"/>
                     <Button x:Name="LoginBut" HorizontalAlignment="Right" Content="Авторизація" Style="{StaticResource MaterialDesignFlatButton}" Click="Login_Click"/>
@@ -23,7 +24,15 @@
                 <TextBox x:Name="input_email" materialDesign:HintAssist.Hint="Введіть email" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="Gray"/>
                 <PasswordBox x:Name="input_password" materialDesign:HintAssist.Hint="Введіть пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" BorderBrush="Gray"/>
                 <PasswordBox x:Name="input_passConf" materialDesign:HintAssist.Hint="Підтвердіть пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" BorderBrush="Gray"/>
-                <Button x:Name="Register_ENTER" Click="Registration_Click" Content="Зареєструватися" Margin="0 20 0 0" Cursor="Hand"/>
+                <Grid>
+                    <CheckBox
+                        Content="Запам'ятати мене"
+                        Margin="0,47,0,-47"
+                        Style="{StaticResource MaterialDesignCheckBox}" 
+                        x:Name="isRemember" />
+                    <Button x:Name="Register_ENTER" Click="Registration_Click" Content="Зареєструватися" Margin="0,15,0,5" Cursor="Hand"/>
+                </Grid>
+
             </StackPanel>
         </Border>
     </Grid>

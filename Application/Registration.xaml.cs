@@ -14,8 +14,12 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Xml.Linq;
+using Newtonsoft.Json;
+using System.Text.Json.Serialization;
+using System.IO;
+using System.Reflection;
+using MongoDB.Bson;
 
 namespace Application
 {
@@ -38,7 +42,7 @@ namespace Application
             NavigationService.Navigate(new Login());
         }
 
-        private void Registration_Click(object sender, RoutedEventArgs e)
+        private async void Registration_Click(object sender, RoutedEventArgs e)
         {
             string login = input_login.Text.Trim();
             string email = input_email.Text.Trim().ToLower();
@@ -80,7 +84,19 @@ namespace Application
             {
                 User user = new User(email, password, login);
                 //Если совпадает email выкинуть соответствующую ошибку
-                db.CreateUser(user);
+                await db.CreateUser(user);
+
+                if (isRemember.IsChecked == true)
+                {
+                    var createdUser = await db.FindUser(email, password);
+
+                    string fileName = Path.GetFullPath("UserData.json");
+
+                    string jsonString = JsonConvert.SerializeObject(createdUser[0]);
+
+                    File.WriteAllText(fileName, jsonString);
+                }
+                
 
                 input_login.Text = "";
                 input_email.Text = "";
