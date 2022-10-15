@@ -20,7 +20,7 @@ namespace Application
         {
             var client = new MongoClient(ConnectionString);
             var db = client.GetDatabase(DBName);
-            
+
             return db.GetCollection<T>(collection);
         }
 
