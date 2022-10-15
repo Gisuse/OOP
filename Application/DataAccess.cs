@@ -2,9 +2,11 @@
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Application
 {
@@ -36,11 +38,11 @@ namespace Application
             return UserCollection.InsertOneAsync(user);
         }
 
-        public async Task FindUser(User user)
+        public async Task<List<User>> FindUser(string email, string password)
         {
             var UserCollection = ConnectToMongo<User>(UserConnection);
-            var filter = new BsonDocument ("$and", new BsonArray { new BsonDocument("Email", user.Email), new BsonDocument("Password", user.Password) });
-            await UserCollection.FindAsync(filter);
+            var people = await UserCollection.Find(user => user.Email == email && user.Password == password).ToListAsync();
+            return people;
         }
     }
 }

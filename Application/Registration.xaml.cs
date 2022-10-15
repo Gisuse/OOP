@@ -79,7 +79,7 @@ namespace Application
             else
             {
                 User user = new User(email, password, login);
-                //Еслт совпадает email выкинуть соответствующую ошибку
+                //Если совпадает email выкинуть соответствующую ошибку
                 db.CreateUser(user);
 
                 input_login.Text = "";

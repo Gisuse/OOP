@@ -20,9 +20,11 @@ namespace Application
     /// </summary>
     public partial class Login : Page
     {
+        DataAccess db;
         public Login()
         {
             InitializeComponent();
+            db = new DataAccess();
         }
 
         private void RegisBut_Click(object sender, RoutedEventArgs e)
@@ -38,6 +40,53 @@ namespace Application
         private void input_login_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        async private void Register_ENTER_Click(object sender, RoutedEventArgs e)
+        {
+            string email = input_login.Text.Trim().ToLower();
+            string password = input_password.Password.Trim();
+
+            input_login.ClearValue(ToolTipProperty);
+            input_login.BorderBrush = Brushes.Gray;
+
+            input_password.ClearValue(ToolTipProperty);
+            input_password.BorderBrush = Brushes.Gray;
+
+            if (!email.Contains("@") || !email.Contains("."))
+            {
+                input_login.ToolTip = "Некоректний email!";
+                input_login.BorderBrush = Brushes.Red;
+            }
+            else if (password.Length < 5)
+            {
+                input_password.ToolTip = "Пароль має містити понад 5 символів!";
+                input_password.BorderBrush = Brushes.Red;
+            }
+            else
+            {
+                var user = await db.FindUser(email, password);
+                // Сделать нормальную проверку и соответствуюзий результат
+                if (user.Count < 1)
+                {
+                    MessageBox.Show("Not found");
+                    
+                }
+                else
+                {
+                    foreach (var p in user)
+                    {
+
+                        MessageBox.Show(p.Login);
+                    
+                    }
+                }
+                
+
+                input_login.Text = "";
+                input_password.Password = "";
+                
+            }
         }
     }
 }
