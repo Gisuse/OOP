@@ -1,0 +1,62 @@
+﻿<Window x:Class="Application.MainMenu"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Application"
+      xmlns:view="clr-namespace:Application.MVVW.View"
+      xmlns:viewModel="clr-namespace:Application.MVVW.ViewModel"
+      mc:Ignorable="d" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      Height="600" Width="800"
+      AllowsTransparency="True"
+        WindowStyle="none"
+        Background="Transparent">
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
+    <Border MinWidth="800" MinHeight="600" Margin="0" VerticalAlignment="center"  CornerRadius="40" Background="#A0C1D1">
+        <Border.Effect>
+            <DropShadowEffect BlurRadius="15" Direction="-90"
+                              RenderingBias="Quality" ShadowDepth="2"/>
+        </Border.Effect>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Label x:Name="AppName" FontSize="30" HorizontalAlignment="Left" Content="ChemBase" Style="{StaticResource MaterialDesignLabel}" Height="45" Margin="25, 13" Padding="0" Foreground="White"/>
+
+            <StackPanel Grid.Row="1">
+                <RadioButton Style="{StaticResource MenuButtonTheme}" Content="Навчання" IsChecked="True"/>
+                <RadioButton Style="{StaticResource MenuButtonTheme}" Content="Налаштування"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1">
+                <TextBox
+                    materialDesign:HintAssist.Foreground="Transparent"
+                    Style="{StaticResource ModernSearchBox}"  />
+            </StackPanel>
+
+
+            <ContentControl Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="10"
+                            Content="{Binding CurrentView}"
+                            VerticalAlignment="Top">
+                
+                
+            </ContentControl>
+            
+        </Grid>
+
+
+
+    </Border>
+</Window>
