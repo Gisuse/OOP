@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\MyProgs\Coursework\Application\App.xaml
-3384554857
+8270949619
 
-8-1551013780
+141700725851
 15473806043
-Login.xaml;MainWindow.xaml;Registration.xaml;
+Login.xaml;MainMenu.xaml;MainWindow.xaml;MVVW\View\HomeView.xaml;Registration.xaml;Theme\MenuButton.xaml;Theme\TextBoxSearch.xaml;Theme\WindowButton.xaml;
 
 True
 

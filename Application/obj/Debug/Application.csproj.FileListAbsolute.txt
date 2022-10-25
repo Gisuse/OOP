@@ -1,4 +1,3 @@
-D:\MyProgs\Coursework\Application\obj\Debug\Application.csproj.AssemblyReference.cache
 D:\MyProgs\Coursework\Application\obj\Debug\App.g.cs
 D:\MyProgs\Coursework\Application\obj\Debug\Application_MarkupCompile.cache
 D:\MyProgs\Coursework\Application\obj\Debug\Application_MarkupCompile.lref
@@ -24,3 +23,12 @@ D:\MyProgs\Coursework\Application\obj\Debug\Login.baml
 D:\MyProgs\Coursework\Application\obj\Debug\Registration.baml
 D:\MyProgs\Coursework\Application\obj\Debug\MainWindow.g.cs
 D:\MyProgs\Coursework\Application\obj\Debug\MainWindow.baml
+D:\MyProgs\Coursework\Application\obj\Debug\MainMenu.g.cs
+D:\MyProgs\Coursework\Application\obj\Debug\MainMenu.baml
+D:\MyProgs\Coursework\Application\obj\Debug\Theme\TextBoxSearch.baml
+D:\MyProgs\Coursework\Application\obj\Debug\Theme\MenuButton.baml
+D:\MyProgs\Coursework\Application\obj\Debug\Application.csproj.AssemblyReference.cache
+D:\MyProgs\Coursework\Application\obj\Debug\MVVW\View\HomeView.g.cs
+D:\MyProgs\Coursework\Application\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\MyProgs\Coursework\Application\obj\Debug\MVVW\View\HomeView.baml
+D:\MyProgs\Coursework\Application\obj\Debug\Theme\WindowButton.baml
