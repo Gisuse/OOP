@@ -317,3 +317,4 @@ D:\Документы\Никита\Универ\Курсовой проект О
 D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\obj\Debug\Application.csproj.CopyComplete
 D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\obj\Debug\Application.exe
 D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\obj\Debug\Application.pdb
+D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\GeneratedInternalTypeHelper.g.cs

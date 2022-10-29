@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\obj\Debug\
+D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\
 Application
 none
 false
 DEBUG;TRACE
-D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\App.xaml
+D:\Университет\Курсач ООП 2022-2023\OOP\Application\App.xaml
 31088911665
-12-459372909
+12-1622875611
 91964119992
-1501180549999
+150-798069108
 Login.xaml;MainWindow.xaml;Registration.xaml;
 
-False
+True
 
