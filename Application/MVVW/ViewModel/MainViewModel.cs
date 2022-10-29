@@ -6,7 +6,13 @@ namespace Application.MVVW.ViewModel
     class MainViewModel : ObservableObject
     {
 
+        public RelayCommand HomeViewCommand { get; set; }
+        public RelayCommand ProfileViewCommand { get; set; }
+
+
         public HomeViewModel HomeVM{ get; set; }
+        public ProfileViewModel ProfileVM { get; set; }
+
 
         private object _currentView;
 
@@ -22,7 +28,18 @@ namespace Application.MVVW.ViewModel
         public MainViewModel()
         {
             HomeVM = new HomeViewModel();
-            CurrentView = HomeVM;
+            ProfileVM = new ProfileViewModel();
+            CurrentView = ProfileVM;
+
+            HomeViewCommand = new RelayCommand(o =>
+            {
+                CurrentView = HomeVM;
+            });
+
+            ProfileViewCommand = new RelayCommand(o =>
+            {
+                CurrentView = ProfileVM;
+            });
         }
     }
 }

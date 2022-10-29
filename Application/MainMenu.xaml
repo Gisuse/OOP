@@ -34,24 +34,24 @@
             <Label x:Name="AppName" FontSize="30" HorizontalAlignment="Left" Content="ChemBase" Style="{StaticResource MaterialDesignLabel}" Height="45" Margin="25, 13" Padding="0" Foreground="White"/>
 
             <StackPanel Grid.Row="1">
-                <RadioButton Style="{StaticResource MenuButtonTheme}" Content="Навчання" IsChecked="True"/>
+                <RadioButton Style="{StaticResource MenuButtonTheme}" Content="Навчання" IsChecked="True"
+                             Command="{Binding HomeViewCommand}"/>
+                <RadioButton Style="{StaticResource MenuButtonTheme}" Content="Профіль" Command="{Binding ProfileViewCommand}"/>
                 <RadioButton Style="{StaticResource MenuButtonTheme}" Content="Налаштування"/>
             </StackPanel>
 
             <StackPanel Grid.Column="1">
                 <TextBox
                     materialDesign:HintAssist.Foreground="Transparent"
-                    Style="{StaticResource ModernSearchBox}"  />
+                    Style="{StaticResource ModernSearchBox}"/>
             </StackPanel>
 
 
             <ContentControl Grid.Row="1"
                             Grid.Column="1"
-                            Margin="10"
                             Content="{Binding CurrentView}"
-                            VerticalAlignment="Top">
-                
-                
+                            VerticalAlignment="Top"
+                            Margin="10,0,0,0">
             </ContentControl>
             
         </Grid>

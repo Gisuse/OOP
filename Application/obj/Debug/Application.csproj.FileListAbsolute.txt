@@ -27,8 +27,10 @@ D:\MyProgs\Coursework\Application\obj\Debug\MainMenu.g.cs
 D:\MyProgs\Coursework\Application\obj\Debug\MainMenu.baml
 D:\MyProgs\Coursework\Application\obj\Debug\Theme\TextBoxSearch.baml
 D:\MyProgs\Coursework\Application\obj\Debug\Theme\MenuButton.baml
-D:\MyProgs\Coursework\Application\obj\Debug\Application.csproj.AssemblyReference.cache
 D:\MyProgs\Coursework\Application\obj\Debug\MVVW\View\HomeView.g.cs
 D:\MyProgs\Coursework\Application\obj\Debug\GeneratedInternalTypeHelper.g.cs
 D:\MyProgs\Coursework\Application\obj\Debug\MVVW\View\HomeView.baml
 D:\MyProgs\Coursework\Application\obj\Debug\Theme\WindowButton.baml
+D:\MyProgs\Coursework\Application\obj\Debug\Theme\AvatarImage.baml
+D:\MyProgs\Coursework\Application\obj\Debug\MVVW\View\ProfileView.g.cs
+D:\MyProgs\Coursework\Application\obj\Debug\MVVW\View\ProfileView.baml
