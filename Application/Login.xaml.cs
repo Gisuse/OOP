@@ -15,6 +15,11 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Path = System.IO.Path;
 using Newtonsoft.Json;
+using MongoDB.Bson;
+using System.Text.Json;
+using JsonSerializer = System.Text.Json.JsonSerializer;
+using System.Reflection;
+using System.ComponentModel;
 
 namespace Application
 {
@@ -24,10 +29,27 @@ namespace Application
     public partial class Login : Page
     {
         DataAccess db;
+
+        public string Email { get; set; }
+        public string Password { get; set; }
+
         public Login()
         {
             InitializeComponent();
             db = new DataAccess();
+
+            //string fileName = Path.GetFullPath("UserData.json");
+            //string fileName = "UserData.json";
+            //var inner = File.ReadAllText(fileName);
+            //var innerJson = JsonConvert.DeserializeObject(inner);
+            string fileName = Path.GetFullPath("UserData.json");
+            var inner = File.ReadAllText(fileName);
+            Login login = JsonSerializer.Deserialize<Login>(inner);
+
+
+            //input_login.Text = login.Email;
+            //input_password.Password = login.Password;
+
         }
 
         private void RegisBut_Click(object sender, RoutedEventArgs e)
@@ -40,10 +62,6 @@ namespace Application
             NavigationService.Navigate(new Registration());
         }
 
-        private void input_login_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
 
         async private void Register_ENTER_Click(object sender, RoutedEventArgs e)
         {
@@ -100,6 +118,11 @@ namespace Application
                 input_password.Password = "";
                 
             }
+        }
+
+        private void input_login_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
