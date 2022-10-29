@@ -34,3 +34,22 @@ D:\MyProgs\Coursework\Application\obj\Debug\Theme\WindowButton.baml
 D:\MyProgs\Coursework\Application\obj\Debug\Theme\AvatarImage.baml
 D:\MyProgs\Coursework\Application\obj\Debug\MVVW\View\ProfileView.g.cs
 D:\MyProgs\Coursework\Application\obj\Debug\MVVW\View\ProfileView.baml
+D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\Application.csproj.AssemblyReference.cache
+D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\Application.csproj.SuggestedBindingRedirects.cache
+D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\Login.g.cs
+D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\MainWindow.g.cs
+D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\Registration.g.cs
+D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\App.g.cs
+D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\Application_Content.g.cs
+D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\Application_MarkupCompile.cache
+D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\Application_MarkupCompile.lref
+D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\Application.exe
+D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\Application.pdb
+D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\Theme\AvatarImage.baml
+D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\Theme\MenuButton.baml
+D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\Theme\TextBoxSearch.baml
+D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\Theme\WindowButton.baml
+D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\MainMenu.g.cs
+D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\MVVW\View\HomeView.g.cs
+D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\MVVW\View\ProfileView.g.cs
