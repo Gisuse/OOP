@@ -8,10 +8,13 @@ namespace Application.MVVW.ViewModel
 
         public RelayCommand HomeViewCommand { get; set; }
         public RelayCommand ProfileViewCommand { get; set; }
+        public RelayCommand SettingsViewCommand { get; set; }
 
 
         public HomeViewModel HomeVM{ get; set; }
         public ProfileViewModel ProfileVM { get; set; }
+        public SettingsViewModel SettingsVM { get; set; }
+
 
 
         private object _currentView;
@@ -29,7 +32,8 @@ namespace Application.MVVW.ViewModel
         {
             HomeVM = new HomeViewModel();
             ProfileVM = new ProfileViewModel();
-            CurrentView = ProfileVM;
+            SettingsVM = new SettingsViewModel();
+            CurrentView = HomeVM;
 
             HomeViewCommand = new RelayCommand(o =>
             {
@@ -39,6 +43,11 @@ namespace Application.MVVW.ViewModel
             ProfileViewCommand = new RelayCommand(o =>
             {
                 CurrentView = ProfileVM;
+            });
+
+            SettingsViewCommand = new RelayCommand(o =>
+            {
+                CurrentView = SettingsVM;
             });
         }
     }
