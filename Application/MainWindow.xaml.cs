@@ -22,7 +22,7 @@ namespace Application
         public MainWindow()
         {
             InitializeComponent();
-            Mainframe.Content = new Login();
+            Mainframe.Content = new Registration();
         }
     }
 }

@@ -103,3 +103,7 @@ D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debu
 D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\Application.csproj.GenerateResource.cache
 D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\Application.csproj.CoreCompileInputs.cache
 D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\Application.csproj.CopyComplete
+D:\Университет\Курсач ООП 2022-2023\OOP\Application\bin\Debug\EntityFramework.dll
+D:\Университет\Курсач ООП 2022-2023\OOP\Application\bin\Debug\EntityFramework.SqlServer.dll
+D:\Университет\Курсач ООП 2022-2023\OOP\Application\bin\Debug\EntityFramework.xml
+D:\Университет\Курсач ООП 2022-2023\OOP\Application\bin\Debug\EntityFramework.SqlServer.xml

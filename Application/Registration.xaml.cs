@@ -83,27 +83,47 @@ namespace Application
             else
             {
                 User user = new User(email, password, login);
-                //Если совпадает email выкинуть соответствующую ошибку
-                await db.CreateUser(user);
-
-                if (isRemember.IsChecked == true)
-                {
-                    var createdUser = await db.FindUser(email, password);
-
-                    string fileName = Path.GetFullPath("UserData.json");
-
-                    string jsonString = JsonConvert.SerializeObject(createdUser[0]);
-
-                    File.WriteAllText(fileName, jsonString);
-                }
                 
+                try
+                {
+                    //await db.CreateUser(user);
 
-                input_login.Text = "";
-                input_email.Text = "";
-                input_password.Password = "";
-                input_passConf.Password = "";
+                    if (isRemember.IsChecked == true)
+                    {
+                        var createdUser = await db.FindUser(email, password);
 
-                MessageBox.Show("Шедевр");
+                        string fileName = Path.GetFullPath("UserData.json");
+
+                        string jsonString = JsonConvert.SerializeObject(createdUser[0]);
+
+                        File.WriteAllText(fileName, jsonString);
+                    }
+
+                    input_login.Text = "";
+                    input_email.Text = "";
+                    input_password.Password = "";
+                    input_passConf.Password = "";
+
+                    try
+                    {
+                        MainMenu taskWindow = new MainMenu();
+                        taskWindow.Show();
+
+                        MainWindow main = Application.App.Current.MainWindow as MainWindow;
+
+                        main.Close();
+                    }
+                    catch (Exception err)
+                    {
+                        MessageBox.Show(err.Message);
+                    }
+                }
+                catch (Exception er)
+                {
+                    //Если совпадает email выкинуть соответствующую ошибку
+                    //сделать её адекватно и красиво, тоесть код ошибки: текст ошибки
+                    MessageBox.Show(er.Message);
+                }
             }
         }
         
