@@ -6,5 +6,5 @@
         xmlns:local="clr-namespace:Application"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="800" Background="Transparent">
-    <Frame Name="Mainframe" Background="Transparent" NavigationUIVisibility="Hidden"></Frame>
+    <Frame Name="Mainframe" Background="White" NavigationUIVisibility="Hidden"></Frame>
 </Window>

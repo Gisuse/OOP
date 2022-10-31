@@ -29,26 +29,16 @@ namespace Application
     public partial class Login : Page
     {
         DataAccess db;
-
+    
         public string Email { get; set; }
         public string Password { get; set; }
 
         public Login()
         {
+
             InitializeComponent();
             db = new DataAccess();
 
-            //string fileName = Path.GetFullPath("UserData.json");
-            //string fileName = "UserData.json";
-            //var inner = File.ReadAllText(fileName);
-            //var innerJson = JsonConvert.DeserializeObject(inner);
-            string fileName = Path.GetFullPath("UserData.json");
-            var inner = File.ReadAllText(fileName);
-            Login login = JsonSerializer.Deserialize<Login>(inner);
-
-
-            //input_login.Text = login.Email;
-            //input_password.Password = login.Password;
 
         }
 
@@ -104,13 +94,19 @@ namespace Application
 
                         File.WriteAllText(fileName, jsonString);
                     }
-
-                    foreach (var p in user)
-                    {
-
-                        MessageBox.Show(p.Login);
                     
-                    }
+                    MainMenu mainMenu = new MainMenu();
+                    mainMenu.Show();
+
+                    MainWindow mainWindow = Application.App.Current.MainWindow as MainWindow;
+                    mainWindow.Close();
+
+                    //foreach (var p in user)
+                    //{
+
+                    //MessageBox.Show(p.Login);
+
+                    //}
                 }
                 
 
