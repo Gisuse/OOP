@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/camera.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("packages/mongodb.libmongocrypt.1.6.0/runtimes/win/native/mongocrypt.dll")]
 
 
