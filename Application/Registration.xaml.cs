@@ -30,7 +30,6 @@ namespace Application
     {
         DataAccess db;
 
-        private string str;
         public Registration()
         {
             InitializeComponent();
@@ -86,7 +85,7 @@ namespace Application
                 
                 try
                 {
-                    //await db.CreateUser(user);
+                    await db.CreateUser(user);
 
                     if (isRemember.IsChecked == true)
                     {
@@ -104,19 +103,12 @@ namespace Application
                     input_password.Password = "";
                     input_passConf.Password = "";
 
-                    try
-                    {
                         MainMenu taskWindow = new MainMenu();
                         taskWindow.Show();
 
                         MainWindow main = Application.App.Current.MainWindow as MainWindow;
 
                         main.Close();
-                    }
-                    catch (Exception err)
-                    {
-                        MessageBox.Show(err.Message);
-                    }
                 }
                 catch (Exception er)
                 {

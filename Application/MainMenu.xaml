@@ -37,11 +37,9 @@
                 <RadioButton Style="{StaticResource MenuButtonTheme}" Content="Навчання" IsChecked="True"
                              Command="{Binding HomeViewCommand}"/>
                 <RadioButton Style="{StaticResource MenuButtonTheme}" Content="Профіль" Command="{Binding ProfileViewCommand}"/>
-<<<<<<< HEAD
+
                 <RadioButton Style="{StaticResource MenuButtonTheme}" Content="Налаштування" Command="{Binding SettingsViewCommand}"/>
-=======
-                <RadioButton Style="{StaticResource MenuButtonTheme}" Content="Налаштування"/>
->>>>>>> n+y
+
             </StackPanel>
 
             <StackPanel Grid.Column="1">

@@ -1,15 +1,9 @@
 ﻿<UserControl x:Class="Application.MVVW.View.ProfileView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-<<<<<<< HEAD
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-=======
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Application.MVVW.View"
->>>>>>> n+y
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="550">
     <Grid>
@@ -23,7 +17,6 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="0" Width="500" HorizontalAlignment="Left">
-<<<<<<< HEAD
             <Button Style="{StaticResource AvatarButton}" Width="100" Margin="0,10,0,0" HorizontalAlignment="Left"/>
         </StackPanel>
         <StackPanel Grid.Row="0" Margin="110,15,0,0" Width="200" HorizontalAlignment="Left">
@@ -39,15 +32,15 @@
         </StackPanel>
 
         <ScrollViewer Grid.Row="1" Height="330">
-        <ListView Name="LYears">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal" Width="540">
-                        <TextBlock Text="NAME OF THEME" Foreground="White" HorizontalAlignment="Left" FontSize="40" Width="450"/>
-                        <TextBlock Text="10" Foreground="White" TextAlignment="Center" FontSize="40" Width="90"/>
-                    </StackPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
+            <ListView Name="LYears">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal" Width="540">
+                            <TextBlock Text="NAME OF THEME" Foreground="White" HorizontalAlignment="Left" FontSize="40" Width="450"/>
+                            <TextBlock Text="10" Foreground="White" TextAlignment="Center" FontSize="40" Width="90"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
                 <TextBlock Text="EXAMPLE#1"/>
                 <TextBlock Text="EXAMPLE#1"/>
                 <TextBlock Text="EXAMPLE#1"/>
@@ -70,20 +63,6 @@
                 <TextBlock Text="EXAMPLE#1"/>
             </ListView>
         </ScrollViewer>
-=======
-            <Button Style="{StaticResource AvatarButton}" Width="100" HorizontalAlignment="Left"/>
-        </StackPanel>
-        <StackPanel Grid.Row="0" Margin="110,15,0,0" Width="200" HorizontalAlignment="Left">
-            <Label Content="Ім'я" FontSize="25" Foreground="White" Padding="4,0,0,0"/>
-            <Label Content="Прізвище" FontSize="25" Foreground="White" Padding="4,0,0,0"/>
-            <Button Style="{StaticResource MaterialDesignFlatButton}" 
-                    FontSize="9" Content="Редагувати профіль" Width="200" Height="20" Padding="4,0,0,0" Margin="0"
-                    HorizontalContentAlignment="Left"/>
-        </StackPanel>
-        <StackPanel Grid.Row="0" Margin="310,15,0,0" Width="200" HorizontalAlignment="Left">
-            <Label Content="Логін" FontSize="25" Foreground="White" Padding="4,0,0,0"/>
-            <Label Content="E-Mail" FontSize="25" Foreground="White" Padding="4,0,0,0"/>
-        </StackPanel>
->>>>>>> n+y
+        <Button Style="{StaticResource AvatarButton}" Width="100" HorizontalAlignment="Left"/>
     </Grid>
 </UserControl>

@@ -29,7 +29,8 @@ namespace Application
     public partial class Login : Page
     {
         DataAccess db;
-    
+        //DataAccess db;
+
         public string Email { get; set; }
         public string Password { get; set; }
 
