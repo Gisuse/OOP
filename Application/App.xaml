@@ -5,7 +5,11 @@
              xmlns:local="clr-namespace:Application"
              xmlns:view="clr-namespace:Application.MVVW.View"
              xmlns:viewModel="clr-namespace:Application.MVVW.ViewModel"
+<<<<<<< HEAD
              StartupUri="MainMenu.xaml">
+=======
+             StartupUri="MainWindow.xaml">
+>>>>>>> n+y
     <Application.Resources>
         <ResourceDictionary >
             <ResourceDictionary.MergedDictionaries>
@@ -17,7 +21,10 @@
                 <ResourceDictionary Source="Theme/MenuButton.xaml"/>
                 <ResourceDictionary Source="Theme/WindowButton.xaml"/>
                 <ResourceDictionary Source="Theme/AvatarImage.xaml"/>
+<<<<<<< HEAD
                 <ResourceDictionary Source="Theme/SettingsTextBox.xaml"/>
+=======
+>>>>>>> n+y
             </ResourceDictionary.MergedDictionaries>
 
             <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
@@ -28,10 +35,13 @@
                 <view:ProfileView/>
             </DataTemplate>
 
+<<<<<<< HEAD
             <DataTemplate DataType="{x:Type viewModel:SettingsViewModel}">
                 <view:SettingsView/>
             </DataTemplate>
 
+=======
+>>>>>>> n+y
         </ResourceDictionary>
         
         

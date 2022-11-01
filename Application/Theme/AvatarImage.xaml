@@ -5,19 +5,31 @@
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Grid Background="Transparent" Width="100" Height="105" HorizontalAlignment="Left" VerticalAlignment="Center">
+<<<<<<< HEAD
                         <Border Background="Transparent" x:Name="AvatarBorder" Margin="0,0,0,0">
+=======
+                        <Border Background="Transparent" x:Name="AvatarBorder" Margin="0,10,0,0">
+>>>>>>> n+y
                             <Border.Clip>
                                 <EllipseGeometry Center="50,50" RadiusX="45" RadiusY="44"/>
                             </Border.Clip>
                             <Button Background="Transparent" Height="100" Width="100" Padding="0">
+<<<<<<< HEAD
                                 <Image x:Name="avatarIMG" Source="pack://Application:,,,/Images/avatar.png" Opacity="1.0"/>
                             </Button>
                         </Border>
                         <Border x:Name="cameraICON" Background="Gray"  Opacity="0" Margin="0,0,0,0">
+=======
+                                <Image x:Name="avatarIMG" Source="/Images/avatar4.jpg" Opacity="1.0"/>
+                            </Button>
+                        </Border>
+                        <Border x:Name="cameraICON" Background="Gray"  Opacity="0">
+>>>>>>> n+y
                             <Border.Clip>
                                 <EllipseGeometry Center="50,50" RadiusX="45" RadiusY="44"/>
                             </Border.Clip>
                             <Button Background="Transparent" Height="50" Width="50" Padding="0" BorderBrush="Transparent">
+<<<<<<< HEAD
                                 <Image Source="pack://Application:,,,/Images/camera.png"/>
                             </Button>
                         </Border>
@@ -27,6 +39,17 @@
                             <Setter TargetName="cameraICON" Property="Opacity" Value="0.8"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
+=======
+                                <Image Source="/Images/camera.png"/>
+                            </Button>
+                        </Border>
+                    </Grid>
+                    <!--<ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="cameraICON" Property="Opacity" Value="0.8"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>-->
+>>>>>>> n+y
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
