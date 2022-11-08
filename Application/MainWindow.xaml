@@ -5,6 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Application"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="800" Background="Transparent">
-    <Frame Name="Mainframe" Background="White" NavigationUIVisibility="Hidden"></Frame>
+        Height="600" Width="800"
+        AllowsTransparency="True"
+        WindowStyle="none"
+        Background="Transparent"
+        WindowStartupLocation="CenterScreen"
+        Title="ChemBase">
+    <Frame Name="Mainframe" Background="Transparent" NavigationUIVisibility="Hidden" MouseDown="Mainframe_MouseDown">
+    </Frame>
 </Window>

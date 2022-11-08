@@ -87,21 +87,24 @@ namespace Application
                 }
                 else
                 {
+                    MainWindow mainWindow = Application.App.Current.MainWindow as MainWindow;
                     if (isRemember.IsChecked == true)
-                    {
+                    {                      
                         string fileName = Path.GetFullPath("UserData.json");
 
                         string jsonString = JsonConvert.SerializeObject(user[0]);
 
                         File.WriteAllText(fileName, jsonString);
+
                     }
+
+                    Loading loading = new Loading();                   
+                    NavigationService.Navigate(loading);
                     
+                   
                     MainMenu mainMenu = new MainMenu();
-                    mainMenu.Show();
-
-                    MainWindow mainWindow = Application.App.Current.MainWindow as MainWindow;
+                    mainMenu.Show();                    
                     mainWindow.Close();
-
                     //foreach (var p in user)
                     //{
 
@@ -117,9 +120,32 @@ namespace Application
             }
         }
 
-        private void input_login_TextChanged(object sender, TextChangedEventArgs e)
+        private void CloseIcon_MouseDown(object sender, MouseEventArgs e)
         {
+            MainWindow mainWindow = Application.App.Current.MainWindow as MainWindow;
+            mainWindow.Close();
+        }
+
+        private void CloseIcon_MouseEnter(object sender, MouseEventArgs e)
+        {
+            CloseIcon.Background = new SolidColorBrush
+            {
+                Color = Colors.Red,
+                Opacity = 0.6,
+            };
+            CloseIcon.Foreground = Brushes.White;
 
         }
+
+        private void CloseIcon_MouseLeave(object sender, MouseEventArgs e)
+        {
+            CloseIcon.Background = new SolidColorBrush
+            {
+                Color = Colors.Transparent,
+                Opacity = 0,
+            };
+            CloseIcon.Foreground = Brushes.Black;
+        }
+
     }
 }

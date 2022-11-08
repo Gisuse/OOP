@@ -28,6 +28,7 @@ namespace Application
         {
 
             InitializeComponent();
+            Mainframe.Content = new Loading();
 
             db = new DataAccess();
 
@@ -67,6 +68,14 @@ namespace Application
             }
 
 
+        }
+
+        private void Mainframe_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+            {
+                DragMove();
+            }
         }
     }
 }

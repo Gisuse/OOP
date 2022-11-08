@@ -11,7 +11,9 @@
       Height="600" Width="800"
       AllowsTransparency="True"
         WindowStyle="none"
-        Background="Transparent">
+        Background="Transparent"
+        WindowStartupLocation="CenterScreen"
+        Title="Home">
     <Window.DataContext>
         <viewModel:MainViewModel/>
     </Window.DataContext>
@@ -42,10 +44,18 @@
 
             </StackPanel>
 
-            <StackPanel Grid.Column="1">
+            <StackPanel Grid.Column="1" Width="500" HorizontalAlignment="Left">
                 <TextBox
                     materialDesign:HintAssist.Foreground="Transparent"
                     Style="{StaticResource ModernSearchBox}"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Width="45" Height="45" HorizontalAlignment="Right" Margin="0 0 15 0">
+                <materialDesign:PackIcon Name="CloseIcon" Kind="Close" Height="35" Width="35" Padding="0" Margin="0 0 0 0" HorizontalAlignment="Right" MouseDown="CloseIcon_MouseDown" MouseEnter="CloseIcon_MouseEnter" MouseLeave="CloseIcon_MouseLeave"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Width="45" Height="45" HorizontalAlignment="Right" Margin="0 0 50 0">
+                <materialDesign:PackIcon Name="MinimIcon" Kind="WindowMinimize" Height="35" Width="35" Padding="0" Margin="0 0 0 0" HorizontalAlignment="Right"
+                                         VerticalAlignment="Center" MouseDown="MinimIcon_MouseDown" MouseEnter="MinimIcon_MouseEnter" MouseLeave="MinimIcon_MouseLeave"/>
             </StackPanel>
 
 
@@ -55,7 +65,7 @@
                             VerticalAlignment="Top"
                             Margin="10,0,0,0">
             </ContentControl>
-            
+
         </Grid>
 
 

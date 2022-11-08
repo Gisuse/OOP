@@ -118,6 +118,33 @@ namespace Application
                 }
             }
         }
-        
+
+        private void CloseIcon_MouseDown(object sender, MouseEventArgs e)
+        {
+            MainWindow mainWindow = Application.App.Current.MainWindow as MainWindow;
+            mainWindow.Close();
+        }
+
+        private void CloseIcon_MouseEnter(object sender, MouseEventArgs e)
+        {
+            CloseIcon.Background = new SolidColorBrush
+            {
+                Color = Colors.Red,
+                Opacity = 0.6,
+            };
+            CloseIcon.Foreground = Brushes.White;
+
+        }
+
+        private void CloseIcon_MouseLeave(object sender, MouseEventArgs e)
+        {
+            CloseIcon.Background = new SolidColorBrush
+            {
+                Color = Colors.Transparent,
+                Opacity = 0,
+            };
+            CloseIcon.Foreground = Brushes.Black;
+        }
+
     }
 }
