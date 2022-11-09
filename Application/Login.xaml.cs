@@ -77,19 +77,18 @@ namespace Application
             }
             else
             {
-                var user = await db.FindUser(email, password);
+                try
+                {
+                    var user = await db.FindUser(email, password);
 
-                // Сделать нормальную проверку и соответствуюзий результат
-                if (user.Count < 1)
-                {
-                    MessageBox.Show("Not found");
-                    
-                }
-                else
-                {
+                    if (user.Count < 1)
+                    {
+                        throw new Exception();
+                    }
+
                     MainWindow mainWindow = Application.App.Current.MainWindow as MainWindow;
                     if (isRemember.IsChecked == true)
-                    {                      
+                    {
                         string fileName = Path.GetFullPath("UserData.json");
 
                         string jsonString = JsonConvert.SerializeObject(user[0]);
@@ -98,21 +97,18 @@ namespace Application
 
                     }
 
-                    Loading loading = new Loading();                   
+                    Loading loading = new Loading();
                     NavigationService.Navigate(loading);
-                    
-                   
+
+
                     MainMenu mainMenu = new MainMenu();
-                    mainMenu.Show();                    
+                    mainMenu.Show();
                     mainWindow.Close();
-                    //foreach (var p in user)
-                    //{
-
-                    //MessageBox.Show(p.Login);
-
-                    //}
                 }
-                
+                catch (Exception er)
+                {
+                    MessageBox.Show("Такого користувача не існує", "Попередження", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
 
                 input_login.Text = "";
                 input_password.Password = "";

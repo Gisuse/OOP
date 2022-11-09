@@ -112,9 +112,7 @@ namespace Application
                 }
                 catch (Exception er)
                 {
-                    //Если совпадает email выкинуть соответствующую ошибку
-                    //сделать её адекватно и красиво, тоесть код ошибки: текст ошибки
-                    MessageBox.Show(er.Message);
+                    MessageBox.Show("Такий email вже використовується", "Попередження", MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
             }
         }
