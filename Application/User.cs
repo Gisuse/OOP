@@ -22,14 +22,35 @@ namespace Application
         public string Password { get; set; }
         public string Login { get; set; }
 
-        public User() { }
+        public string Name { get; set; }
+        public string SName{ get; set; }
+        public string AboutMe { get; set; }
+
+        
+
+        //public User() { }
 
         public User(string email, string password, string login)
         {
-            this.Email = email;
-            this.Password = password;
-            this.Login = login;
-            this.Role = 0;
+            Email = email;
+            Password = password;
+            Login = login;
+            Role = 0;
+            Name = "";
+            SName = "";
+            AboutMe = "";
+        }
+
+        public User()
+        {
+            Id = TemporaryUser.Id;
+            Email = TemporaryUser.Email;
+            Password = TemporaryUser.Password;
+            Login = TemporaryUser.Login;
+            Role = TemporaryUser.Role;
+            Name = TemporaryUser.Name;
+            SName = TemporaryUser.SName;
+            AboutMe = TemporaryUser.AboutMe;
         }
     }
 }

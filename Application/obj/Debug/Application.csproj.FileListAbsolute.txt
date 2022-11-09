@@ -352,3 +352,5 @@ D:\GitRepo\OOP\OOP\Application\obj\Debug\Application.exe
 D:\GitRepo\OOP\OOP\Application\obj\Debug\Application.pdb
 D:\GitRepo\OOP\OOP\Application\obj\Debug\Loading.g.cs
 D:\GitRepo\OOP\OOP\Application\obj\Debug\Loading.baml
+D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\Loading.g.cs
+D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\Loading.baml

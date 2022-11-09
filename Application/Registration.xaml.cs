@@ -91,6 +91,14 @@ namespace Application
                     {
                         var createdUser = await db.FindUser(email, password);
 
+                        TemporaryUser.Email = createdUser[0].Email;
+                        TemporaryUser.Password = createdUser[0].Password;
+                        TemporaryUser.Login = createdUser[0].Login;
+                        TemporaryUser.Role = createdUser[0].Role;
+                        TemporaryUser.Name = createdUser[0].Name;
+                        TemporaryUser.SName = createdUser[0].SName;
+                        TemporaryUser.AboutMe = createdUser[0].AboutMe;
+
                         string fileName = Path.GetFullPath("UserData.json");
 
                         string jsonString = JsonConvert.SerializeObject(createdUser[0]);
