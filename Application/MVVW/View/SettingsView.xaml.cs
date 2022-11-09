@@ -26,6 +26,7 @@ namespace Application.MVVW.View
         public SettingsView()
         {
             InitializeComponent();
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -50,7 +51,9 @@ namespace Application.MVVW.View
                 //string path = @"D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\Images";
                 File.Delete(pathOldAvatar);
                 File.Move(pathNewAvatar, pathOldAvatar);
+
             }
         }
+
     }
 }

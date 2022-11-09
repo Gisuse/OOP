@@ -21,6 +21,9 @@ namespace Application
         public string Email { get; set; }
         public string Password { get; set; }
         public string Login { get; set; }
+        public string Name { get; set; }
+        public string SName { get; set; }
+        public string AboutMe { get; set; }
 
         public User() { }
 
@@ -30,6 +33,9 @@ namespace Application
             this.Password = password;
             this.Login = login;
             this.Role = 0;
+            this.Name = "";
+            this.SName = "";
+            this.AboutMe = "";
         }
     }
 }
