@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Application.Core;
 
 namespace Application.MVVW.ViewModel
@@ -14,7 +15,6 @@ namespace Application.MVVW.ViewModel
         public HomeViewModel HomeVM{ get; set; }
         public ProfileViewModel ProfileVM { get; set; }
         public SettingsViewModel SettingsVM { get; set; }
-
 
 
         private object _currentView;
@@ -47,6 +47,11 @@ namespace Application.MVVW.ViewModel
             SettingsViewCommand = new RelayCommand(o =>
             {
                 CurrentView = SettingsVM;
+                MainMenu mainWindow = App.Current.Windows.OfType<MainMenu>().FirstOrDefault();
+                if (mainWindow != null)
+                {
+                    mainWindow._SettingsB.IsChecked = true;
+                }
             });
         }
     }

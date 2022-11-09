@@ -40,7 +40,7 @@
                              Command="{Binding HomeViewCommand}"/>
                 <RadioButton Style="{StaticResource MenuButtonTheme}" Content="Профіль" Command="{Binding ProfileViewCommand}"/>
 
-                <RadioButton Style="{StaticResource MenuButtonTheme}" Content="Налаштування" Command="{Binding SettingsViewCommand}"/>
+                <RadioButton x:Name="_SettingsB" Style="{StaticResource MenuButtonTheme}" Content="Налаштування" Command="{Binding SettingsViewCommand}"/>
 
             </StackPanel>
 
