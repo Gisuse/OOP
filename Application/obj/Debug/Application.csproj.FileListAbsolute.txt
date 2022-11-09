@@ -352,3 +352,8 @@ D:\GitRepo\OOP\OOP\Application\obj\Debug\Application.exe
 D:\GitRepo\OOP\OOP\Application\obj\Debug\Application.pdb
 D:\GitRepo\OOP\OOP\Application\obj\Debug\Loading.g.cs
 D:\GitRepo\OOP\OOP\Application\obj\Debug\Loading.baml
+D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\obj\Debug\Theme\SettingsTextBox.baml
+D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\obj\Debug\Loading.g.cs
+D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\obj\Debug\MVVW\View\SettingsView.g.cs
+D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\obj\Debug\Loading.baml
+D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\obj\Debug\MVVW\View\SettingsView.baml
