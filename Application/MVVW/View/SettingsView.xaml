@@ -35,7 +35,7 @@
             </StackPanel>
 
             <StackPanel Grid.Column="1" Width="310">
-                <TextBox x:Name="sName_TextBox" Style="{StaticResource SettingsTextBox}" Margin="10,5,0,0"/>
+                <TextBox x:Name="sName_TextBox" Style="{StaticResource SettingsTextBox}" Margin="10,5,0,0" TextChanged="sName_TextBox_TextChanged"/>
                 <TextBox x:Name="name_TextBox" Style="{StaticResource SettingsTextBox}" Margin="10,5,0,0"/>
                 <TextBox x:Name="aboutMe_TextBox" Style="{StaticResource SettingsTextBox}" Margin="10,5,0,0"/>
                 <Button x:Name="_SaveInfo" Content="Зберегти" Margin="10 15 0 0 "

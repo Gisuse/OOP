@@ -11,7 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace Application.MVVW.View
 {
@@ -31,20 +32,36 @@ namespace Application.MVVW.View
         private void _SaveInfo_Click(object sender, RoutedEventArgs e)
         {
             User user = new User();
-            
+
             user.SName = sName_TextBox.Text;
             user.Name = name_TextBox.Text;
             user.AboutMe = aboutMe_TextBox.Text;
-            MessageBox.Show(aboutMe_TextBox.Text);
+            MessageBox.Show(name_TextBox.Text);
+            //Нормальная обработка ощибок
             try
             {
                 db.UpdateUser(user);
+
+                TemporaryUser.SName = sName_TextBox.Text;
+                TemporaryUser.Name = name_TextBox.Text;
+                TemporaryUser.AboutMe = aboutMe_TextBox.Text;
+
+                string fileName = Path.GetFullPath("UserData.json");
+
+                string jsonString = JsonConvert.SerializeObject(user);
+
+                File.WriteAllText(fileName, jsonString);
             }
             catch(Exception er)
             {
-                //MessageBox.Show(er.Message);
+                MessageBox.Show(er.Message);
             }
             
+        }
+
+        private void sName_TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
