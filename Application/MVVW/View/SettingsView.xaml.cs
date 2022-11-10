@@ -14,6 +14,10 @@ using System.Windows.Navigation;
 using Newtonsoft.Json;
 using System.IO;
 using Microsoft.Win32;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using Application.MVVW.ViewModel;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Application.MVVW.View
 {
@@ -23,11 +27,18 @@ namespace Application.MVVW.View
     public partial class SettingsView : UserControl
     {
         DataAccess db;
+        //public event PropertyChangedEventHandler PropertyChanged;
+        //public void OnPropertyChanged([CallerMemberName] string prop = "")
+        //   => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
+        //private string _propImageSource;
+        //public string PropImageSource { get => _propImageSource; set { _propImageSource = value; OnPropertyChanged(); } }
+        string pathOldAvatar;
         public SettingsView()
         {
             InitializeComponent();
-
             db = new DataAccess();
+
+           
         }
 
         private void _SaveInfo_Click(object sender, RoutedEventArgs e)
@@ -72,15 +83,22 @@ namespace Application.MVVW.View
                 FileInfo fi = new FileInfo(ofd.FileName);
                 string pathNewAvatar = fi.FullName;
 
-                string pathOldAvatar = Path.GetFullPath("Images");
+                pathOldAvatar = Path.GetFullPath("Images");
                 var strIndex = pathOldAvatar.IndexOf("bin");
                 pathOldAvatar = pathOldAvatar.Remove(strIndex, 10);
                 pathOldAvatar = pathOldAvatar + @"\avatar.png";
 
+
+                //sName_TextBox.Text = pathOldAvatar;
                 //string pathOldAvatar = @"D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\Images\avatar.png";
                 //string path = @"D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\Images";
                 File.Delete(pathOldAvatar);
                 File.Move(pathNewAvatar, pathOldAvatar);
+
+                new SettingsViewModel().changePhoto(pathOldAvatar);
+                //new SettingsViewModel().changePhoto(pathOldAvatar);
+                //settingsViewModel.updateImage(pathOldAvatar);
+                //PropImageSource = pathOldAvatar;
 
                 //buttonAndAvatar.Style.Setters.Remove(new Setter(Image.SourceProperty, pathOldAvatar));
                 //buttonAndAvatar.Style.Setters.Add(new Setter(Image.SourceProperty, pathNewAvatar));
