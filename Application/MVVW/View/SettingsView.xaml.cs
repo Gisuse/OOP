@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using Newtonsoft.Json;
 using System.IO;
+using Microsoft.Win32;
 
 namespace Application.MVVW.View
 {
@@ -56,12 +57,38 @@ namespace Application.MVVW.View
             {
                 MessageBox.Show(er.Message);
             }
-            
         }
 
         private void sName_TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        private void buttonAndAvatar_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog() { ValidateNames = true, Filter = "PNG|*.png" };
+            if (ofd.ShowDialog() == true)
+            {
+                FileInfo fi = new FileInfo(ofd.FileName);
+                string pathNewAvatar = fi.FullName;
+
+                string pathOldAvatar = Path.GetFullPath("Images");
+                var strIndex = pathOldAvatar.IndexOf("bin");
+                pathOldAvatar = pathOldAvatar.Remove(strIndex, 10);
+                pathOldAvatar = pathOldAvatar + @"\avatar.png";
+
+                //string pathOldAvatar = @"D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\Images\avatar.png";
+                //string path = @"D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\Images";
+                File.Delete(pathOldAvatar);
+                File.Move(pathNewAvatar, pathOldAvatar);
+
+                //buttonAndAvatar.Style.Setters.Remove(new Setter(Image.SourceProperty, pathOldAvatar));
+                //buttonAndAvatar.Style.Setters.Add(new Setter(Image.SourceProperty, pathNewAvatar));
+
+                //avatarIMG.Source = new BitmapImage(new Uri(pathOldAvatar));
+                //Button clickedButton = (Button)sender;
+                //clickedButton.Style.Setters.Add(new Setter { Property = Image.SourceProperty, Value = pathOldAvatar });
+            }
         }
     }
 }
