@@ -116,6 +116,7 @@
       <DependentUpon>Loading.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVW\ViewModel\ProfileViewModel.cs" />
+    <Compile Include="TemporaryUser.cs" />
     <Compile Include="User.cs" />
     <Page Include="Loading.xaml">
       <SubType>Designer</SubType>

@@ -1,7 +1,5 @@
-﻿using Microsoft.Win32;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,8 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
-using Path = System.IO.Path;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace Application.MVVW.View
 {
@@ -23,37 +21,47 @@ namespace Application.MVVW.View
     /// </summary>
     public partial class SettingsView : UserControl
     {
+        DataAccess db;
         public SettingsView()
         {
             InitializeComponent();
 
+            db = new DataAccess();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void _SaveInfo_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog ofd = new OpenFileDialog() { ValidateNames = true, Filter = "PNG|*.png" };
-            if (ofd.ShowDialog() == true)
+            User user = new User();
+
+            user.SName = sName_TextBox.Text;
+            user.Name = name_TextBox.Text;
+            user.AboutMe = aboutMe_TextBox.Text;
+            MessageBox.Show(name_TextBox.Text);
+            //Нормальная обработка ощибок
+            try
             {
-                FileInfo fi = new FileInfo(ofd.FileName);
-                string pathNewAvatar = fi.FullName;
+                db.UpdateUser(user);
 
-                //string pathOldAvatar = Path.GetFullPath("Images");
-                //var strIndex = pathOldAvatar.IndexOf("bin");
-                //pathOldAvatar = pathOldAvatar.Remove(strIndex, 10);
-                //File.Delete(pathOldAvatar);
-                //File.Move(pathNewAvatar, pathOldAvatar);
+                TemporaryUser.SName = sName_TextBox.Text;
+                TemporaryUser.Name = name_TextBox.Text;
+                TemporaryUser.AboutMe = aboutMe_TextBox.Text;
 
-                string pathOldAvatar = Path.GetFullPath("Images");
-                var strIndex = pathOldAvatar.IndexOf("bin");
-                pathOldAvatar = pathOldAvatar.Remove(strIndex, 10);
-                pathOldAvatar = pathOldAvatar + @"\avatar.png";
-                //string pathOldAvatar = @"D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\Images\avatar.png";
-                //string path = @"D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\Images";
-                File.Delete(pathOldAvatar);
-                File.Move(pathNewAvatar, pathOldAvatar);
+                string fileName = Path.GetFullPath("UserData.json");
 
+                string jsonString = JsonConvert.SerializeObject(user);
+
+                File.WriteAllText(fileName, jsonString);
             }
+            catch(Exception er)
+            {
+                MessageBox.Show(er.Message);
+            }
+            
         }
 
+        private void sName_TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

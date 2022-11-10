@@ -44,5 +44,13 @@ namespace Application
             var people = await UserCollection.Find(user => user.Email == email && user.Password == password).ToListAsync();
             return people;
         }
+
+        public Task UpdateUser(User user)
+        {
+            var UserCollection = ConnectToMongo<User>(UserConnection);
+            var filter = Builders<User>.Filter.Eq("Id", user.Id);
+
+            return UserCollection.ReplaceOneAsync(filter, user);
+        }
     }
 }

@@ -26,6 +26,18 @@ namespace Application.MVVW.View
         public ProfileView()
         {
             InitializeComponent();
+            profile_email.Content = TemporaryUser.Email;
+            profile_login.Content = TemporaryUser.Login; 
+
+            if (TemporaryUser.SName != "")
+            {
+                profile_sname.Content = TemporaryUser.SName;
+            }
+
+            if (TemporaryUser.Name != "")
+            {
+                profile_sname.Content = TemporaryUser.Name;
+            }
         }
     }
 }
