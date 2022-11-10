@@ -36,7 +36,7 @@ namespace Application.MVVW.View
 
             if (TemporaryUser.Name != "")
             {
-                profile_sname.Content = TemporaryUser.Name;
+                profile_name.Content = TemporaryUser.Name;
             }
         }
     }

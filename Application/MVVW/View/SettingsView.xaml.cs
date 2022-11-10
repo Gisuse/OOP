@@ -33,18 +33,18 @@ namespace Application.MVVW.View
         {
             User user = new User();
 
-            user.SName = sName_TextBox.Text;
-            user.Name = name_TextBox.Text;
-            user.AboutMe = aboutMe_TextBox.Text;
-            MessageBox.Show(name_TextBox.Text);
+            user.SName = sName_TextBox.Text.ToString();
+            user.Name = name_TextBox.Text.ToString();
+            user.AboutMe = aboutMe_TextBox.Text.ToString();
+            MessageBox.Show(name_TextBox.Text.ToString());
             //Нормальная обработка ощибок
             try
             {
                 db.UpdateUser(user);
 
-                TemporaryUser.SName = sName_TextBox.Text;
-                TemporaryUser.Name = name_TextBox.Text;
-                TemporaryUser.AboutMe = aboutMe_TextBox.Text;
+                TemporaryUser.SName = user.SName;
+                TemporaryUser.Name = user.Name;
+                TemporaryUser.AboutMe = user.AboutMe;
 
                 string fileName = Path.GetFullPath("UserData.json");
 

@@ -18,7 +18,7 @@
                         <Grid x:Name="SettingsGrid">
                             <Rectangle StrokeThickness="2"/>
                             <TextBox Margin="1"
-                                     Text="{TemplateBinding Text}"
+                                     Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Text, UpdateSourceTrigger=PropertyChanged}"
                                      BorderThickness="0"
                                      Background="Transparent"
                                      VerticalContentAlignment="Center"
@@ -33,7 +33,8 @@
                                        HorizontalAlignment="Left"
                                        Margin="10,0,0,0"
                                        Foreground="DarkGray"
-                                       Grid.Column="1">
+                                       Grid.Column="1"
+                                       >
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
                                         <Style.Triggers>

@@ -30,7 +30,7 @@
                        Padding="20, 5" Margin="0,5,0,0"/>
                 <Label Content="Про себе" Foreground="White" FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Left" Height="45"
                        Padding="20, 5" Margin="0,5,0,0"/>
-                <Label Content="Тема" Foreground="White" FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Left" Height="45"
+                <Label Opacity="0" Content="Тема" Foreground="White" FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Left" Height="45"
                        Padding="20, 5" Margin="0,60,0,0"/>
             </StackPanel>
 
@@ -48,7 +48,7 @@
                               HorizontalAlignment="Left"
                               Height="45"
                               materialDesign:ToggleButtonAssist.SwitchTrackOffBackground="Black"
-                              materialDesign:ToggleButtonAssist.SwitchTrackOnBackground="White"/>
+                              materialDesign:ToggleButtonAssist.SwitchTrackOnBackground="White" Opacity="0"/>
             </StackPanel>
 
         </Grid>
