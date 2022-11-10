@@ -86,6 +86,14 @@ namespace Application
                         throw new Exception();
                     }
 
+                    TemporaryUser.Email = user[0].Email;
+                    TemporaryUser.Password = user[0].Password;
+                    TemporaryUser.Login = user[0].Login;
+                    TemporaryUser.Role = user[0].Role;
+                    TemporaryUser.Name = user[0].Name;
+                    TemporaryUser.SName = user[0].SName;
+                    TemporaryUser.AboutMe = user[0].AboutMe;
+
                     MainWindow mainWindow = Application.App.Current.MainWindow as MainWindow;
                     if (isRemember.IsChecked == true)
                     {
