@@ -23,7 +23,7 @@
             <Button Style="{StaticResource MaterialDesignFlatButton}" 
                     FontSize="12" Content="Редагувати профіль" Width="200" Height="20" Padding="4,0,0,0" Margin="0"
                     HorizontalContentAlignment="Left"
-                    Command="{Binding DataContext.SettingsViewCommand, RelativeSource={RelativeSource AncestorType=Window}}"/>
+                    Command="{Binding DataContext.SettingsViewCommand, RelativeSource={RelativeSource AncestorType=Window}}" Cursor="Hand"/>
         </StackPanel>
         <StackPanel Grid.Row="0" Margin="310,15,0,0" Width="200" HorizontalAlignment="Left">
             <Label x:Name="profile_login" Content="Логін" FontSize="30" Foreground="White" Padding="4,0,0,0"/>
