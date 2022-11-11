@@ -10,7 +10,7 @@
                                 <EllipseGeometry Center="50,50" RadiusX="45" RadiusY="44"/>
                             </Border.Clip>
                             <Button Background="Transparent" Height="100" Width="100" Padding="0">
-                                <Image x:Name="avatarIMG" Source="pack://Application:,,,/Images/avatar.png" Opacity="1.0"/>
+                                <Image x:Name="avatarIMG" Source="{Binding ImagePath}" Opacity="1.0"/>
                             </Button>
                         </Border>
                         <Border x:Name="cameraICON" Background="Gray"  Opacity="0">

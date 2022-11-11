@@ -235,7 +235,9 @@
     <Folder Include="MVVW\Model\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\avatar.png" />
+    <Content Include="Images\avatar.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\camera.png" />
