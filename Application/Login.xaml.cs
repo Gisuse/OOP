@@ -104,6 +104,14 @@ namespace Application
                         File.WriteAllText(fileName, jsonString);
 
                     }
+                    else
+                    {
+                        string fileName = Path.GetFullPath("UserData.json");
+
+                        string jsonString = "{}";
+
+                        File.WriteAllText(fileName, jsonString);
+                    }
 
                     Loading loading = new Loading();
                     NavigationService.Navigate(loading);

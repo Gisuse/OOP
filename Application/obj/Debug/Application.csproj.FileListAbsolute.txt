@@ -365,3 +365,4 @@ D:\Универ\2 курс\1 семестр\OOP (Курсач)\OOP\Application\b
 D:\Универ\2 курс\1 семестр\OOP (Курсач)\OOP\Application\bin\Debug\WpfAnimatedGif.xml
 D:\Универ\2 курс\1 семестр\OOP (Курсач)\OOP\Application\obj\Debug\Loading.g.cs
 D:\Универ\2 курс\1 семестр\OOP (Курсач)\OOP\Application\obj\Debug\Loading.baml
+D:\Университет\Курсач ООП 2022-2023\OOP\Application\bin\Debug\Images\avatar.png

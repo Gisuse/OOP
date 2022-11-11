@@ -52,5 +52,7 @@ namespace Application
             SName = TemporaryUser.SName;
             AboutMe = TemporaryUser.AboutMe;
         }
+
+
     }
 }

@@ -32,43 +32,53 @@ namespace Application
 
             db = new DataAccess();
 
-            string fileName = Path.GetFullPath("UserData.json");
-            string inner = File.ReadAllText(fileName);
+            searchUser();
 
-            searchUser(inner);
-
-           
         }
 
-        private async void searchUser(string inner)
+        private async void searchUser()
         {
             try
             {
-                User saveUser = JsonSerializer.Deserialize<User>(inner);
+                string fileName = Path.GetFullPath("UserData.json");
 
-                var user = await db.FindUser(saveUser.Email, saveUser.Password);
-
-
-                if (user.Count < 1)
+                if (File.Exists(fileName))
                 {
-                    Mainframe.Content = new Login();
+                    string inner = File.ReadAllText(fileName);
+
+                    User saveUser = JsonSerializer.Deserialize<User>(inner);
+
+                    var user = await db.FindUser(saveUser.Email, saveUser.Password);
+
+
+                    if (user.Count < 1)
+                    {
+                        File.Delete(fileName);
+
+                        Mainframe.Content = new Login();
+                    }
+                    else
+                    {
+                        MessageBox.Show(saveUser.Email);
+                        TemporaryUser.Email = user[0].Email;
+                        TemporaryUser.Password = user[0].Password;
+                        TemporaryUser.Login = user[0].Login;
+                        TemporaryUser.Role = user[0].Role;
+                        TemporaryUser.Name = user[0].Name;
+                        TemporaryUser.SName = user[0].SName;
+                        TemporaryUser.AboutMe = user[0].AboutMe;
+                        TemporaryUser.Id = user[0].Id;
+
+                        MainMenu mainMenu = new MainMenu();
+                        mainMenu.Show();
+                        MainWindow mainWindow = Application.App.Current.MainWindow as MainWindow;
+                        mainWindow.Close();
+                        //Mainframe.Content = new MainMenu();
+                    }
                 }
                 else
                 {
-                    TemporaryUser.Email = user[0].Email;
-                    TemporaryUser.Password = user[0].Password;
-                    TemporaryUser.Login = user[0].Login;
-                    TemporaryUser.Role = user[0].Role;
-                    TemporaryUser.Name = user[0].Name;
-                    TemporaryUser.SName = user[0].SName;
-                    TemporaryUser.AboutMe = user[0].AboutMe;
-                    TemporaryUser.Id = user[0].Id;
-
-                    MainMenu mainMenu = new MainMenu();
-                    mainMenu.Show();
-                    MainWindow mainWindow = Application.App.Current.MainWindow as MainWindow;
-                    mainWindow.Close();
-                    //Mainframe.Content = new MainMenu();
+                    Mainframe.Content = new Login();
                 }
             }
             catch (Exception err)

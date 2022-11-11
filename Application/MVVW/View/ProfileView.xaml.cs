@@ -14,8 +14,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
-
+using System.IO;
 namespace Application.MVVW.View
 {
     /// <summary>
@@ -38,6 +37,19 @@ namespace Application.MVVW.View
             {
                 profile_name.Content = TemporaryUser.Name;
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            string fileName = Path.GetFullPath("UserData.json");
+
+            File.Delete(fileName);
+
+            // очистка TemporaryUser не нужна, так как мы присваиваем все данные в регистрации и логине
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            MainMenu mainMenu = Application.App.Current.Windows[0] as MainMenu;
+            mainMenu.Close();
         }
     }
 }

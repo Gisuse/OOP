@@ -88,25 +88,31 @@ namespace Application
                 try
                 {
                     await db.CreateUser(user);
-                    var createdUser = await db.FindUser(email, password);
-
-                    TemporaryUser.Email = createdUser[0].Email;
-                    TemporaryUser.Password = createdUser[0].Password;
-                    TemporaryUser.Login = createdUser[0].Login;
-                    TemporaryUser.Role = createdUser[0].Role;
-                    TemporaryUser.Name = createdUser[0].Name;
-                    TemporaryUser.SName = createdUser[0].SName;
-                    TemporaryUser.AboutMe = createdUser[0].AboutMe;
+                    
+                    TemporaryUser.Email = user.Email;
+                    TemporaryUser.Password = user.Password;
+                    TemporaryUser.Login = user.Login;
+                    TemporaryUser.Role = user.Role;
+                    TemporaryUser.Name = user.Name;
+                    TemporaryUser.SName = user.SName;
+                    TemporaryUser.AboutMe = user.AboutMe;
+                    TemporaryUser.AboutMe = user.AboutMe;
 
                     if (isRemember.IsChecked == true)
                     {
-                        
-
-                       
+                        var createdUser = await db.FindUser(email, password);
 
                         string fileName = Path.GetFullPath("UserData.json");
 
                         string jsonString = JsonConvert.SerializeObject(createdUser[0]);
+
+                        File.WriteAllText(fileName, jsonString);
+                    }
+                    else
+                    {
+                        string fileName = Path.GetFullPath("UserData.json");
+
+                        string jsonString = "{}";
 
                         File.WriteAllText(fileName, jsonString);
                     }
@@ -116,12 +122,12 @@ namespace Application
                     input_password.Password = "";
                     input_passConf.Password = "";
 
-                        MainMenu taskWindow = new MainMenu();
-                        taskWindow.Show();
+                    MainMenu taskWindow = new MainMenu();
+                    taskWindow.Show();
 
-                        MainWindow main = Application.App.Current.MainWindow as MainWindow;
+                    MainWindow main = Application.App.Current.MainWindow as MainWindow;
 
-                        main.Close();
+                    main.Close();
                 }
                 catch (Exception er)
                 {
