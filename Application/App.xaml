@@ -17,6 +17,7 @@
                 <ResourceDictionary Source="Theme/WindowButton.xaml"/>
                 <ResourceDictionary Source="Theme/AvatarImage.xaml"/>
                 <ResourceDictionary Source="Theme/SettingsTextBox.xaml"/>
+                <ResourceDictionary Source="Theme/ExitButton.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
                 <view:HomeView/>

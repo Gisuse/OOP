@@ -28,7 +28,9 @@
         <StackPanel Grid.Row="0" Margin="310,15,0,0" Width="200" HorizontalAlignment="Left">
             <Label x:Name="profile_login" Content="Логін" FontSize="30" Foreground="White" Padding="4,0,0,0"/>
             <Label x:Name="profile_email" Content="E-Mail" FontSize="30" Foreground="White" Padding="4,0,0,0"/>
-            <Button Content="Выйти" Click="Button_Click"/>
+            <Button Style="{StaticResource exitButton}" 
+                    FontSize="12" Content="Вийти" Width="179" Height="20" Padding="0,0,0,0"
+                    HorizontalContentAlignment="Center" Click="Button_Click" Foreground="White"/>
         </StackPanel>
 
         <ScrollViewer Grid.Row="1" Height="330">
