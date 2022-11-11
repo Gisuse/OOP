@@ -18,19 +18,15 @@
                 <ResourceDictionary Source="Theme/AvatarImage.xaml"/>
                 <ResourceDictionary Source="Theme/SettingsTextBox.xaml"/>
             </ResourceDictionary.MergedDictionaries>
-
             <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
                 <view:HomeView/>
             </DataTemplate>
-
             <DataTemplate DataType="{x:Type viewModel:ProfileViewModel}">
                 <view:ProfileView/>
             </DataTemplate>
             <DataTemplate DataType="{x:Type viewModel:SettingsViewModel}">
                 <view:SettingsView/>
-                </DataTemplate>
+            </DataTemplate>
         </ResourceDictionary>
-        
-        
     </Application.Resources>
 </Application>

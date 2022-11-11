@@ -354,3 +354,4 @@ D:\GitRepo\OOP\OOP\Application\obj\Debug\Loading.g.cs
 D:\GitRepo\OOP\OOP\Application\obj\Debug\Loading.baml
 D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\Loading.g.cs
 D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\Loading.baml
+D:\GitRepo\OOP\OOP\Application\bin\Debug\Images\avatar.png
