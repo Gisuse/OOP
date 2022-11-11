@@ -30,15 +30,15 @@ namespace Application
 
         //public User() { }
 
-        public User(string email, string password, string login)
+        public User(string email, string password, string login, string name, string sName)
         {
             Email = email;
             Password = password;
             Login = login;
             Role = 0;
-            Name = "";
-            SName = "";
-            AboutMe = "";
+            Name = name;
+            SName = sName;
+            AboutMe = AboutMe;
         }
 
         public User()

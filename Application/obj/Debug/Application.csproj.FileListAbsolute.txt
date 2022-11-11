@@ -355,3 +355,13 @@ D:\GitRepo\OOP\OOP\Application\obj\Debug\Loading.baml
 D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\Loading.g.cs
 D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\Loading.baml
 D:\GitRepo\OOP\OOP\Application\bin\Debug\Images\avatar.png
+D:\Универ\2 курс\1 семестр\OOP (Курсач)\OOP\Application\bin\Debug\Images\avatar.png
+D:\Универ\2 курс\1 семестр\OOP (Курсач)\OOP\Application\bin\Debug\EntityFramework.dll
+D:\Универ\2 курс\1 семестр\OOP (Курсач)\OOP\Application\bin\Debug\EntityFramework.SqlServer.dll
+D:\Универ\2 курс\1 семестр\OOP (Курсач)\OOP\Application\bin\Debug\WpfAnimatedGif.dll
+D:\Универ\2 курс\1 семестр\OOP (Курсач)\OOP\Application\bin\Debug\EntityFramework.xml
+D:\Универ\2 курс\1 семестр\OOP (Курсач)\OOP\Application\bin\Debug\EntityFramework.SqlServer.xml
+D:\Универ\2 курс\1 семестр\OOP (Курсач)\OOP\Application\bin\Debug\WpfAnimatedGif.pdb
+D:\Универ\2 курс\1 семестр\OOP (Курсач)\OOP\Application\bin\Debug\WpfAnimatedGif.xml
+D:\Универ\2 курс\1 семестр\OOP (Курсач)\OOP\Application\obj\Debug\Loading.g.cs
+D:\Универ\2 курс\1 семестр\OOP (Курсач)\OOP\Application\obj\Debug\Loading.baml

@@ -44,6 +44,8 @@ namespace Application
         private async void Registration_Click(object sender, RoutedEventArgs e)
         {
             string login = input_login.Text.Trim();
+            string Name = input_name.Text.Trim();
+            string SName = input_surname.Text.Trim();  
             string email = input_email.Text.Trim().ToLower();
             string password = input_password.Password.Trim();
             string password2 = input_passConf.Password.Trim();
@@ -81,23 +83,26 @@ namespace Application
             }
             else
             {
-                User user = new User(email, password, login);
+                User user = new User(email, password, login, Name, SName );
                 
                 try
                 {
                     await db.CreateUser(user);
+                    var createdUser = await db.FindUser(email, password);
+
+                    TemporaryUser.Email = createdUser[0].Email;
+                    TemporaryUser.Password = createdUser[0].Password;
+                    TemporaryUser.Login = createdUser[0].Login;
+                    TemporaryUser.Role = createdUser[0].Role;
+                    TemporaryUser.Name = createdUser[0].Name;
+                    TemporaryUser.SName = createdUser[0].SName;
+                    TemporaryUser.AboutMe = createdUser[0].AboutMe;
 
                     if (isRemember.IsChecked == true)
                     {
-                        var createdUser = await db.FindUser(email, password);
+                        
 
-                        TemporaryUser.Email = createdUser[0].Email;
-                        TemporaryUser.Password = createdUser[0].Password;
-                        TemporaryUser.Login = createdUser[0].Login;
-                        TemporaryUser.Role = createdUser[0].Role;
-                        TemporaryUser.Name = createdUser[0].Name;
-                        TemporaryUser.SName = createdUser[0].SName;
-                        TemporaryUser.AboutMe = createdUser[0].AboutMe;
+                       
 
                         string fileName = Path.GetFullPath("UserData.json");
 
