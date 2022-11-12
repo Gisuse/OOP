@@ -59,7 +59,6 @@ namespace Application
                     }
                     else
                     {
-                        MessageBox.Show(saveUser.Email);
                         TemporaryUser.Email = user[0].Email;
                         TemporaryUser.Password = user[0].Password;
                         TemporaryUser.Login = user[0].Login;

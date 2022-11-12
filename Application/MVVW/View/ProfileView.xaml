@@ -65,6 +65,6 @@
                 <TextBlock Text="EXAMPLE#1"/>
             </ListView>
         </ScrollViewer>
-        <Button Style="{StaticResource AvatarButton}" Width="100" HorizontalAlignment="Left"/>
+        <Button Style="{StaticResource AvatarButton}" Width="100" HorizontalAlignment="Left"  Command="{Binding ChangeImage}"/>
     </Grid>
 </UserControl>

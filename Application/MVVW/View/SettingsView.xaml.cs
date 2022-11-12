@@ -36,7 +36,9 @@ namespace Application.MVVW.View
             user.SName = sName_TextBox.Text.ToString();
             user.Name = name_TextBox.Text.ToString();
             user.AboutMe = aboutMe_TextBox.Text.ToString();
-            MessageBox.Show(name_TextBox.Text.ToString());
+            sName_TextBox.Text = "";
+            name_TextBox.Text = "";
+            aboutMe_TextBox.Text = "";
             //Нормальная обработка ощибок
             try
             {

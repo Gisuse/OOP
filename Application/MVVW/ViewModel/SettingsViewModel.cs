@@ -50,7 +50,7 @@ namespace Application.MVVW.ViewModel
                     pathOldAvatar = pathOldAvatar.Remove(strIndex, 10);
                     pathOldAvatar = pathOldAvatar + @"\avatar.png";
                     File.Delete(pathOldAvatar);
-                    File.Move(pathNewAvatar, pathOldAvatar);
+                    File.Copy(pathNewAvatar, pathOldAvatar);
                     ImagePath = @pathOldAvatar;
                 }
             });
