@@ -25,8 +25,9 @@ namespace Application
         public string Name { get; set; }
         public string SName{ get; set; }
         public string AboutMe { get; set; }
+        public byte[] ContentImage { get; set; }
 
-        
+
 
         //public User() { }
 

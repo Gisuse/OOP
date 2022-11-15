@@ -98,6 +98,14 @@ namespace Application
                     TemporaryUser.AboutMe = user.AboutMe;
                     TemporaryUser.AboutMe = user.AboutMe;
 
+                    string pathDefaultAvatar = Path.GetFullPath("Images");
+                    var strIndex = pathDefaultAvatar.IndexOf("bin");
+                    pathDefaultAvatar = pathDefaultAvatar.Remove(strIndex, 10);
+                    string pathAvatar = pathDefaultAvatar + @"\avatar.png";
+                    pathDefaultAvatar = pathDefaultAvatar + @"\defaultAvatar.png";
+                    File.Delete(pathAvatar);
+                    File.Copy(pathDefaultAvatar, pathAvatar);
+
                     if (isRemember.IsChecked == true)
                     {
                         var createdUser = await db.FindUser(email, password);
