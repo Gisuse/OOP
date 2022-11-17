@@ -18,6 +18,7 @@
                 <ResourceDictionary Source="Theme/AvatarImage.xaml"/>
                 <ResourceDictionary Source="Theme/SettingsTextBox.xaml"/>
                 <ResourceDictionary Source="Theme/ExitButton.xaml"/>
+                <ResourceDictionary Source="Theme/BackButton.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
                 <view:HomeView/>
@@ -28,6 +29,10 @@
             <DataTemplate DataType="{x:Type viewModel:SettingsViewModel}">
                 <view:SettingsView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:EducationViewModel}">
+                <view:EducationView/>
+            </DataTemplate>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

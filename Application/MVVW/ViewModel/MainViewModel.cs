@@ -11,10 +11,12 @@ namespace Application.MVVW.ViewModel
         public RelayCommand ProfileViewCommand { get; set; }
         public RelayCommand SettingsViewCommand { get; set; }
 
+        public RelayCommand EducationViewCommand { get; set; }
 
         public HomeViewModel HomeVM{ get; set; }
         public ProfileViewModel ProfileVM { get; set; }
         public SettingsViewModel SettingsVM { get; set; }
+        public EducationViewModel EducationVM { get; set; }
 
 
         private object _currentView;
@@ -33,7 +35,9 @@ namespace Application.MVVW.ViewModel
             HomeVM = new HomeViewModel();
             ProfileVM = new ProfileViewModel();
             SettingsVM = new SettingsViewModel();
+            EducationVM = new EducationViewModel();
             CurrentView = HomeVM;
+         
             HomeViewCommand = new RelayCommand(o =>
             {
                 CurrentView = HomeVM;
@@ -52,6 +56,11 @@ namespace Application.MVVW.ViewModel
                 {
                     mainWindow._SettingsB.IsChecked = true;
                 }
+            });
+
+            EducationViewCommand = new RelayCommand(o =>
+            {
+                CurrentView = EducationVM;
             });
         }
     }

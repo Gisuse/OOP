@@ -115,7 +115,11 @@
     <Compile Include="Loading.xaml.cs">
       <DependentUpon>Loading.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MVVW\ViewModel\EducationViewModel.cs" />
     <Compile Include="MVVW\ViewModel\ProfileViewModel.cs" />
+    <Compile Include="MVVW\View\EducationView.xaml.cs">
+      <DependentUpon>EducationView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TemporaryUser.cs" />
     <Compile Include="User.cs" />
     <Page Include="Loading.xaml">
@@ -131,6 +135,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVW\View\EducationView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -183,6 +191,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Theme\AvatarImage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\BackButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -374,3 +374,6 @@ D:\Документы\Никита\Универ\Курсовой проект О
 D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\obj\Debug\MVVW\View\SettingsView.g.cs
 D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\obj\Debug\Loading.baml
 D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\obj\Debug\MVVW\View\SettingsView.baml
+D:\Универ\2 курс\1 семестр\OOP (Курсач)\OOP\Application\obj\Debug\MVVW\View\EducationView.g.cs
+D:\Универ\2 курс\1 семестр\OOP (Курсач)\OOP\Application\obj\Debug\MVVW\View\EducationView.baml
+D:\Универ\2 курс\1 семестр\OOP (Курсач)\OOP\Application\obj\Debug\Theme\BackButton.baml

@@ -24,5 +24,13 @@ namespace Application.MVVW.View
         {
             InitializeComponent();
         }
+
+        private void backButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainMenu mainWindow = new MainMenu();
+            mainWindow.Show();
+            MainMenu mainMenu = Application.App.Current.Windows[0] as MainMenu;
+            mainMenu.Close();
+        }
     }
 }
