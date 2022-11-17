@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace Application.MVVW.View
 {
     /// <summary>
-    /// Логика взаимодействия для HomeView.xaml
+    /// Логика взаимодействия для EducationView.xaml
     /// </summary>
-    public partial class HomeView : UserControl
+    public partial class EducationView : UserControl
     {
-        public HomeView()
+        public EducationView()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
