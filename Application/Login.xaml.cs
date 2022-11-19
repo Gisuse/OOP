@@ -72,7 +72,7 @@ namespace Application
             }
             else
             {
-                //Loading loading = new Loading();
+                Loading loading = new Loading();
                 //NavigationService.Navigate(loading);
 
                 Exceptions ex = new Exceptions();
