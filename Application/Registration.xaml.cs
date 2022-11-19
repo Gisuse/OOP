@@ -83,12 +83,12 @@ namespace Application
             }
             else
             {
-                User user = new User(email, password, login, Name, SName );
-                
+                User user = new User(email, password, login, Name, SName);
+
                 try
                 {
                     await db.CreateUser(user);
-                    
+
                     TemporaryUser.Email = user.Email;
                     TemporaryUser.Password = user.Password;
                     TemporaryUser.Login = user.Login;
@@ -105,6 +105,7 @@ namespace Application
                     pathDefaultAvatar = pathDefaultAvatar + @"\defaultAvatar.png";
                     File.Delete(pathAvatar);
                     File.Copy(pathDefaultAvatar, pathAvatar);
+
 
                     if (isRemember.IsChecked == true)
                     {
@@ -141,7 +142,8 @@ namespace Application
                 {
                     MessageBox.Show("Такий email вже використовується", "Попередження", MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
-            }
+
+        }
         }
 
         private void CloseIcon_MouseDown(object sender, MouseEventArgs e)

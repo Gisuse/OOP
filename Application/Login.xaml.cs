@@ -20,6 +20,8 @@ using System.Text.Json;
 using JsonSerializer = System.Text.Json.JsonSerializer;
 using System.Reflection;
 using System.ComponentModel;
+using System.Xml.Linq;
+using MaterialDesignThemes.Wpf;
 
 namespace Application
 {
@@ -28,19 +30,14 @@ namespace Application
     /// </summary>
     public partial class Login : Page
     {
-        DataAccess db;
-        //DataAccess db;
-
         public string Email { get; set; }
         public string Password { get; set; }
+        DataAccess db;
 
         public Login()
         {
-
             InitializeComponent();
             db = new DataAccess();
-
-
         }
 
         private void RegisBut_Click(object sender, RoutedEventArgs e)
@@ -81,6 +78,7 @@ namespace Application
                 {
                     var user = await db.FindUser(email, password);
 
+
                     if (user.Count < 1)
                     {
                         throw new Exception();
@@ -94,7 +92,6 @@ namespace Application
                     TemporaryUser.SName = user[0].SName;
                     TemporaryUser.AboutMe = user[0].AboutMe;
 
-                    MainWindow mainWindow = Application.App.Current.MainWindow as MainWindow;
                     if (isRemember.IsChecked == true)
                     {
                         string fileName = Path.GetFullPath("UserData.json");
@@ -113,23 +110,23 @@ namespace Application
                         File.WriteAllText(fileName, jsonString);
                     }
 
-                    Loading loading = new Loading();
-                    NavigationService.Navigate(loading);
+                    //Loading loading = new Loading();
+                    //NavigationService.Navigate(loading);
+                    //MessageBox.Show(user.Count.ToString());
+                    //NavigationService.StopLoading();
 
 
                     MainMenu mainMenu = new MainMenu();
                     mainMenu.Show();
+                    MainWindow mainWindow = Application.App.Current.MainWindow as MainWindow;
                     mainWindow.Close();
                 }
                 catch (Exception er)
                 {
                     MessageBox.Show("Такого користувача не існує", "Попередження", MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
-
-                input_login.Text = "";
-                input_password.Password = "";
-                
-            }
+            
+        }
         }
 
         private void CloseIcon_MouseDown(object sender, MouseEventArgs e)
