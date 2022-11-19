@@ -32,12 +32,10 @@ namespace Application
     {
         public string Email { get; set; }
         public string Password { get; set; }
-        DataAccess db;
 
         public Login()
         {
             InitializeComponent();
-            db = new DataAccess();
         }
 
         private void RegisBut_Click(object sender, RoutedEventArgs e)
@@ -74,59 +72,19 @@ namespace Application
             }
             else
             {
-                try
-                {
-                    var user = await db.FindUser(email, password);
+                //Loading loading = new Loading();
+                //NavigationService.Navigate(loading);
+
+                Exceptions ex = new Exceptions();
+                ex.Login(email, password);
 
 
-                    if (user.Count < 1)
-                    {
-                        throw new Exception();
-                    }
+                input_login.Text = "";
+                input_password.Password = "";
 
-                    TemporaryUser.Email = user[0].Email;
-                    TemporaryUser.Password = user[0].Password;
-                    TemporaryUser.Login = user[0].Login;
-                    TemporaryUser.Role = user[0].Role;
-                    TemporaryUser.Name = user[0].Name;
-                    TemporaryUser.SName = user[0].SName;
-                    TemporaryUser.AboutMe = user[0].AboutMe;
+                //NavigationService.StopLoading();
 
-                    if (isRemember.IsChecked == true)
-                    {
-                        string fileName = Path.GetFullPath("UserData.json");
-
-                        string jsonString = JsonConvert.SerializeObject(user[0]);
-
-                        File.WriteAllText(fileName, jsonString);
-
-                    }
-                    else
-                    {
-                        string fileName = Path.GetFullPath("UserData.json");
-
-                        string jsonString = "{}";
-
-                        File.WriteAllText(fileName, jsonString);
-                    }
-
-                    //Loading loading = new Loading();
-                    //NavigationService.Navigate(loading);
-                    //MessageBox.Show(user.Count.ToString());
-                    //NavigationService.StopLoading();
-
-
-                    MainMenu mainMenu = new MainMenu();
-                    mainMenu.Show();
-                    MainWindow mainWindow = Application.App.Current.MainWindow as MainWindow;
-                    mainWindow.Close();
-                }
-                catch (Exception er)
-                {
-                    MessageBox.Show("Такого користувача не існує", "Попередження", MessageBoxButton.OK, MessageBoxImage.Warning);
-                }
-            
-        }
+            }
         }
 
         private void CloseIcon_MouseDown(object sender, MouseEventArgs e)
