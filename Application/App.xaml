@@ -19,6 +19,7 @@
                 <ResourceDictionary Source="Theme/SettingsTextBox.xaml"/>
                 <ResourceDictionary Source="Theme/ExitButton.xaml"/>
                 <ResourceDictionary Source="Theme/BackButton.xaml"/>
+                <ResourceDictionary Source="Theme/ClassButton.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
                 <view:HomeView/>
@@ -31,6 +32,9 @@
             </DataTemplate>
             <DataTemplate DataType="{x:Type viewModel:EducationViewModel}">
                 <view:EducationView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:ClassViewModel}">
+                <view:ClassView/>
             </DataTemplate>
 
         </ResourceDictionary>

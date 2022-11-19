@@ -9,10 +9,10 @@
 
     <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left">
         <Button Style="{StaticResource WindowButtonTheme}"
-                Width="520" Height="180" Margin="0" Padding="0" Click="Button_Click_1" Cursor="Hand" Command="{Binding DataContext.EducationViewCommand, RelativeSource={RelativeSource AncestorType=Window}}">
+                Width="520" Height="180" Margin="0" Padding="0" Click="Button_Click_1" Cursor="Hand" Command="{Binding DataContext.ClassViewModel, RelativeSource={RelativeSource AncestorType=Window}}">
         </Button>
         <Button Style="{StaticResource WindowButtonAltTheme}"
-            Width="520" Height="180" Margin="0" Padding="0">
+            Width="520" Height="180" Margin="0" Padding="0" Cursor="Hand">
             
         </Button>
     </StackPanel>
