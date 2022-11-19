@@ -76,71 +76,16 @@ namespace Application
             {
                 input_passConf.ToolTip = "Паролі не співпадають!";
                 input_passConf.BorderBrush = Brushes.Red;
-            }else if (password.Length < 5)
+            }
+            else if (password.Length < 5)
             {
                 input_password.ToolTip = "Пароль має містити понад 5 символів!";
                 input_password.BorderBrush = Brushes.Red;
             }
             else
             {
-                User user = new User(email, password, login, Name, SName );
-                
-                try
-                {
-                    await db.CreateUser(user);
-                    
-                    TemporaryUser.Email = user.Email;
-                    TemporaryUser.Password = user.Password;
-                    TemporaryUser.Login = user.Login;
-                    TemporaryUser.Role = user.Role;
-                    TemporaryUser.Name = user.Name;
-                    TemporaryUser.SName = user.SName;
-                    TemporaryUser.AboutMe = user.AboutMe;
-                    TemporaryUser.AboutMe = user.AboutMe;
-
-                    string pathDefaultAvatar = Path.GetFullPath("Images");
-                    var strIndex = pathDefaultAvatar.IndexOf("bin");
-                    pathDefaultAvatar = pathDefaultAvatar.Remove(strIndex, 10);
-                    string pathAvatar = pathDefaultAvatar + @"\avatar.png";
-                    pathDefaultAvatar = pathDefaultAvatar + @"\defaultAvatar.png";
-                    File.Delete(pathAvatar);
-                    File.Copy(pathDefaultAvatar, pathAvatar);
-
-                    if (isRemember.IsChecked == true)
-                    {
-                        var createdUser = await db.FindUser(email, password);
-
-                        string fileName = Path.GetFullPath("UserData.json");
-
-                        string jsonString = JsonConvert.SerializeObject(createdUser[0]);
-
-                        File.WriteAllText(fileName, jsonString);
-                    }
-                    else
-                    {
-                        string fileName = Path.GetFullPath("UserData.json");
-
-                        string jsonString = "{}";
-
-                        File.WriteAllText(fileName, jsonString);
-                    }
-
-                    input_login.Text = "";
-                    input_email.Text = "";
-                    input_password.Password = "";
-                    input_passConf.Password = "";
-
-                    MainMenu taskWindow = new MainMenu();
-                    taskWindow.Show();
-
-                    MainWindow main = Application.App.Current.MainWindow as MainWindow;
-
-                    main.Close();
-                }
-                catch (Exception er)
-                {
-                    MessageBox.Show("Такий email вже використовується", "Попередження", MessageBoxButton.OK, MessageBoxImage.Warning);
-                }
+                Exceptions ex = new Exceptions();
+                ex.Regestrarion(email, password, login, Name, SName);
             }
         }
 
