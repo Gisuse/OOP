@@ -463,3 +463,9 @@ C:\Users\Вероника\Desktop\Учеба\2 курс\1 семестр\OOP (К
 C:\Users\Вероника\Desktop\Учеба\2 курс\1 семестр\OOP (Курсач)\OOP\Application\obj\Debug\Application.csproj.CopyComplete
 C:\Users\Вероника\Desktop\Учеба\2 курс\1 семестр\OOP (Курсач)\OOP\Application\obj\Debug\Application.exe
 C:\Users\Вероника\Desktop\Учеба\2 курс\1 семестр\OOP (Курсач)\OOP\Application\obj\Debug\Application.pdb
+D:\Универ\2 курс\1 семестр\OOP (Курсач)\OOP\Application\obj\Debug\Theme\ClassButton.baml
+D:\Универ\2 курс\1 семестр\OOP (Курсач)\OOP\Application\obj\Debug\MVVW\View\ClassView.g.cs
+D:\Универ\2 курс\1 семестр\OOP (Курсач)\OOP\Application\obj\Debug\MVVW\View\ClassView.baml
+C:\Users\Вероника\Desktop\Учеба\2 курс\1 семестр\OOP (Курсач)\OOP\Application\obj\Debug\Theme\ClassButton.baml
+C:\Users\Вероника\Desktop\Учеба\2 курс\1 семестр\OOP (Курсач)\OOP\Application\obj\Debug\MVVW\View\ClassView.g.cs
+C:\Users\Вероника\Desktop\Учеба\2 курс\1 семестр\OOP (Курсач)\OOP\Application\obj\Debug\MVVW\View\ClassView.baml

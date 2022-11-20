@@ -72,11 +72,19 @@ namespace Application
             }
             else
             {
-                Loading loading = new Loading();
+                //Loading loading = new Loading();
                 //NavigationService.Navigate(loading);
 
+                //------------------------------------------------------------------------------
+                bool rememberChecked = false;
+                if (isRemember.IsChecked == true)
+                {
+                    rememberChecked = true;
+                }
+                //------------------------------------------------------------------------------
+
                 Exceptions ex = new Exceptions();
-                ex.Login(email, password);
+                ex.Login(email, password, rememberChecked);
 
 
                 input_login.Text = "";

@@ -25,7 +25,7 @@ namespace Application
             db = new DataAccess();
         }
 
-        public async void Regestrarion(string email, string password, string login, string Name, string SName)
+        public async void Regestrarion(string email, string password, string login, string Name, string SName, bool rememberChecked)
         {
             User user = new User(email, password, login, Name, SName);
 
@@ -51,7 +51,7 @@ namespace Application
                 File.Copy(pathDefaultAvatar, pathAvatar);
 
                 
-                if (reg.isRemember.IsChecked == true)
+                if (rememberChecked == true)
                 {
                     var createdUser = await db.FindUser(email, password);
 
@@ -88,7 +88,7 @@ namespace Application
             }
         }
 
-        public async void Login(string email, string password) 
+        public async void Login(string email, string password, bool rememberChecked) 
         {
             try
             {
@@ -107,8 +107,8 @@ namespace Application
                 TemporaryUser.Name = user[0].Name;
                 TemporaryUser.SName = user[0].SName;
                 TemporaryUser.AboutMe = user[0].AboutMe;
-
-                if (reg.isRemember.IsChecked == true)
+                
+                if (rememberChecked == true)
                 {
                     string fileName = Path.GetFullPath("UserData.json");
 
@@ -117,6 +117,8 @@ namespace Application
                     File.WriteAllText(fileName, jsonString);
 
                 }
+                
+
                 else
                 {
                     string fileName = Path.GetFullPath("UserData.json");
