@@ -84,8 +84,17 @@ namespace Application
             }
             else
             {
+                //------------------------------------------------------------------------------
+
+                bool rememberChecked = false;
+                if (isRemember.IsChecked == true)
+                {
+                    rememberChecked = true;
+                }
+                //------------------------------------------------------------------------------
+
                 Exceptions ex = new Exceptions();
-                ex.Regestrarion(email, password, login, Name, SName);
+                ex.Regestrarion(email, password, login, Name, SName, rememberChecked);
             }
         }
 
