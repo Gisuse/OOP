@@ -381,3 +381,9 @@ D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debu
 D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\MVVW\View\EducationView.g.cs
 D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\MVVW\View\ClassView.baml
 D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\MVVW\View\EducationView.baml
+D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\obj\Debug\Theme\BackButton.baml
+D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\obj\Debug\Theme\ClassButton.baml
+D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\obj\Debug\MVVW\View\ClassView.g.cs
+D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\obj\Debug\MVVW\View\EducationView.g.cs
+D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\obj\Debug\MVVW\View\ClassView.baml
+D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\obj\Debug\MVVW\View\EducationView.baml
