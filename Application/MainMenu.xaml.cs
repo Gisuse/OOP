@@ -80,5 +80,10 @@ namespace Application
             };
             MinimIcon.Foreground = Brushes.Black;
         }
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -16,23 +16,25 @@ using System.Windows.Shapes;
 namespace Application.MVVW.View
 {
     /// <summary>
-    /// Логика взаимодействия для HomeView.xaml
+    /// Логика взаимодействия для Class.xaml
     /// </summary>
-    public partial class HomeView : UserControl
+    public partial class ClassView : UserControl
     {
-        public HomeView()
+        public ClassView()
         {
             InitializeComponent();
+        }
+        
+        private void backButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainMenu mainWindow = new MainMenu();
+            mainWindow.Show();
+            MainMenu mainMenu = Application.App.Current.Windows[0] as MainMenu;
+            mainMenu.Close();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
