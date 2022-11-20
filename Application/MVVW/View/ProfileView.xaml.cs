@@ -15,6 +15,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.IO;
+using static System.Net.Mime.MediaTypeNames;
+
 namespace Application.MVVW.View
 {
     /// <summary>
@@ -25,18 +27,49 @@ namespace Application.MVVW.View
         public ProfileView()
         {
             InitializeComponent();
-            profile_email.Content = TemporaryUser.Email;
-            profile_login.Content = TemporaryUser.Login; 
+
+            if (TemporaryUser.Email.Length > 7)
+            {
+                profile_email.Content = TemporaryUser.Email.Substring(0, 7) + "...";
+            }
+            else
+            {
+                profile_email.Content = TemporaryUser.Email;
+            }
+
+            if (TemporaryUser.Login.Length > 7)
+            {
+                profile_login.Content = TemporaryUser.Login.Substring(0, 7) + "...";
+            }
+            else
+            {
+                profile_login.Content = TemporaryUser.Login;
+            }
 
             if (TemporaryUser.SName != "")
             {
-                profile_sname.Content = TemporaryUser.SName;
+                if (TemporaryUser.SName.Length > 7)
+                {
+                    profile_sname.Content = TemporaryUser.SName.Substring(0, 7) + "...";
+                }
+                else
+                {
+                    profile_sname.Content = TemporaryUser.SName;
+                }
             }
 
             if (TemporaryUser.Name != "")
             {
-                profile_name.Content = TemporaryUser.Name;
+                if (TemporaryUser.SName.Length > 7)
+                {
+                    profile_name.Content = TemporaryUser.Name.Substring(0, 7) + "...";
+                }
+                else
+                {
+                    profile_name.Content = TemporaryUser.Name;
+                }
             }
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

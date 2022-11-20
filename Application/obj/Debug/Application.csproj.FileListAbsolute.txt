@@ -374,3 +374,4 @@ D:\Документы\Никита\Универ\Курсовой проект О
 D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\obj\Debug\MVVW\View\SettingsView.g.cs
 D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\obj\Debug\Loading.baml
 D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\obj\Debug\MVVW\View\SettingsView.baml
+D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\Theme\ExitButton.baml
