@@ -12,7 +12,7 @@
         </StackPanel>
         <StackPanel>
             <Button x:Name="backButton"
-                 HorizontalAlignment="Left" Foreground="White" Background="Transparent" Click="backButton_Click" Cursor="Hand" Width="58" Height="44" Content="{StaticResource MyImage}" BorderBrush="#00000000"/>
+                 HorizontalAlignment="Left" Foreground="White" Background="Transparent" Command="{Binding DataContext.ClassViewModel, RelativeSource={RelativeSource AncestorType=Window}}" Cursor="Hand" Width="58" Height="44" Content="{StaticResource MyImage}" BorderBrush="#00000000"/>
         </StackPanel>
 
         <StackPanel Margin="0,50,0,0" >
