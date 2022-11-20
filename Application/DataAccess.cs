@@ -38,6 +38,12 @@ namespace Application
             return UserCollection.InsertOneAsync(user);
         }
 
+        public Task CreateMaterials(Materials materials)
+        {
+            var UserCollection = ConnectToMongo<Materials>("Materials");
+            return UserCollection.InsertOneAsync(materials);
+        }
+
         public async Task<List<User>> FindUser(string email, string password)
         {
             var UserCollection = ConnectToMongo<User>(UserConnection);

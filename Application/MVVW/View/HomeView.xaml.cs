@@ -20,9 +20,12 @@ namespace Application.MVVW.View
     /// </summary>
     public partial class HomeView : UserControl
     {
+        DataAccess db;
+
         public HomeView()
         {
             InitializeComponent();
+            db = new DataAccess();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -31,6 +34,18 @@ namespace Application.MVVW.View
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            Materials materials = new Materials();
+
+            db.CreateMaterials(materials);
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
