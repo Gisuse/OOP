@@ -10,18 +10,16 @@
         <StackPanel>
             <Label Content="Оберіть клас" FontWeight="Black" Foreground="White" FontSize="30" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"/>
         </StackPanel>
-        <StackPanel VerticalAlignment="Top" Margin="27,71,305,0" Height="201">
+        <StackPanel VerticalAlignment="Top" Margin="40,71,292,0" Height="201">
             <Button Style="{StaticResource 7 Class}" Width="216" Height="204" Padding="0" Cursor="Hand" Content="7 клас" Foreground="White" FontSize="45" Click="Button_Click" Command="{Binding DataContext.EducationViewCommand, RelativeSource={RelativeSource AncestorType=Window}}"/>
         </StackPanel>
-        <StackPanel VerticalAlignment="Top" Margin="305,71,27,0" Height="201">
+        <StackPanel VerticalAlignment="Top" Margin="290,71,42,0" Height="201">
             <Button Style="{StaticResource  8 Class}" Width="223" Height="204" Padding="0" Cursor="Hand" Content="8 клас" Foreground="White" FontSize="45" Command="{Binding DataContext.EducationViewCommand, RelativeSource={RelativeSource AncestorType=Window}}"/>
         </StackPanel>
-        <StackPanel VerticalAlignment="Top" Margin="10,287,292,0" Height="201">
-            <Button Style="{StaticResource  9 Class}" Width="228" Height="203" Padding="0" Cursor="Hand" Content="9 клас" Foreground="White" FontSize="45" Command="{Binding DataContext.EducationViewCommand, RelativeSource={RelativeSource AncestorType=Window}}"/>
+        <StackPanel VerticalAlignment="Top" Margin="10,287,10,0" Height="201">
+            <Button Style="{StaticResource  9 Class}" Width="520" Height="203" Padding="0" Cursor="Hand" Content="9 клас" Foreground="White" FontSize="45" Command="{Binding DataContext.EducationViewCommand, RelativeSource={RelativeSource AncestorType=Window}}"/>
         </StackPanel>
-        <StackPanel VerticalAlignment="Top" Margin="290,287,12,0" Height="201">
-            <Button Style="{StaticResource  10 Class}" Width="227" Height="203" Padding="0" Cursor="Hand" Content="10 клас" Foreground="White" FontSize="45" Command="{Binding DataContext.EducationViewCommand, RelativeSource={RelativeSource AncestorType=Window}}"/>
-        </StackPanel>
+        
         <StackPanel>
             <Button x:Name="backButton"
                  HorizontalAlignment="Left" Foreground="White" Background="Transparent" Click="backButton_Click" Cursor="Hand" Width="58" Height="44" Content="{StaticResource MyImage}" BorderBrush="#00000000"/>
