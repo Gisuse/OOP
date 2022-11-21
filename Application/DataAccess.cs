@@ -51,6 +51,13 @@ namespace Application
             return people;
         }
 
+        public async Task<List<Materials>> FindMaterials(int className)
+        {
+            var UserCollection = ConnectToMongo<Materials>("Materials");
+            var materials = await UserCollection.Find(Materials => Materials.ClassName == className).ToListAsync();
+            return materials;
+        }
+
         public Task UpdateUser(User user)
         {
             var UserCollection = ConnectToMongo<User>(UserConnection);

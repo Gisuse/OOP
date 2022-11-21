@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MongoDB.Bson;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,33 @@ namespace Application.MVVW.View
     /// </summary>
     public partial class EducationView : UserControl
     {
+        DataAccess db;
         public EducationView()
         {
             InitializeComponent();
+            db = new DataAccess();
+            findMat();
+            //txb1.Text = materials.ToJson();
+        }
+
+        public async void findMat()
+        {
+            try
+            {
+                var materials = await db.FindMaterials(7);
+
+                for(int i = 0; i < materials.Count; i++)
+                {
+                    TextBlock tb = new TextBlock();
+                    tb.Text = materials[i].Title;
+                    MessageBox.Show(tb.Text);
+                    ListView.Items.Add(tb);
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void backButton_Click(object sender, RoutedEventArgs e)
