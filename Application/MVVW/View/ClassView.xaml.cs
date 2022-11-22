@@ -35,6 +35,17 @@ namespace Application.MVVW.View
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            TemporaryMaterials.CurrentClass = 7;
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            TemporaryMaterials.CurrentClass = 8;
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            TemporaryMaterials.CurrentClass = 9;
         }
     }
 }

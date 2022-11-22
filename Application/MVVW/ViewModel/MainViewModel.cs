@@ -63,6 +63,7 @@ namespace Application.MVVW.ViewModel
             EducationViewCommand = new RelayCommand(o =>
             {
                 CurrentView = EducationVM;
+
             });
 
             ClassViewModel = new RelayCommand(o =>

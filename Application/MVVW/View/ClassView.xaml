@@ -14,10 +14,10 @@
             <Button Style="{StaticResource 7 Class}" Width="216" Height="204" Padding="0" Cursor="Hand" Content="7 клас" Foreground="White" FontSize="45" Click="Button_Click" Command="{Binding DataContext.EducationViewCommand, RelativeSource={RelativeSource AncestorType=Window}}"/>
         </StackPanel>
         <StackPanel VerticalAlignment="Top" Margin="290,71,42,0" Height="201">
-            <Button Style="{StaticResource  8 Class}" Width="223" Height="204" Padding="0" Cursor="Hand" Content="8 клас" Foreground="White" FontSize="45" Command="{Binding DataContext.EducationViewCommand, RelativeSource={RelativeSource AncestorType=Window}}"/>
+            <Button Style="{StaticResource  8 Class}" Width="223" Height="204" Padding="0" Cursor="Hand" Content="8 клас" Foreground="White" FontSize="45" Command="{Binding DataContext.EducationViewCommand, RelativeSource={RelativeSource AncestorType=Window}}" Click="Button_Click_1"/>
         </StackPanel>
         <StackPanel VerticalAlignment="Top" Margin="10,287,10,0" Height="201">
-            <Button Style="{StaticResource  9 Class}" Width="520" Height="203" Padding="0" Cursor="Hand" Content="9 клас" Foreground="White" FontSize="45" Command="{Binding DataContext.EducationViewCommand, RelativeSource={RelativeSource AncestorType=Window}}"/>
+            <Button Style="{StaticResource  9 Class}" Width="520" Height="203" Padding="0" Cursor="Hand" Content="9 клас" Foreground="White" FontSize="45" Command="{Binding DataContext.EducationViewCommand, RelativeSource={RelativeSource AncestorType=Window}}" Click="Button_Click_2"/>
         </StackPanel>
         
         <StackPanel>

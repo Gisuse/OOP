@@ -26,22 +26,22 @@ namespace Application.MVVW.View
         {
             InitializeComponent();
             db = new DataAccess();
-            findMat();
+            findMat(TemporaryMaterials.CurrentClass);
             //txb1.Text = materials.ToJson();
         }
 
-        public async void findMat()
+        public async void findMat(int ClassValue)
         {
             try
             {
-                var materials = await db.FindMaterials(7);
+                var materials = await db.FindMaterials(ClassValue);
 
                 for(int i = 0; i < materials.Count; i++)
                 {
                     TextBlock tb = new TextBlock();
-                    tb.Text = materials[i].Title;
+                    tb.Text = materials[i].NumberOfTheme + ". " + materials[i].Title;
 
-                    ListView.Items.Add(tb);
+                    ListView.Items.Add(tb);                                        
                 }
             }
             catch(Exception ex)

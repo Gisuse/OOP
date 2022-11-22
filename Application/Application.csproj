@@ -126,6 +126,7 @@
     <Compile Include="MVVW\View\EducationView.xaml.cs">
       <DependentUpon>EducationView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TemporaryMaterials.cs" />
     <Compile Include="TemporaryUser.cs" />
     <Compile Include="User.cs" />
     <Page Include="Loading.xaml">
