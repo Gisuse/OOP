@@ -40,7 +40,7 @@ namespace Application.MVVW.View
                 {
                     TextBlock tb = new TextBlock();
                     tb.Text = materials[i].Title;
-                    MessageBox.Show(tb.Text);
+
                     ListView.Items.Add(tb);
                 }
             }
