@@ -36,10 +36,26 @@ namespace Application.MVVW.View
             {
                 var materials = await db.FindMaterials(ClassValue);
 
-                for(int i = 0; i < materials.Count; i++)
+                var temp = materials[0];
+
+                for (int i = 0; i < materials.Count - 1; i++)
+                {
+                    for (int j = i + 1; j < materials.Count; j++)
+                    {
+                        if (materials[i].NumberOfTheme > materials[j].NumberOfTheme)
+                        {
+                            temp = materials[i];
+                            materials[i] = materials[j];
+                            materials[j] = temp;
+                        }
+                    }
+                }
+
+                for (int i = 0; i < materials.Count; i++)
                 {
                     TextBlock tb = new TextBlock();
-                    tb.Text = materials[i].NumberOfTheme + ". " + materials[i].Title;
+
+                    tb.Text = materials[i].NumberOfTheme + ". " + (materials[i].Title.Length > 24 ? materials[i].Title.Substring(0, 24) + "..." : materials[i].Title);
 
                     ListView.Items.Add(tb);                                        
                 }
