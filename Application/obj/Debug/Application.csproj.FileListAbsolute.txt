@@ -400,3 +400,5 @@ D:\GitRepo\OOP\OOP\Application\obj\Debug\MVVW\View\ClassView.g.cs
 D:\GitRepo\OOP\OOP\Application\obj\Debug\MVVW\View\EducationView.g.cs
 D:\GitRepo\OOP\OOP\Application\obj\Debug\MVVW\View\ClassView.baml
 D:\GitRepo\OOP\OOP\Application\obj\Debug\MVVW\View\EducationView.baml
+D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\obj\Debug\MVVW\View\EducationInfoView.g.cs
+D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\obj\Debug\MVVW\View\EducationInfoView.baml

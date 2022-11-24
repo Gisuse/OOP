@@ -31,6 +31,7 @@ namespace Application.MVVW.View
             if (TemporaryUser.Email.Length > 7)
             {
                 profile_email.Content = TemporaryUser.Email.Substring(0, 7) + "...";
+                profile_email.ToolTip = TemporaryUser.Email;
             }
             else
             {
@@ -40,6 +41,7 @@ namespace Application.MVVW.View
             if (TemporaryUser.Login.Length > 7)
             {
                 profile_login.Content = TemporaryUser.Login.Substring(0, 7) + "...";
+                profile_login.ToolTip= TemporaryUser.Login;
             }
             else
             {
@@ -51,6 +53,7 @@ namespace Application.MVVW.View
                 if (TemporaryUser.SName.Length > 7)
                 {
                     profile_sname.Content = TemporaryUser.SName.Substring(0, 7) + "...";
+                    profile_sname.ToolTip = TemporaryUser.SName;
                 }
                 else
                 {
@@ -63,6 +66,7 @@ namespace Application.MVVW.View
                 if (TemporaryUser.SName.Length > 7)
                 {
                     profile_name.Content = TemporaryUser.Name.Substring(0, 7) + "...";
+                    profile_name.ToolTip = TemporaryUser.Name;
                 }
                 else
                 {

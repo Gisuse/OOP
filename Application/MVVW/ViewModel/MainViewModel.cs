@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using Application.Core;
+using Application.MVVW.View;
 
 namespace Application.MVVW.ViewModel
 {
@@ -12,12 +13,14 @@ namespace Application.MVVW.ViewModel
         public RelayCommand SettingsViewCommand { get; set; }
         public RelayCommand EducationViewCommand { get; set; }
         public RelayCommand ClassViewModel { get; set; }
+        public RelayCommand EducationInfoViewModel { get; set; }
 
         public HomeViewModel HomeVM{ get; set; }
         public ProfileViewModel ProfileVM { get; set; }
         public SettingsViewModel SettingsVM { get; set; }
         public EducationViewModel EducationVM { get; set; }
         public ClassViewModel ClassVM { get; set; }
+        public EducationInfoViewModel InfoVM { get; set; }
 
 
         private object _currentView;
@@ -38,6 +41,7 @@ namespace Application.MVVW.ViewModel
             SettingsVM = new SettingsViewModel();
             EducationVM = new EducationViewModel();
             ClassVM = new ClassViewModel();
+            InfoVM = new EducationInfoViewModel();
             CurrentView = HomeVM;
          
             HomeViewCommand = new RelayCommand(o =>
@@ -69,6 +73,11 @@ namespace Application.MVVW.ViewModel
             ClassViewModel = new RelayCommand(o =>
             {
                 CurrentView = ClassVM;
+            });
+
+            EducationInfoViewModel = new RelayCommand(o =>
+            {
+                CurrentView = InfoVM;
             });
         }
     }
