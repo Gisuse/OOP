@@ -22,12 +22,20 @@ namespace Application.MVVW.View
     public partial class EducationView : UserControl
     {
         DataAccess db;
+        int NumberOfTheme;
         public EducationView()
         {
             InitializeComponent();
             db = new DataAccess();
             findMat(TemporaryMaterials.CurrentClass);
+            
             //txb1.Text = materials.ToJson();
+        }
+
+        public void ForwardToInfo(object sender, RoutedEventArgs e)
+        {
+            int currentTheme = int.Parse(sender.ToString().Split(' ')[1].Remove(1));
+            TemporaryMaterials.CurrentTheme = currentTheme;
         }
 
         public async void findMat(int ClassValue)
@@ -35,7 +43,7 @@ namespace Application.MVVW.View
             try
             {
                 var materials = await db.FindMaterials(ClassValue);
-
+                TemporaryMaterials.materials = materials.ToArray();
                 var temp = materials[0];
 
                 for (int i = 0; i < materials.Count - 1; i++)
@@ -53,11 +61,17 @@ namespace Application.MVVW.View
 
                 for (int i = 0; i < materials.Count; i++)
                 {
-                    TextBlock tb = new TextBlock();
+                    //TextBlock tb = new TextBlock();
 
-                    tb.Text = materials[i].NumberOfTheme + ". " + (materials[i].Title.Length > 24 ? materials[i].Title.Substring(0, 24) + "..." : materials[i].Title);
+                    //tb.Text = materials[i].NumberOfTheme + ". " + (materials[i].Title.Length > 24 ? materials[i].Title.Substring(0, 24) + "..." : materials[i].Title);
 
-                    ListView.Items.Add(tb);                                        
+                    //ListView.Items.Add(tb);
+                    Button tb = new Button();
+
+                    //TemporaryMaterials.CurrentInfo = materials[i].MaterialContent;
+                    tb.Content = materials[i].NumberOfTheme + ". " + (materials[i].Title.Length > 24 ? materials[i].Title.Substring(0, 24) + "..." : materials[i].Title);
+                    //tb.Click += new RoutedEventHandler(ForwardToInfo); 
+                    ListView.Items.Add(tb);
                 }
             }
             catch(Exception ex)

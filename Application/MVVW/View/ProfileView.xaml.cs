@@ -41,7 +41,7 @@ namespace Application.MVVW.View
             if (TemporaryUser.Login.Length > 7)
             {
                 profile_login.Content = TemporaryUser.Login.Substring(0, 7) + "...";
-                profile_login.ToolTip = TemporaryUser.Login;
+                profile_login.ToolTip= TemporaryUser.Login;
             }
             else
             {
@@ -73,6 +73,7 @@ namespace Application.MVVW.View
                     profile_name.Content = TemporaryUser.Name;
                 }
             }
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
