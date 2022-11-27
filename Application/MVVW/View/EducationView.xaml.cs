@@ -69,7 +69,16 @@ namespace Application.MVVW.View
                     Button tb = new Button();
 
                     //TemporaryMaterials.CurrentInfo = materials[i].MaterialContent;
-                    tb.Content = materials[i].NumberOfTheme + ". " + (materials[i].Title.Length > 24 ? materials[i].Title.Substring(0, 24) + "..." : materials[i].Title);
+                    if(materials[i].Title.Length > 24)
+                    {
+                        tb.Content = materials[i].NumberOfTheme + ". " + materials[i].Title.Substring(0, 24) + "...";
+                        tb.ToolTip = materials[i].Title;
+                    }
+                    else
+                    {
+                        tb.Content = materials[i].NumberOfTheme + ". " + materials[i].Title;
+                    }
+                     //materials[i].NumberOfTheme + ". " + ( ?  + "..." : materials[i].Title);
                     //tb.Click += new RoutedEventHandler(ForwardToInfo); 
                     ListView.Items.Add(tb);
                 }

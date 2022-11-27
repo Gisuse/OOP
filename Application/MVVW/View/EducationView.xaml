@@ -24,7 +24,7 @@
                                 <!--<Button x:Name="ForvardToInfo" Height="50" Padding="0, 0, 0, 0" BorderBrush="Transparent" Background="Transparent" Command="{Binding DataContext.EducationInfoViewModel, RelativeSource={RelativeSource AncestorType=Window}}">
                                     <TextBlock Text="{Binding Text}" Foreground="White" HorizontalAlignment="Left" FontWeight="Normal" FontSize="30" Width="450"/>
                                 </Button>-->
-                                <Button Click="ForwardToInfo" Content="{Binding Content}" Foreground="White" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" FontWeight="Normal" FontSize="30" Width="450" Height="50"  BorderBrush="Transparent" Background="Transparent" Command="{Binding DataContext.EducationInfoViewModel, RelativeSource={RelativeSource AncestorType=Window}}"/>
+                                <Button ToolTip="{Binding ToolTip}" Click="ForwardToInfo" Content="{Binding Content}" Foreground="White" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" FontWeight="Normal" FontSize="30" Width="450" Height="50"  BorderBrush="Transparent" Background="Transparent" Command="{Binding DataContext.EducationInfoViewModel, RelativeSource={RelativeSource AncestorType=Window}}"/>
 
                                 <!--<Button Command="{Binding DataContext.EducationInfoViewCommand, RelativeSource={RelativeSource AncestorType=Window}}"/>-->
                                 <!--<Label Content="{Binding Content}" FontSize="30" HorizontalContentAlignment="Right" Width="79" Foreground="White"/>-->

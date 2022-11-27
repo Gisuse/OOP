@@ -132,6 +132,7 @@
     </Compile>
     <Compile Include="TemporaryMaterials.cs" />
     <Compile Include="TemporaryUser.cs" />
+    <Compile Include="Tests.cs" />
     <Compile Include="User.cs" />
     <Page Include="Loading.xaml">
       <SubType>Designer</SubType>

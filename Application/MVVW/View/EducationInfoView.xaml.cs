@@ -33,13 +33,13 @@ namespace Application.MVVW.View
 
         public void findMat()
         {
-
-            //TextBlock tb = new TextBlock();
-            //tb.Text = TemporaryMaterials.materials[TemporaryMaterials.CurrentTheme - 1].MaterialContent;
-            //ListView.Items.Add(tb);
-            Label tb = new Label();
-            tb.Content = TemporaryMaterials.materials[TemporaryMaterials.CurrentTheme - 1].MaterialContent;
+            TextBlock tb = new TextBlock();
+            tb.Text = TemporaryMaterials.materials[TemporaryMaterials.CurrentTheme - 1].MaterialContent;
             ListView.Items.Add(tb);
+            
+            //Label tb = new Label();
+            //tb.Content = TemporaryMaterials.materials[TemporaryMaterials.CurrentTheme - 1].MaterialContent;
+            //ListView.Items.Add(tb);
         }
     }
 }

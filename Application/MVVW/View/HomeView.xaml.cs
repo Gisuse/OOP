@@ -26,6 +26,10 @@ namespace Application.MVVW.View
         {
             InitializeComponent();
             db = new DataAccess();
+
+            Tests test = new Tests();
+
+            db.CreateTest(test);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -38,16 +42,14 @@ namespace Application.MVVW.View
 
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            Materials materials = new Materials();
-
-            db.CreateMaterials(materials);
-        }
-
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }

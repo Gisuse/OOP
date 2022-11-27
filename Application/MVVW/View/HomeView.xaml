@@ -15,8 +15,8 @@
             Width="520" Height="180" Margin="0" Padding="0" Cursor="Hand" Command="{Binding DataContext.ClassViewModel, RelativeSource={RelativeSource AncestorType=Window}}">
             
         </Button>
-        <!--<TextBox x:Name="txb1" TextWrapping="Wrap" Text="TextBox" Width="120" TextChanged="TextBox_TextChanged"/>
+        <TextBox x:Name="txb1" TextWrapping="Wrap" Text="TextBox" Width="120" TextChanged="TextBox_TextChanged"/>
         <TextBox x:Name="txb2" TextWrapping="Wrap" Text="TextBox" Width="120"/>
-        <Button Content="Button" Click="Button_Click_2"/>-->
+        <Button Content="Button" Click="Button_Click_2"/>
     </StackPanel>
 </UserControl>

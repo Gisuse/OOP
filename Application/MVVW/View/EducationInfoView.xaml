@@ -13,7 +13,7 @@
         </StackPanel>
         <TextBlock Text="Инфа по теме ..." Foreground="White" FontSize="40" HorizontalAlignment="Center"/>
         <StackPanel Margin="0,50,0,0" >
-            <ScrollViewer Grid.Row="1" Height="440">
+            <ScrollViewer Grid.Row="1" Height="450">
                 <ListView x:Name="ListView">
                     <ListView.ItemTemplate>
                         <DataTemplate>
@@ -21,7 +21,8 @@
                                 <!--<Button x:Name="ForvardToInfo" Height="50" Padding="0, 0, 0, 0" BorderBrush="Transparent" Background="Transparent" Command="{Binding DataContext.EducationInfoViewModel, RelativeSource={RelativeSource AncestorType=Window}}">
                                     <TextBlock Text="{Binding Text}" Foreground="White" HorizontalAlignment="Left" FontWeight="Normal" FontSize="30" Width="450"/>
                                 </Button>-->
-                                <Label Content="{Binding Content}" Foreground="White" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" FontWeight="Normal" FontSize="30" Width="520" Height="550"/>
+                                <!--<Label Content="{Binding Content}" Foreground="White" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" FontWeight="Normal" FontSize="30" Width="520" Height="550"/>-->
+                                <TextBlock TextWrapping="Wrap" Text="{Binding Text}" Foreground="White" HorizontalAlignment="Stretch" FontWeight="Normal" FontSize="30" Width="520"/>
                                 <!--<Button Command="{Binding DataContext.EducationInfoViewCommand, RelativeSource={RelativeSource AncestorType=Window}}"/>-->
                                 <!--<Label Content="{Binding Content}" FontSize="30" HorizontalContentAlignment="Right" Width="79" Foreground="White"/>-->
                             </StackPanel>

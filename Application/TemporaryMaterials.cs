@@ -10,7 +10,7 @@ namespace Application
     {
         public static int CurrentClass = 7;
         public static int CurrentTheme = 1;
-        //public static string CurrentInfo;
+        public static bool IsTest = false;
         public static Materials[] materials;
     }
 }
