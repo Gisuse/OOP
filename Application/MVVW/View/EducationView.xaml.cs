@@ -13,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Navigation;
+using Newtonsoft.Json;
 
 namespace Application.MVVW.View
 {
@@ -27,8 +29,16 @@ namespace Application.MVVW.View
         {
             InitializeComponent();
             db = new DataAccess();
-            findMat(TemporaryMaterials.CurrentClass);
-            
+
+            if (!TemporaryMaterials.IsTest)
+            {
+                findMat(TemporaryMaterials.CurrentClass);
+            }
+            else
+            {
+                findTests(TemporaryMaterials.CurrentClass);
+            }
+
             //txb1.Text = materials.ToJson();
         }
 
@@ -78,12 +88,64 @@ namespace Application.MVVW.View
                     {
                         tb.Content = materials[i].NumberOfTheme + ". " + materials[i].Title;
                     }
-                     //materials[i].NumberOfTheme + ". " + ( ?  + "..." : materials[i].Title);
+                    //materials[i].NumberOfTheme + ". " + ( ?  + "..." : materials[i].Title);
                     //tb.Click += new RoutedEventHandler(ForwardToInfo); 
                     ListView.Items.Add(tb);
                 }
             }
             catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public async void findTests(int ClassValue)
+        {
+            try
+            {
+                var tests = await db.FindTests(7);
+                //string tests = JsonConvert.DeserializeObject(await db.FindTests(7).ToString());
+                TemporaryMaterials.tests = tests.ToArray();
+                var temp = tests[0];
+
+                for (int i = 0; i < tests.Count - 1; i++)
+                {
+                    for (int j = i + 1; j < tests.Count; j++)
+                    {
+                        if (tests[i].numberOfTheme > tests[j].numberOfTheme)
+                        {
+                            temp = tests[i];
+                            tests[i] = tests[j];
+                            tests[j] = temp;
+                        }
+                    }
+                }
+
+                for (int i = 0; i < tests.Count; i++)
+                {
+                    //TextBlock tb = new TextBlock();
+
+                    //tb.Text = tests[i].NumberOfTheme + ". " + (tests[i].Question.Length > 24 ? tests[i].Question.Substring(0, 24) + "..." : tests[i].Question);
+
+                    //ListView.Items.Add(tb);
+                    Button tb = new Button();
+
+                    //TemporaryMaterials.CurrentInfo = tests[i].MaterialContent;
+                    if (tests[i].Question.Length > 24)
+                    {
+                        tb.Content = tests[i].numberOfTheme + ". " + tests[i].Question.Substring(0, 24) + "...";
+                        tb.ToolTip = tests[i].Question;
+                    }
+                    else
+                    {
+                        tb.Content = tests[i].numberOfTheme + ". " + tests[i].Question;
+                    }
+                    //tests[i].NumberOfTheme + ". " + ( ?  + "..." : tests[i].Question);
+                    //tb.Click += new RoutedEventHandler(ForwardToInfo); 
+                    ListView.Items.Add(tb);
+                }
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

@@ -23,14 +23,14 @@ namespace Application
     //    }
     //}
 
-    public struct TestModel
+    public class TestModel
     {
-        public int numberOfAnswer;
         public int numberOfQuestion;
+        public int numberOfAnswer;
         public string value;
         public bool isCorrest;
 
-        public TestModel(int numberOfAnswer, int numberOfQuestion, string value, bool isCorrest)
+        public TestModel( int numberOfQuestion, int numberOfAnswer, string value, bool isCorrest)
         {
             this.numberOfAnswer = numberOfAnswer;
             this.numberOfQuestion = numberOfQuestion;
@@ -47,10 +47,14 @@ namespace Application
         public string Id { get; set; }
         public string Question { get; set; }
         public TestModel[] Answers { get; set; }
+        public int numberOfTheme { get; set; }
+        public int ClassName { get; set; }
 
         public Tests()
         {
-            Question = "хасбула ахмедович?";
+            Question = "ffhgfh?";
+            numberOfTheme = 1;
+            ClassName = 7;
             TestModel testModel = new TestModel(1, 1, "1", false);
             TestModel testModel1 = new TestModel(1, 2, "2", true);
             TestModel testModel2 = new TestModel(1, 3, "3", false);
