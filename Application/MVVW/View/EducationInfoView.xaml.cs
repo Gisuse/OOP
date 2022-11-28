@@ -23,6 +23,8 @@ namespace Application.MVVW.View
         public EducationInfoView()
         {
             InitializeComponent();
+
+
             findMat();
             //TextBlock tb = new TextBlock();
 

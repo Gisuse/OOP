@@ -14,6 +14,7 @@ namespace Application.MVVW.ViewModel
         public RelayCommand EducationViewCommand { get; set; }
         public RelayCommand ClassViewModel { get; set; }
         public RelayCommand EducationInfoViewModel { get; set; }
+        public RelayCommand TestViewModel { get; set; }
 
         public HomeViewModel HomeVM{ get; set; }
         public ProfileViewModel ProfileVM { get; set; }
@@ -21,6 +22,7 @@ namespace Application.MVVW.ViewModel
         public EducationViewModel EducationVM { get; set; }
         public ClassViewModel ClassVM { get; set; }
         public EducationInfoViewModel InfoVM { get; set; }
+        public TestViewModel TestVM { get; set; }
 
 
         private object _currentView;
@@ -42,6 +44,7 @@ namespace Application.MVVW.ViewModel
             EducationVM = new EducationViewModel();
             ClassVM = new ClassViewModel();
             InfoVM = new EducationInfoViewModel();
+            TestVM = new TestViewModel();
             CurrentView = HomeVM;
          
             HomeViewCommand = new RelayCommand(o =>
@@ -78,6 +81,10 @@ namespace Application.MVVW.ViewModel
             EducationInfoViewModel = new RelayCommand(o =>
             {
                 CurrentView = InfoVM;
+            });
+            TestViewModel = new RelayCommand(o =>
+            {
+                CurrentView = TestVM;
             });
         }
     }
