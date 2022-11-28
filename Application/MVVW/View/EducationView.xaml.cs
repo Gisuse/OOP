@@ -30,15 +30,15 @@ namespace Application.MVVW.View
             InitializeComponent();
             db = new DataAccess();
 
-            if (!TemporaryMaterials.IsTest)
-            {
-                findMat(TemporaryMaterials.CurrentClass);
-            }
-            else
-            {
-                findTests(TemporaryMaterials.CurrentClass);
-            }
-
+            //if (!TemporaryMaterials.IsTest)
+            //{
+            //    findMat(TemporaryMaterials.CurrentClass);
+            //}
+            //else
+            //{
+            //    findTests(TemporaryMaterials.CurrentClass);
+            //}
+            findMat(TemporaryMaterials.CurrentClass);
             //txb1.Text = materials.ToJson();
         }
 

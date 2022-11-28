@@ -46,6 +46,7 @@ namespace Application
 
         public string Id { get; set; }
         public string Question { get; set; }
+        public int numberOfQuestion { get; set; }
         public TestModel[] Answers { get; set; }
         public int numberOfTheme { get; set; }
         public int ClassName { get; set; }
@@ -54,6 +55,7 @@ namespace Application
         {
             Question = "ffhgfh?";
             numberOfTheme = 1;
+            numberOfQuestion = 1;
             ClassName = 7;
             TestModel testModel = new TestModel(1, 1, "1", false);
             TestModel testModel1 = new TestModel(1, 2, "2", true);
