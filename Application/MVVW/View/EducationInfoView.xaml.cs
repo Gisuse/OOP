@@ -24,7 +24,8 @@ namespace Application.MVVW.View
         {
             InitializeComponent();
 
-
+            string ThemeTitleMain = Array.Find(TemporaryMaterials.materials, element => element.ClassName == TemporaryMaterials.CurrentClass && element.NumberOfTheme == TemporaryMaterials.CurrentTheme).Title;
+            ThemeTitle.Text = ThemeTitleMain;
             findMat();
             //TextBlock tb = new TextBlock();
 
