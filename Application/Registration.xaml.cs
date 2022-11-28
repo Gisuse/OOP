@@ -48,7 +48,7 @@ namespace Application
             string SName = input_surname.Text.Trim();  
             string email = input_email.Text.Trim().ToLower();
             string password = input_password.Password.Trim();
-            string password2 = input_passConf.Password.Trim();
+            string password2 = input_passConf.Password.Trim();                       
 
             input_login.ClearValue(ToolTipProperty);
             input_login.BorderBrush = Brushes.Gray;

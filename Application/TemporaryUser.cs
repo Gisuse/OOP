@@ -20,6 +20,8 @@ namespace Application
         public static string SName;
         public static string AboutMe;
 
+        public static string ImagePath;
+
         public TemporaryUser() { }
 
         public TemporaryUser(User user)

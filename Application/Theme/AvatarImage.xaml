@@ -17,9 +17,7 @@
                             <Border.Clip>
                                 <EllipseGeometry Center="50,50" RadiusX="45" RadiusY="44"/>
                             </Border.Clip>
-                            <Button Background="Transparent" Height="50" Width="50" Padding="0" BorderBrush="Transparent">
-                                <Image Source="pack://Application:,,,/Images/camera.png"/>
-                            </Button>
+                            <Image Source="pack://Application:,,,/Images/camera.png" Height="50" Width="50"/>
                         </Border>
                     </Grid>
                     <ControlTemplate.Triggers>

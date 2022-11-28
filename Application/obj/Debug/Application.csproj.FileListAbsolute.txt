@@ -410,3 +410,7 @@ D:\Универ\2 курс\1 семестр\OOP (Курсач)\OOP\Application\o
 D:\Универ\2 курс\1 семестр\OOP (Курсач)\OOP\Application\obj\Debug\MVVW\View\TestView.baml
 D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\obj\Debug\MVVW\View\TestView.g.cs
 D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\obj\Debug\MVVW\View\TestView.baml
+D:\GitRepo\OOP\OOP\Application\obj\Debug\MVVW\View\EducationInfoView.g.cs
+D:\GitRepo\OOP\OOP\Application\obj\Debug\MVVW\View\TestView.g.cs
+D:\GitRepo\OOP\OOP\Application\obj\Debug\MVVW\View\EducationInfoView.baml
+D:\GitRepo\OOP\OOP\Application\obj\Debug\MVVW\View\TestView.baml

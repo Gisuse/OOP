@@ -29,6 +29,14 @@ namespace Application.MVVW.View
         {
             InitializeComponent();
             db = new DataAccess();
+            if(TemporaryMaterials.IsTest == true)
+            {
+                profile_login.Content = "Тестові завдання";
+            }
+            else if(TemporaryMaterials.IsTest == false)
+            {
+                profile_login.Content = "Навчальні матеріали";
+            }
 
             //if (!TemporaryMaterials.IsTest)
             //{
@@ -157,6 +165,14 @@ namespace Application.MVVW.View
             mainWindow.Show();
             MainMenu mainMenu = Application.App.Current.Windows[0] as MainMenu;
             mainMenu.Close();
+        }
+
+        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(TemporaryMaterials.IsTest == false)
+            {
+                
+            }
         }
     }
 }
