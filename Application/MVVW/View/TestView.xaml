@@ -25,16 +25,14 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <StackPanel>
-                                <Label Content="{Binding Question}" Foreground="White" FontSize="35"/>
-                                <RadioButton Width="auto" HorizontalAlignment="Left" Content="{Binding Answer1}" Foreground="White" FontSize="35" Margin="4 0" Padding="5" Style="{StaticResource MaterialDesignRadioButton}"/>
-                                <RadioButton Width="auto" HorizontalAlignment="Left" Content="{Binding Answer2}" Foreground="White" FontSize="35" Margin="4 0" Padding="5" Style="{StaticResource MaterialDesignRadioButton}"/>
-                                <RadioButton Width="auto" HorizontalAlignment="Left" Content="{Binding Answer3}" Foreground="White" FontSize="35" Margin="4 0" Padding="5" Style="{StaticResource MaterialDesignRadioButton}"/>
+                                <Label Content="{Binding Path=Question}" Foreground="White" FontSize="35"/>
+                                <RadioButton Width="auto" HorizontalAlignment="Left" Content="{Binding Path=Answer1}" Foreground="White" FontSize="35" Margin="4 0" Padding="5" Style="{StaticResource MaterialDesignRadioButton}"/>
+                                <RadioButton Width="auto" HorizontalAlignment="Left" Content="{Binding Path=Answer2}" Foreground="White" FontSize="35" Margin="4 0" Padding="5" Style="{StaticResource MaterialDesignRadioButton}"/>
+                                <RadioButton Width="auto" HorizontalAlignment="Left" Content="{Binding Path=Answer3}" Foreground="White" FontSize="35" Margin="4 0" Padding="5" Style="{StaticResource MaterialDesignRadioButton}"/>
                             </StackPanel>
                         </DataTemplate>
                     </ListView.ItemTemplate>
-                    <Label Content="Example1"/>
-                    <Label Content="Example1"/>
-                    <Label Content="Example1"/>
+                    
                 </ListView>
             </ScrollViewer>
         </StackPanel>
@@ -46,7 +44,7 @@
             <Button x:Name="_SaveInfo" Content="Відправити" Margin="10 17 0 0"
                         Style="{StaticResource MaterialDesignRaisedDarkButton}"
                         Width="230" Height="35" HorizontalAlignment="Center" VerticalAlignment="Center"
-                         materialDesign:ButtonAssist.CornerRadius="13"/>
+                         materialDesign:ButtonAssist.CornerRadius="13" Click="_SaveInfo_Click"/>
         </StackPanel>
     </Grid>
 </UserControl>
