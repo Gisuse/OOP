@@ -52,8 +52,8 @@ namespace Application.MVVW.View
         {
             MyData data = new MyData();
             data.Answer1 = "answer 1";
-            data.Answer2 = "answer 1";
-            data.Answer3 = "answer 1";
+            data.Answer2 = "answer 2";
+            data.Answer3 = "answer 3";
             data.Question = "Question?";
 
             TestList.Items.Add(data); 
