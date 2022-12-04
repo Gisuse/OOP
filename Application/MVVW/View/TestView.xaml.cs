@@ -39,5 +39,24 @@ namespace Application.MVVW.View
             
             e.Handled = true;
         }
+
+        public class MyData
+        {
+            public string Answer1 { get; set; }
+            public string Answer2 { get; set; }
+            public string Answer3 { get; set; }
+            public string Question { get; set; }
+        }
+
+        private void _SaveInfo_Click(object sender, RoutedEventArgs e)
+        {
+            MyData data = new MyData();
+            data.Answer1 = "answer 1";
+            data.Answer2 = "answer 1";
+            data.Answer3 = "answer 1";
+            data.Question = "Question?";
+
+            TestList.Items.Add(data); 
+        }
     }
 }
