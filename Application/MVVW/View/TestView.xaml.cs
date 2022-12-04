@@ -24,5 +24,20 @@ namespace Application.MVVW.View
         {
             InitializeComponent();
         }
+
+        private void ScrollViewer_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
+        {
+            ScrollViewer scv = (ScrollViewer)sender;
+            if(e.Delta > 0)
+            {
+                scv.ScrollToVerticalOffset(scv.VerticalOffset - e.Delta + 75);
+            }
+            else if(e.Delta < 0)
+            {
+                scv.ScrollToVerticalOffset(scv.VerticalOffset - e.Delta - 75);
+            }
+            
+            e.Handled = true;
+        }
     }
 }
