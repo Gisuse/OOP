@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Application.MVVW.View"
              mc:Ignorable="d"
-             d:DesignHeight="450" d:DesignWidth="550">
+             d:DesignHeight="450" d:DesignWidth="600">
     <Grid>
         <StackPanel>
             <Label x:Name="profile_login" FontWeight="Black" FontSize="30" Foreground="White" Padding="4,0,0,0" FontStretch="Normal" HorizontalContentAlignment="Center"/>
