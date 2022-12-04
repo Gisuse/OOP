@@ -44,6 +44,19 @@ namespace Application
             return UserCollection.InsertOneAsync(materials);
         }
 
+        public Task CreateTest(Tests test)
+        {
+            var UserCollection = ConnectToMongo<Tests>("Tests");
+            return UserCollection.InsertOneAsync(test);
+        }
+
+        public async Task<List<Tests>> FindTests(int ClassName)
+        {
+            var UserCollection = ConnectToMongo<Tests>("Tests");
+            var tests = await UserCollection.Find(Tests => Tests.ClassName == ClassName).ToListAsync();
+            return tests;
+        }
+
         public async Task<List<User>> FindUser(string email, string password)
         {
             var UserCollection = ConnectToMongo<User>(UserConnection);

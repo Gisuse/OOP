@@ -33,9 +33,10 @@ namespace Application.MVVW.ViewModel
 
 
         public SettingsViewModel()
-        {
-            string imgroot = "/Application;component/Images/avatar.png";
-            ImagePath = imgroot;
+        {          
+            //string imgroot = "/Application;component/Images/avatar.png";
+            TemporaryUser.ImagePath = "/Application;component/Images/avatar.png";
+            ImagePath = TemporaryUser.ImagePath;
             ChangeImage = new RelayCommand(o =>
             {
                 OpenFileDialog ofd = new OpenFileDialog() { ValidateNames = true, Filter = "PNG|*.png" };

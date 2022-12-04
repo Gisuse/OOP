@@ -49,8 +49,8 @@ namespace Application
                 pathDefaultAvatar = pathDefaultAvatar + @"\defaultAvatar.png";
                 File.Delete(pathAvatar);
                 File.Copy(pathDefaultAvatar, pathAvatar);
+                TemporaryUser.ImagePath = pathAvatar;
 
-                
                 if (rememberChecked == true)
                 {
                     var createdUser = await db.FindUser(email, password);

@@ -85,5 +85,13 @@ namespace Application
         {
 
         }
+
+        private void borderMainMenu_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+            {
+                DragMove();
+            }
+        }
     }
 }

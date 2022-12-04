@@ -402,3 +402,15 @@ D:\GitRepo\OOP\OOP\Application\obj\Debug\MVVW\View\ClassView.baml
 D:\GitRepo\OOP\OOP\Application\obj\Debug\MVVW\View\EducationView.baml
 D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\obj\Debug\MVVW\View\EducationInfoView.g.cs
 D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\obj\Debug\MVVW\View\EducationInfoView.baml
+D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\MVVW\View\EducationInfoView.g.cs
+D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\MVVW\View\EducationInfoView.baml
+D:\Универ\2 курс\1 семестр\OOP (Курсач)\OOP\Application\obj\Debug\MVVW\View\EducationInfoView.g.cs
+D:\Универ\2 курс\1 семестр\OOP (Курсач)\OOP\Application\obj\Debug\MVVW\View\EducationInfoView.baml
+D:\Универ\2 курс\1 семестр\OOP (Курсач)\OOP\Application\obj\Debug\MVVW\View\TestView.g.cs
+D:\Универ\2 курс\1 семестр\OOP (Курсач)\OOP\Application\obj\Debug\MVVW\View\TestView.baml
+D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\obj\Debug\MVVW\View\TestView.g.cs
+D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\obj\Debug\MVVW\View\TestView.baml
+D:\GitRepo\OOP\OOP\Application\obj\Debug\MVVW\View\EducationInfoView.g.cs
+D:\GitRepo\OOP\OOP\Application\obj\Debug\MVVW\View\TestView.g.cs
+D:\GitRepo\OOP\OOP\Application\obj\Debug\MVVW\View\EducationInfoView.baml
+D:\GitRepo\OOP\OOP\Application\obj\Debug\MVVW\View\TestView.baml

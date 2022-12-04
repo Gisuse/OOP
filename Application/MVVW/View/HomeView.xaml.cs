@@ -26,6 +26,10 @@ namespace Application.MVVW.View
         {
             InitializeComponent();
             db = new DataAccess();
+
+            Tests test = new Tests();
+
+            //db.CreateTest(test);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -35,19 +39,22 @@ namespace Application.MVVW.View
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            Materials materials = new Materials();
-
-            db.CreateMaterials(materials);
+            TemporaryMaterials.IsTest = false;
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            TemporaryMaterials.IsTest = true;
         }
     }
 }
