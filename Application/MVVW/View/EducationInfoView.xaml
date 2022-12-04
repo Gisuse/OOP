@@ -11,9 +11,17 @@
             <Button x:Name="backButton"
                  HorizontalAlignment="Left" Foreground="White" Background="Transparent" Command="{Binding DataContext.EducationViewCommand, RelativeSource={RelativeSource AncestorType=Window}}" Cursor="Hand" Width="58" Height="44" Content="{StaticResource MyImage}" BorderBrush="#00000000"/>
         </StackPanel>
+<<<<<<< Updated upstream
         <TextBlock Text="Инфа по теме ..." Foreground="White" FontSize="40" HorizontalAlignment="Center"/>
         <StackPanel Margin="0,50,0,0" >
             <ScrollViewer Grid.Row="1" Height="440">
+=======
+        <StackPanel Grid.Row="0" Height="auto" VerticalAlignment="Top" HorizontalAlignment="Center" MaxWidth="500">
+            <TextBlock TextWrapping="Wrap" x:Name="ThemeTitle" Foreground="White" FontSize="37"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1">
+            <ScrollViewer Grid.Row="1" Height="450" PreviewMouseWheel="ScrollViewer_PreviewMouseWheel">
+>>>>>>> Stashed changes
                 <ListView x:Name="ListView">
                     <ListView.ItemTemplate>
                         <DataTemplate>

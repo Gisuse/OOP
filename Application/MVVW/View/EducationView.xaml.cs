@@ -87,5 +87,30 @@ namespace Application.MVVW.View
             MainMenu mainMenu = Application.App.Current.Windows[0] as MainMenu;
             mainMenu.Close();
         }
+<<<<<<< Updated upstream
+=======
+
+        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(TemporaryMaterials.IsTest == false)
+            {
+                
+            }
+        }
+        private void ScrollViewer_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
+        {
+            ScrollViewer scv = (ScrollViewer)sender;
+            if (e.Delta > 0)
+            {
+                scv.ScrollToVerticalOffset(scv.VerticalOffset - e.Delta + 75);
+            }
+            else if (e.Delta < 0)
+            {
+                scv.ScrollToVerticalOffset(scv.VerticalOffset - e.Delta - 75);
+            }
+
+            e.Handled = true;
+        }
+>>>>>>> Stashed changes
     }
 }

@@ -16,43 +16,27 @@ using System.Windows.Shapes;
 namespace Application.MVVW.View
 {
     /// <summary>
-    /// Логика взаимодействия для EducationInfoView.xaml
+    /// Логика взаимодействия для TestView.xaml
     /// </summary>
-    public partial class EducationInfoView : UserControl
+    public partial class TestView : UserControl
     {
-        public EducationInfoView()
+        public TestView()
         {
             InitializeComponent();
-            findMat();
-            //TextBlock tb = new TextBlock();
-
-            //tb.Text = TemporaryMaterials.CurrentInfo;
-
-            //ListView.Items.Add(tb);
         }
 
-        public void findMat()
-        {
-
-            //TextBlock tb = new TextBlock();
-            //tb.Text = TemporaryMaterials.materials[TemporaryMaterials.CurrentTheme - 1].MaterialContent;
-            //ListView.Items.Add(tb);
-            Label tb = new Label();
-            tb.Content = TemporaryMaterials.materials[TemporaryMaterials.CurrentTheme - 1].MaterialContent;
-            ListView.Items.Add(tb);
-        }
         private void ScrollViewer_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
         {
             ScrollViewer scv = (ScrollViewer)sender;
-            if (e.Delta > 0)
+            if(e.Delta > 0)
             {
                 scv.ScrollToVerticalOffset(scv.VerticalOffset - e.Delta + 75);
             }
-            else if (e.Delta < 0)
+            else if(e.Delta < 0)
             {
                 scv.ScrollToVerticalOffset(scv.VerticalOffset - e.Delta - 75);
             }
-
+            
             e.Handled = true;
         }
     }
