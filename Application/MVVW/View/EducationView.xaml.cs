@@ -27,6 +27,7 @@ namespace Application.MVVW.View
         int NumberOfTheme;
         public EducationView()
         {
+            // Обработка ошибок при поиске тестов и материалов, если возвращает пустую коллекцию
             InitializeComponent();
             db = new DataAccess();
             if(TemporaryMaterials.IsTest == true)
@@ -38,15 +39,16 @@ namespace Application.MVVW.View
                 profile_login.Content = "Навчальні матеріали";
             }
 
-            //if (!TemporaryMaterials.IsTest)
-            //{
-            //    findMat(TemporaryMaterials.CurrentClass);
-            //}
-            //else
-            //{
-            //    findTests(TemporaryMaterials.CurrentClass);
-            //}
-            findMat(TemporaryMaterials.CurrentClass);
+            if (!TemporaryMaterials.IsTest)
+            {
+                findMat(TemporaryMaterials.CurrentClass);
+            }
+            else
+            {
+                findTests(TemporaryMaterials.CurrentClass);
+            }
+            //findMat(TemporaryMaterials.CurrentClass);
+
             //txb1.Text = materials.ToJson();
         }
 
@@ -55,6 +57,8 @@ namespace Application.MVVW.View
             int currentTheme = int.Parse(sender.ToString().Split(' ')[1].Remove(1));
             TemporaryMaterials.CurrentTheme = currentTheme;
         }
+
+
 
         public async void findMat(int ClassValue)
         {
@@ -109,9 +113,9 @@ namespace Application.MVVW.View
 
         public async void findTests(int ClassValue)
         {
-            try
+            try 
             {
-                var tests = await db.FindTests(7);
+                var tests = await db.FindTests(ClassValue);
                 //string tests = JsonConvert.DeserializeObject(await db.FindTests(7).ToString());
                 TemporaryMaterials.tests = tests.ToArray();
                 var temp = tests[0];
@@ -139,14 +143,14 @@ namespace Application.MVVW.View
                     Button tb = new Button();
 
                     //TemporaryMaterials.CurrentInfo = tests[i].MaterialContent;
-                    if (tests[i].Question.Length > 24)
+                    if (tests[i].Title.Length > 24)
                     {
-                        tb.Content = tests[i].numberOfTheme + ". " + tests[i].Question.Substring(0, 24) + "...";
-                        tb.ToolTip = tests[i].Question;
+                        tb.Content = tests[i].numberOfTheme + ". " + tests[i].Title.Substring(0, 24) + "...";
+                        tb.ToolTip = tests[i].Title;
                     }
                     else
                     {
-                        tb.Content = tests[i].numberOfTheme + ". " + tests[i].Question;
+                        tb.Content = tests[i].numberOfTheme + ". " + tests[i].Title;
                     }
                     //tests[i].NumberOfTheme + ". " + ( ?  + "..." : tests[i].Question);
                     //tb.Click += new RoutedEventHandler(ForwardToInfo); 

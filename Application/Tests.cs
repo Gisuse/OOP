@@ -50,16 +50,18 @@ namespace Application
         public TestModel[] Answers { get; set; }
         public int numberOfTheme { get; set; }
         public int ClassName { get; set; }
+        public string Title { get; set; }
 
         public Tests()
         {
-            Question = "ffhgfh?";
+            Question = "Ян лох?";
             numberOfTheme = 1;
-            numberOfQuestion = 1;
+            numberOfQuestion = 2;
             ClassName = 7;
-            TestModel testModel = new TestModel(1, 1, "1", false);
-            TestModel testModel1 = new TestModel(1, 2, "2", true);
-            TestModel testModel2 = new TestModel(1, 3, "3", false);
+            Title = "Хімія — природнича наука";
+            TestModel testModel = new TestModel(1, 1, "Да", false);
+            TestModel testModel1 = new TestModel(1, 2, "Однозначно", true);
+            TestModel testModel2 = new TestModel(1, 3, "Несомненно", false);
 
             TestModel[] Answers = new TestModel[3];
 

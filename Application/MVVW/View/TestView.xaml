@@ -25,16 +25,16 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <StackPanel>
-                                <Label Content="{Binding Question}" Foreground="White" FontSize="35"/>
+                                <Label Content="{Binding Question }" Foreground="White" FontSize="35"/>
                                 <RadioButton Width="auto" HorizontalAlignment="Left" Content="{Binding Answer1}" Foreground="White" FontSize="35" Margin="4 0" Padding="5" Style="{StaticResource MaterialDesignRadioButton}"/>
                                 <RadioButton Width="auto" HorizontalAlignment="Left" Content="{Binding Answer2}" Foreground="White" FontSize="35" Margin="4 0" Padding="5" Style="{StaticResource MaterialDesignRadioButton}"/>
                                 <RadioButton Width="auto" HorizontalAlignment="Left" Content="{Binding Answer3}" Foreground="White" FontSize="35" Margin="4 0" Padding="5" Style="{StaticResource MaterialDesignRadioButton}"/>
                             </StackPanel>
                         </DataTemplate>
                     </ListView.ItemTemplate>
+                    <!--<Label Content="Example1"/>
                     <Label Content="Example1"/>
-                    <Label Content="Example1"/>
-                    <Label Content="Example1"/>
+                    <Label Content="Example1"/>-->
                 </ListView>
             </ScrollViewer>
         </StackPanel>
