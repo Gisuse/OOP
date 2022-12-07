@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Application.MVVW.View
 {
@@ -27,9 +28,23 @@ namespace Application.MVVW.View
             InitializeComponent();
             db = new DataAccess();
 
-            Tests test = new Tests();
 
+            getTests();
             //db.CreateTest(test);
+        }
+
+        public async void getTests()
+        {
+            try
+            {
+                Tests test = new Tests();
+                await db.CreateTest(test);
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show(er.ToString());
+            }
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
