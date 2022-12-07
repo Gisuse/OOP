@@ -29,7 +29,7 @@ namespace Application.MVVW.View
             db = new DataAccess();
 
 
-            getTests();
+            //getTests();
             //db.CreateTest(test);
         }
 

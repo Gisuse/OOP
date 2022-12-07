@@ -26,9 +26,9 @@
                         <DataTemplate>
                             <StackPanel>
                                 <Label Content="{Binding Question }" Foreground="White" FontSize="35"/>
-                                <RadioButton Width="auto" HorizontalAlignment="Left" Content="{Binding Answer1}" Foreground="White" FontSize="35" Margin="4 0" Padding="5" Style="{StaticResource MaterialDesignRadioButton}"/>
-                                <RadioButton Width="auto" HorizontalAlignment="Left" Content="{Binding Answer2}" Foreground="White" FontSize="35" Margin="4 0" Padding="5" Style="{StaticResource MaterialDesignRadioButton}"/>
-                                <RadioButton Width="auto" HorizontalAlignment="Left" Content="{Binding Answer3}" Foreground="White" FontSize="35" Margin="4 0" Padding="5" Style="{StaticResource MaterialDesignRadioButton}"/>
+                                <RadioButton Width="auto" HorizontalAlignment="Left" Content="{Binding Answer1}" Foreground="White" FontSize="35" Margin="4 0" Padding="5" Style="{StaticResource MaterialDesignRadioButton}" Checked="RadioButton_Checked"/>
+                                <RadioButton Width="auto" HorizontalAlignment="Left" Content="{Binding Answer2}" Foreground="White" FontSize="35" Margin="4 0" Padding="5" Style="{StaticResource MaterialDesignRadioButton}" Checked="RadioButton_Checked_1"/>
+                                <RadioButton Width="auto" HorizontalAlignment="Left" Content="{Binding Answer3}" Foreground="White" FontSize="35" Margin="4 0" Padding="5" Style="{StaticResource MaterialDesignRadioButton}" Checked="RadioButton_Checked_2"/>
                             </StackPanel>
                         </DataTemplate>
                     </ListView.ItemTemplate>
@@ -46,7 +46,7 @@
             <Button x:Name="_SaveInfo" Content="Відправити" Margin="10 17 0 0"
                         Style="{StaticResource MaterialDesignRaisedDarkButton}"
                         Width="230" Height="35" HorizontalAlignment="Center" VerticalAlignment="Center"
-                         materialDesign:ButtonAssist.CornerRadius="13"/>
+                         materialDesign:ButtonAssist.CornerRadius="13" Click="_SaveInfo_Click_1"/>
         </StackPanel>
     </Grid>
 </UserControl>

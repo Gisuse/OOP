@@ -41,6 +41,7 @@ namespace Application
                 TemporaryUser.SName = user.SName;
                 TemporaryUser.AboutMe = user.AboutMe;
                 TemporaryUser.AboutMe = user.AboutMe;
+                TemporaryUser.CompletedTests = user.CompletedTests;
 
                 string pathDefaultAvatar = Path.GetFullPath("Images");
                 var strIndex = pathDefaultAvatar.IndexOf("bin");
@@ -107,7 +108,8 @@ namespace Application
                 TemporaryUser.Name = user[0].Name;
                 TemporaryUser.SName = user[0].SName;
                 TemporaryUser.AboutMe = user[0].AboutMe;
-                
+                TemporaryUser.CompletedTests = user[0].CompletedTests;
+                MessageBox.Show(user[0].CompletedTests[0].TestClass.ToString());
                 if (rememberChecked == true)
                 {
                     string fileName = Path.GetFullPath("UserData.json");

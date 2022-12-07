@@ -9,6 +9,19 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace Application
 {
+    public class CompletedTestsModel {
+        public int TestClass { get; set; }
+        public int TestTheme { get; set; }
+        public float TestMark { get; set; }
+
+        public CompletedTestsModel(int testClass, int testTheme, float testMark)
+        {
+            TestClass = testClass;
+            TestTheme = testTheme;
+            TestMark = testMark;
+        }
+    }
+
     public class User
     {
         [BsonId]
@@ -21,6 +34,7 @@ namespace Application
         public string Email { get; set; }
         public string Password { get; set; }
         public string Login { get; set; }
+        public CompletedTestsModel[] CompletedTests { get; set; }
 
         public string Name { get; set; }
         public string SName{ get; set; }
@@ -52,6 +66,7 @@ namespace Application
             Name = TemporaryUser.Name;
             SName = TemporaryUser.SName;
             AboutMe = TemporaryUser.AboutMe;
+            CompletedTests = TemporaryUser.CompletedTests;
         }
 
 

@@ -414,3 +414,5 @@ D:\GitRepo\OOP\OOP\Application\obj\Debug\MVVW\View\EducationInfoView.g.cs
 D:\GitRepo\OOP\OOP\Application\obj\Debug\MVVW\View\TestView.g.cs
 D:\GitRepo\OOP\OOP\Application\obj\Debug\MVVW\View\EducationInfoView.baml
 D:\GitRepo\OOP\OOP\Application\obj\Debug\MVVW\View\TestView.baml
+D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\MVVW\View\TestView.g.cs
+D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\MVVW\View\TestView.baml
