@@ -39,13 +39,13 @@ namespace Application.MVVW.View
             var test = TemporaryMaterials.tests[TemporaryMaterials.CurrentTheme-1];
             ThemeTitle.Text = test.Title;
 
-                TestAnswers data = new TestAnswers();
-                data.Answer1 = test.Answers[0].value;
-                data.Answer2 = test.Answers[1].value;
-                data.Answer3 = test.Answers[2].value;
-                data.Question = test.Question;
+                //TestAnswers data = new TestAnswers();
+                //data.Answer1 = test.Answers[0].value;
+                //data.Answer2 = test.Answers[1].value;
+                //data.Answer3 = test.Answers[2].value;
+                //data.Question = test.Question;
 
-                TestList.Items.Add(data);
+                //TestList.Items.Add(data);
 
             //TestList.Items.Add(data);
         }
