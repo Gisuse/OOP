@@ -20,11 +20,35 @@ namespace Application.MVVW.View
     /// </summary>
     public partial class TestView : UserControl
     {
-        public TestView()
+        public class TestAnswers
         {
-            InitializeComponent();
+            public string Answer1 { get; set; }
+            public string Answer2 { get; set; }
+            public string Answer3 { get; set; }
+            public string Question { get; set; }
         }
 
+        public TestView()
+        {
+
+            InitializeComponent();
+            viewTests();
+        }
+        void viewTests()
+        {
+            var test = TemporaryMaterials.tests[TemporaryMaterials.CurrentTheme-1];
+            ThemeTitle.Text = test.Title;
+
+                TestAnswers data = new TestAnswers();
+                data.Answer1 = test.Answers[0].value;
+                data.Answer2 = test.Answers[1].value;
+                data.Answer3 = test.Answers[2].value;
+                data.Question = test.Question;
+
+                TestList.Items.Add(data);
+
+            //TestList.Items.Add(data);
+        }
         private void ScrollViewer_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
         {
             ScrollViewer scv = (ScrollViewer)sender;
