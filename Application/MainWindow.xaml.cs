@@ -67,6 +67,7 @@ namespace Application
                         TemporaryUser.SName = user[0].SName;
                         TemporaryUser.AboutMe = user[0].AboutMe;
                         TemporaryUser.Id = user[0].Id;
+                        TemporaryUser.CompletedTests = user[0].CompletedTests;
 
                         MainMenu mainMenu = new MainMenu();
                         mainMenu.Show();

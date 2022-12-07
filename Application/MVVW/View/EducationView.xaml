@@ -5,10 +5,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Application.MVVW.View"
              mc:Ignorable="d"
-             d:DesignHeight="450" d:DesignWidth="550">
+             d:DesignHeight="450" d:DesignWidth="600">
     <Grid>
         <StackPanel>
-            <Label x:Name="profile_login" FontWeight="Black" Content="Навчальні матеріали" FontSize="30" Foreground="White" Padding="4,0,0,0" FontStretch="Normal" HorizontalContentAlignment="Center"/>
+            <Label x:Name="profile_login" FontWeight="Black" FontSize="30" Foreground="White" Padding="4,0,0,0" FontStretch="Normal" HorizontalContentAlignment="Center"/>
         </StackPanel>
         <StackPanel>
             <Button x:Name="backButton"
@@ -16,15 +16,15 @@
         </StackPanel>
 
         <StackPanel Margin="0,50,0,0" >
-            <ScrollViewer Grid.Row="1" Height="440">
-                <ListView x:Name="ListView">
+            <ScrollViewer Grid.Row="1" Height="440" PreviewMouseWheel="ScrollViewer_PreviewMouseWheel">
+                <ListView x:Name="ListView" SelectionChanged="ListView_SelectionChanged">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal" Width="550" Cursor="Hand" HorizontalAlignment="Stretch">
                                 <!--<Button x:Name="ForvardToInfo" Height="50" Padding="0, 0, 0, 0" BorderBrush="Transparent" Background="Transparent" Command="{Binding DataContext.EducationInfoViewModel, RelativeSource={RelativeSource AncestorType=Window}}">
                                     <TextBlock Text="{Binding Text}" Foreground="White" HorizontalAlignment="Left" FontWeight="Normal" FontSize="30" Width="450"/>
                                 </Button>-->
-                                <Button ToolTip="{Binding ToolTip}" Click="ForwardToInfo" Content="{Binding Content}" Foreground="White" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" FontWeight="Normal" FontSize="30" Width="450" Height="50"  BorderBrush="Transparent" Background="Transparent" Command="{Binding DataContext.EducationInfoViewModel, RelativeSource={RelativeSource AncestorType=Window}}"/>
+                                <Button x:Name="ListButton" ToolTip="{Binding ToolTip}" Click="ForwardToInfo" Content="{Binding Content}" Foreground="White" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" FontWeight="Normal" FontSize="30" Width="450" Height="50"  BorderBrush="Transparent" Background="Transparent" Command="{Binding DataContext.EducationInfoViewModel, RelativeSource={RelativeSource AncestorType=Window}}"/>
 
                                 <!--<Button Command="{Binding DataContext.EducationInfoViewCommand, RelativeSource={RelativeSource AncestorType=Window}}"/>-->
                                 <!--<Label Content="{Binding Content}" FontSize="30" HorizontalContentAlignment="Right" Width="79" Foreground="White"/>-->

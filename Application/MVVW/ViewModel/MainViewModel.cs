@@ -80,7 +80,18 @@ namespace Application.MVVW.ViewModel
 
             EducationInfoViewModel = new RelayCommand(o =>
             {
-                CurrentView = InfoVM;
+                if (TemporaryMaterials.IsTest == false)
+                {
+                    CurrentView = InfoVM;
+                }
+                else if(TemporaryMaterials.IsTest == true)
+                {
+                    CurrentView = TestVM;
+                }
+            });
+            TestViewModel = new RelayCommand(o =>
+            {
+                CurrentView = TestVM;
             });
             TestViewModel = new RelayCommand(o =>
             {
