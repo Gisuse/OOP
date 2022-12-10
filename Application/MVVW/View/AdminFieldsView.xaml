@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="Application.MVVW.View.AdminFieldsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Application.MVVW.View"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Height="auto" VerticalAlignment="Top" Width="50" HorizontalAlignment="Left">
+            <Button x:Name="backButton" HorizontalAlignment="Left" Foreground="White" VerticalAlignment="Top" Background="Transparent" Command="{Binding DataContext.EducationViewCommand, RelativeSource={RelativeSource AncestorType=Window}}" Cursor="Hand" Width="58" Height="44" Content="{StaticResource MyImage}" BorderBrush="Transparent"/>
+        </StackPanel>
+        <StackPanel Grid.Row="0" Height="auto" VerticalAlignment="Top" HorizontalAlignment="Center" MaxWidth="500">
+            <TextBlock TextWrapping="Wrap" x:Name="ThemeTitle" Foreground="White" FontSize="37"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1">
+            <StackPanel MaxHeight="100">
+                <Label FontSize="30" Foreground="white" Content="1. Клас"/>
+                <TextBox  Background="White" HorizontalAlignment="Left" 
+                     Style="{StaticResource CustomTextBox}" Width="150" MaxHeight="50"
+                          FontSize="20"/>
+            </StackPanel>
+            <StackPanel MaxHeight="225">
+                <Label FontSize="30" Foreground="white" Content="2. Назва теми"/>
+                <TextBox  Background="White" HorizontalAlignment="Left" 
+                     Style="{StaticResource CustomTextBox}" Width="300"
+                          FontSize="20"/>
+            </StackPanel>
+            <StackPanel MaxHeight="225">
+                <Label FontSize="30" Foreground="white" Content="3. Навчальний матеріал"/>
+                <TextBox  Background="White" HorizontalAlignment="Left" 
+                     Style="{StaticResource CustomTextBox}" Width="450"
+                          FontSize="20"/>
+            </StackPanel>
+            
+            <Button x:Name="_SaveInfo" Content="Зберегти" Margin="0 13"
+                        Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                        Width="230" Height="35" HorizontalAlignment="Left" VerticalAlignment="Center"
+                         materialDesign:ButtonAssist.CornerRadius="13"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

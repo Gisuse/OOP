@@ -4,27 +4,44 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Application.MVVW.View"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="600">
-    <Grid>
-        <StackPanel>
-            <Label x:Name="profile_login" FontWeight="Black" FontSize="30" Foreground="White" Padding="4,0,0,0" FontStretch="Normal" HorizontalContentAlignment="Center"/>
-        </StackPanel>
-        <StackPanel>
-            <Button x:Name="backButton"
-                 HorizontalAlignment="Left" Foreground="White" Background="Transparent" Command="{Binding DataContext.ClassViewModel, RelativeSource={RelativeSource AncestorType=Window}}" Cursor="Hand" Width="58" Height="44" Content="{StaticResource MyImage}" BorderBrush="#00000000"/>
-        </StackPanel>
 
-        <StackPanel Margin="0,50,0,0" >
-            <ScrollViewer Grid.Row="1" Height="440" PreviewMouseWheel="ScrollViewer_PreviewMouseWheel">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="340"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" VerticalAlignment="Top" Orientation="Horizontal" HorizontalAlignment="Center" Height="50">
+            <Label x:Name="profile_login" FontWeight="Black" FontSize="30" Foreground="White" Padding="0,0,0,0" FontStretch="Normal" HorizontalContentAlignment="Center" VerticalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel Grid.Row="0" Height="auto" VerticalAlignment="Top" Width="50" HorizontalAlignment="Left">
+            <Button x:Name="backButton" HorizontalAlignment="Left" Foreground="White" VerticalAlignment="Top" Background="Transparent" Command="{Binding DataContext.ClassViewModel, RelativeSource={RelativeSource AncestorType=Window}}" Cursor="Hand" Width="58" Height="44" Content="{StaticResource MyImage}" BorderBrush="Transparent"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" VerticalAlignment="Top" Height="340" Width="600">
+            <ScrollViewer Grid.Row="1" Height="340" Width="600" PreviewMouseWheel="ScrollViewer_PreviewMouseWheel">
                 <ListView x:Name="ListView" SelectionChanged="ListView_SelectionChanged">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel Orientation="Horizontal" Width="550" Cursor="Hand" HorizontalAlignment="Stretch">
+                            <StackPanel Orientation="Horizontal" Width="550" Height="50" Cursor="Hand">
                                 <!--<Button x:Name="ForvardToInfo" Height="50" Padding="0, 0, 0, 0" BorderBrush="Transparent" Background="Transparent" Command="{Binding DataContext.EducationInfoViewModel, RelativeSource={RelativeSource AncestorType=Window}}">
                                     <TextBlock Text="{Binding Text}" Foreground="White" HorizontalAlignment="Left" FontWeight="Normal" FontSize="30" Width="450"/>
                                 </Button>-->
-                                <Button x:Name="ListButton" ToolTip="{Binding ToolTip}" Click="ForwardToInfo" Content="{Binding Content}" Foreground="White" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" FontWeight="Normal" FontSize="30" Width="450" Height="50"  BorderBrush="Transparent" Background="Transparent" Command="{Binding DataContext.EducationInfoViewModel, RelativeSource={RelativeSource AncestorType=Window}}"/>
+                                <Button x:Name="ListButton" ToolTip="{Binding ToolTip}" Click="ForwardToInfo" Content="{Binding Content}" Foreground="White" HorizontalAlignment="Left" HorizontalContentAlignment="Left" FontWeight="Normal" FontSize="30" Width="450" Height="50"  BorderBrush="Transparent" Background="Transparent" Command="{Binding DataContext.EducationInfoViewModel, RelativeSource={RelativeSource AncestorType=Window}}"/>
+                                <Button x:Name="EditButton" Foreground="White" FontWeight="Normal" Width="50" Height="50"  BorderBrush="Transparent" Background="Transparent" Padding="0" Command="{Binding DataContext.AdminFieldsViewCommand, RelativeSource={RelativeSource AncestorType=Window}}">
+                                    <Button.Content>
+                                        <materialDesign:PackIcon Name="EditIcon" Kind="Edit" Height="35" Width="35" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Black"/>
+                                    </Button.Content>
+                                </Button>
+                                <Button x:Name="DeleteButton" Foreground="White" FontWeight="Normal" Width="50" Height="50" BorderBrush="Transparent" Background="Transparent" Padding="0">
+                                    <Button.Content>
+                                        <materialDesign:PackIcon Name="DeleteIcon" Kind="Close" Height="45" Width="45" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="#d4190b"/>
+                                    </Button.Content>
+                                </Button>
+                                <!--<materialDesign:PackIcon Name="EditIcon" Kind="Edit" Height="35" Width="35" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="Black"/>
+                                <materialDesign:PackIcon Name="DeleteIcon" Kind="Close" Height="45" Width="45" Margin="10 0 0 0" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="#d4190b"/>-->
 
                                 <!--<Button Command="{Binding DataContext.EducationInfoViewCommand, RelativeSource={RelativeSource AncestorType=Window}}"/>-->
                                 <!--<Label Content="{Binding Content}" FontSize="30" HorizontalContentAlignment="Right" Width="79" Foreground="White"/>-->
@@ -33,6 +50,25 @@
                     </ListView.ItemTemplate>
                 </ListView>
             </ScrollViewer>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Height="55" VerticalAlignment="Bottom" HorizontalAlignment="Left" Orientation="Horizontal">
+            <Button x:Name="AddButton" Foreground="White" FontWeight="Normal" Width="50" Height="50" Margin="15 0 0 0" BorderBrush="Transparent" Background="Transparent" Padding="0">
+                <Button.Content>
+                    <materialDesign:PackIcon Name="AddIcon" BorderBrush="{DynamicResource PrimaryHueDarkBrush}" Foreground="{DynamicResource PrimaryHueDarkBrush}" BorderThickness="3" Kind="Plus" Height="50" Width="50" VerticalAlignment="Center" HorizontalAlignment="Right" />
+                </Button.Content>
+                <!--<Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <ControlTemplate.Triggers>
+                            <DataTrigger Binding ="{Binding Path=valueAdmin, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Value="True">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                            <DataTrigger Binding ="{Binding Path=valueAdmin, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Value="False">
+                                <Setter Property="Visibility" Value="Hidden"/>
+                            </DataTrigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>-->
+            </Button>            
         </StackPanel>
     </Grid>
 </UserControl>

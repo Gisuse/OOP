@@ -69,8 +69,18 @@ namespace Application
                         TemporaryUser.Id = user[0].Id;
                         TemporaryUser.CompletedTests = user[0].CompletedTests;
 
-                        MainMenu mainMenu = new MainMenu();
-                        mainMenu.Show();
+                        if(TemporaryMaterials.IsAdmin == true)
+                        {
+                            Admin admin = new Admin();
+                            admin.Show();
+                            
+                        }
+                        else
+                        {
+                            MainMenu mainMenu = new MainMenu();
+                            mainMenu.Show();
+                        }
+                        
                         MainWindow mainWindow = Application.App.Current.MainWindow as MainWindow;
                         mainWindow.Close();
                         //Mainframe.Content = new MainMenu();
