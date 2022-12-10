@@ -60,10 +60,10 @@ namespace Application
             Question[1] = str;
             Question[2] = str;
             this.Question = Question;
-            numberOfTheme = 1;
+            numberOfTheme = 2;
             //numberOfQuestion = 2;
             ClassName = 7;
-            Title = "Хімія — природнича наука";
+            Title = "Як виникла і розвивалася наука хімія";
             TestModel testModel = new TestModel(1, 1, "Да", false);
             TestModel testModel1 = new TestModel(1, 2, "Однозначно", true);
             TestModel testModel2 = new TestModel(1, 3, "Несомненно", false);

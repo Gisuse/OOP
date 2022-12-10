@@ -57,7 +57,6 @@ namespace Application.MVVW.View
             }
 
             answersCheck = new int[test.Question.Length];
-            //TestList.Items.Add(data);
         }
         private void ScrollViewer_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
         {
@@ -82,21 +81,21 @@ namespace Application.MVVW.View
             public string Question { get; set; }
         }
 
-        private void _SaveInfo_Click(object sender, RoutedEventArgs e)
-        {
-            User user = new User();
+        //private void _SaveInfo_Click(object sender, RoutedEventArgs e)
+        //{
+        //    User user = new User();
 
-            user.CompletedTests[user.CompletedTests.Length] = new CompletedTestsModel(TemporaryMaterials.CurrentClass, TemporaryMaterials.CurrentTheme, 10);
-            MessageBox.Show("dfgdfg");
-            db.UpdateUser(user);
-            //MyData data = new MyData();
-            //data.Answer1 = "answer 1";
-            //data.Answer2 = "answer 2";
-            //data.Answer3 = "answer 3";
-            //data.Question = "Question?";
+        //    user.CompletedTests[user.CompletedTests.Length] = new CompletedTestsModel(TemporaryMaterials.CurrentClass, TemporaryMaterials.CurrentTheme, 10);
+        //    //MessageBox.Show("dfgdfg");
+        //    db.UpdateUser(user);
+        //    //MyData data = new MyData();
+        //    //data.Answer1 = "answer 1";
+        //    //data.Answer2 = "answer 2";
+        //    //data.Answer3 = "answer 3";
+        //    //data.Question = "Question?";
 
-            //TestList.Items.Add(data); 
-        }
+        //    //TestList.Items.Add(data); 
+        //}
 
         private void _SaveInfo_Click_1(object sender, RoutedEventArgs e)
         {
@@ -136,11 +135,22 @@ namespace Application.MVVW.View
                         mark++;
                 }
 
-                mark = (float)Math.Round(mark * 100 / test.Question.Length);
+                mark = (float)Math.Round(mark * 12 / test.Question.Length);
 
-                user.CompletedTests[length] = new CompletedTestsModel(TemporaryMaterials.CurrentClass, TemporaryMaterials.CurrentTheme, mark);
-
+                user.CompletedTests[length] = new CompletedTestsModel(TemporaryMaterials.CurrentClass, TemporaryMaterials.CurrentTheme, mark, test.Title);
                 db.UpdateUser(user);
+                Mark_Message.Content = "Ваша оцінка: " + mark;
+                TestList.Items.Clear();
+                for (int i = 0; i < test.Question.Length; i++)
+                {
+                    TestAnswers data = new TestAnswers();
+                    data.Answer1 = (i + 1) + ".1 " + test.Answers[i, 0].value;
+                    data.Answer2 = (i + 1) + ".2 " + test.Answers[i, 1].value;
+                    data.Answer3 = (i + 1) + ".3 " + test.Answers[i, 2].value;
+                    data.Question = (i + 1) + ". " + test.Question[i];
+
+                    TestList.Items.Add(data);
+                }
             }
             catch(Exception ex)
             {

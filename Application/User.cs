@@ -13,12 +13,14 @@ namespace Application
         public int TestClass { get; set; }
         public int TestTheme { get; set; }
         public float TestMark { get; set; }
+        public string ThemeTitle {get; set;}
 
-        public CompletedTestsModel(int testClass, int testTheme, float testMark)
+        public CompletedTestsModel(int testClass, int testTheme, float testMark, string testTitle)
         {
             TestClass = testClass;
             TestTheme = testTheme;
             TestMark = testMark;
+            ThemeTitle = testTitle;
         }
     }
 

@@ -38,15 +38,17 @@
                 </ListView>
             </ScrollViewer>
         </StackPanel>
-        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left">
-            <Button x:Name="ClearTest" Content="X" Margin="0 17 0 0" Background="Red" BorderBrush="Transparent"
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Width="600" Margin="0,350,0,0" Grid.RowSpan="2">
+            <!--<Button x:Name="ClearTest" Content="X" Margin="0 17 0 0" Background="Red" BorderBrush="Transparent"
                         Style="{StaticResource MaterialDesignRaisedDarkButton}"
                         Width="70" Height="35" HorizontalAlignment="Center" VerticalAlignment="Center"
-                         materialDesign:ButtonAssist.CornerRadius="13"/>
+                         materialDesign:ButtonAssist.CornerRadius="13"/>-->
             <Button x:Name="_SaveInfo" Content="Відправити" Margin="10 17 0 0"
                         Style="{StaticResource MaterialDesignRaisedDarkButton}"
                         Width="230" Height="35" HorizontalAlignment="Center" VerticalAlignment="Center"
                          materialDesign:ButtonAssist.CornerRadius="13" Click="_SaveInfo_Click_1"/>
+            <Label x:Name="Mark_Message" FontSize="25" Margin="10 17 0 0" VerticalContentAlignment="Center" Foreground="white"/>
         </StackPanel>
+
     </Grid>
 </UserControl>
