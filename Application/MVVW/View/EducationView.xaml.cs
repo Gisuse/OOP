@@ -28,7 +28,7 @@ namespace Application.MVVW.View
         public EducationView()
         {
             // Обработка ошибок при поиске тестов и материалов, если возвращает пустую коллекцию
-            InitializeComponent();
+            InitializeComponent();            
             db = new DataAccess();
             if(TemporaryMaterials.IsTest == true)
             {
@@ -95,6 +95,7 @@ namespace Application.MVVW.View
                     {
                         tb.Content = materials[i].NumberOfTheme + ". " + materials[i].Title.Substring(0, 24) + "...";
                         tb.ToolTip = materials[i].Title;
+                        
                     }
                     else
                     {

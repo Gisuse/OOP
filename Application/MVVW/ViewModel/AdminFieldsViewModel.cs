@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace Application.MVVW.ViewModel
 {
-
-    class EducationViewModel
+    class AdminFieldsViewModel
     {
-            
     }
 }
-

@@ -1,0 +1,79 @@
+﻿<UserControl x:Class="Application.MVVW.View.AdminFieldsTestsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Application.MVVW.View"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" MinHeight="50" MaxHeight="150"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Height="auto" VerticalAlignment="Top" Width="50" HorizontalAlignment="Left">
+            <Button x:Name="backButton" HorizontalAlignment="Left" Foreground="White" VerticalAlignment="Top" Background="Transparent" Command="{Binding DataContext.EducationViewCommand, RelativeSource={RelativeSource AncestorType=Window}}" Cursor="Hand" Width="58" Height="44" Content="{StaticResource MyImage}" BorderBrush="Transparent" Margin="0"/>
+        </StackPanel>
+        <StackPanel Grid.Row="0" Height="auto" VerticalAlignment="Top" HorizontalAlignment="Center" MaxWidth="500">
+            <TextBlock TextWrapping="Wrap" x:Name="ThemeTitle" Foreground="White" FontSize="35"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1">
+            <ScrollViewer Height="393" PreviewMouseWheel="ScrollViewer_PreviewMouseWheel">
+                <StackPanel>
+                    <StackPanel MaxHeight="100" Width="200" HorizontalAlignment="Left">
+                        <Label FontSize="30" Foreground="white" Content="1. Клас"/>
+                        <TextBox  Background="White" HorizontalAlignment="Left" 
+                     Style="{StaticResource CustomTextBox}" Width="150" MaxHeight="50"
+                          FontSize="20"/>                        
+                    </StackPanel>
+                    <StackPanel MaxHeight="150">
+                        <Label FontSize="30" Foreground="white" Content="2 Питання"/>
+                        <TextBox  Background="White" HorizontalAlignment="Left" 
+                     Style="{StaticResource CustomTextBox}" Width="450" MaxHeight="100"
+                          FontSize="20"/>
+                    </StackPanel>
+                    <StackPanel MaxHeight="150">
+                        <Label FontSize="30" Foreground="white" Content="3.1 Варіант 1"/>
+                        <TextBox  Background="White" HorizontalAlignment="Left" 
+                     Style="{StaticResource CustomTextBox}" Width="450" MaxHeight="100"
+                          FontSize="20"/>
+                    </StackPanel>
+                    <StackPanel MaxHeight="150">
+                        <Label FontSize="30" Foreground="white" Content="3.2 Варіант 2"/>
+                        <TextBox  Background="White" HorizontalAlignment="Left" 
+                     Style="{StaticResource CustomTextBox}" Width="450" MaxHeight="100"
+                          FontSize="20"/>
+                    </StackPanel>
+                    <StackPanel MaxHeight="150">
+                        <Label FontSize="30" Foreground="white" Content="3.3 Варіант 3"/>
+                        <TextBox  Background="White" HorizontalAlignment="Left" 
+                     Style="{StaticResource CustomTextBox}" Width="450" MaxHeight="100"
+                          FontSize="20"/>
+                    </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
+        </StackPanel>
+        <!--<StackPanel MaxHeight="150" Orientation="Horizontal" >
+                <Label Content="Оберіть відповідь:" Foreground="White" FontSize="25"/>
+                <RadioButton Width="100" HorizontalAlignment="Left" Content="Варіант 1" Foreground="White" FontSize="15" Margin="4 5 0 0" Padding="5" Style="{StaticResource MaterialDesignRadioButton}"/>
+                <RadioButton Width="auto" HorizontalAlignment="Left" Content="Варіант 2" Foreground="White" FontSize="15" Margin="4 5 0 0" Padding="5" Style="{StaticResource MaterialDesignRadioButton}"/>
+                <RadioButton Width="auto" HorizontalAlignment="Left" Content="Варіант 3" Foreground="White" FontSize="15" Margin="4 5 0 0" Padding="5" Style="{StaticResource MaterialDesignRadioButton}"/>
+            </StackPanel>-->
+        <StackPanel Grid.Row="2" Width="600" Height="100" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+            <StackPanel MaxHeight="150" Orientation="Horizontal" >
+                <Label Content="Оберіть відповідь:" Foreground="White" FontSize="25" Padding="5 0 0 0"/>
+                <RadioButton Width="auto" HorizontalAlignment="Left" Content="Варіант 1" Foreground="White" FontSize="15" Margin="10 5 0 0" Padding="5" Style="{StaticResource MaterialDesignRadioButton}"/>
+                <RadioButton Width="auto" HorizontalAlignment="Left" Content="Варіант 2" Foreground="White" FontSize="15" Margin="10 5 0 0" Padding="5" Style="{StaticResource MaterialDesignRadioButton}"/>
+                <RadioButton Width="auto" HorizontalAlignment="Left" Content="Варіант 3" Foreground="White" FontSize="15" Margin="10 5 0 0" Padding="5" Style="{StaticResource MaterialDesignRadioButton}"/>
+            </StackPanel>
+            <Button x:Name="_SaveInfo" Content="Зберегти" Margin="0 7"
+                        Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                        Width="230" Height="35" HorizontalAlignment="Left" VerticalAlignment="Center"
+                         materialDesign:ButtonAssist.CornerRadius="13"/>
+        </StackPanel>
+           
+
+    </Grid>
+</UserControl>
