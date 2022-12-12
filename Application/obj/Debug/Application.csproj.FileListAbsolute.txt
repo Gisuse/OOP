@@ -329,6 +329,7 @@ D:\GitRepo\OOP\OOP\Application\bin\Debug\EntityFramework.dll
 D:\GitRepo\OOP\OOP\Application\bin\Debug\EntityFramework.SqlServer.dll
 D:\GitRepo\OOP\OOP\Application\bin\Debug\MaterialDesignColors.dll
 D:\GitRepo\OOP\OOP\Application\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\GitRepo\OOP\OOP\Application\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
 D:\GitRepo\OOP\OOP\Application\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
 D:\GitRepo\OOP\OOP\Application\bin\Debug\MongoDB.Bson.dll
 D:\GitRepo\OOP\OOP\Application\bin\Debug\MongoDB.Driver.Core.dll
@@ -348,6 +349,7 @@ D:\GitRepo\OOP\OOP\Application\bin\Debug\EntityFramework.SqlServer.xml
 D:\GitRepo\OOP\OOP\Application\bin\Debug\MaterialDesignColors.pdb
 D:\GitRepo\OOP\OOP\Application\bin\Debug\MaterialDesignThemes.Wpf.pdb
 D:\GitRepo\OOP\OOP\Application\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\GitRepo\OOP\OOP\Application\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
 D:\GitRepo\OOP\OOP\Application\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
 D:\GitRepo\OOP\OOP\Application\bin\Debug\MongoDB.Bson.xml
 D:\GitRepo\OOP\OOP\Application\bin\Debug\MongoDB.Driver.xml
@@ -411,8 +413,6 @@ D:\GitRepo\OOP\OOP\Application\obj\Debug\Application.csproj.CoreCompileInputs.ca
 D:\GitRepo\OOP\OOP\Application\obj\Debug\Application.csproj.CopyComplete
 D:\GitRepo\OOP\OOP\Application\obj\Debug\Application.exe
 D:\GitRepo\OOP\OOP\Application\obj\Debug\Application.pdb
-D:\GitRepo\OOP\OOP\Application\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
-D:\GitRepo\OOP\OOP\Application\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
 D:\GitRepo\OOP\OOP\Application\obj\Debug\Application.csproj.AssemblyReference.cache
 D:\GitRepo\OOP\OOP\Application\bin\Debug\System.Threading.Tasks.Extensions.dll
 D:\GitRepo\OOP\OOP\Application\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
@@ -423,3 +423,4 @@ D:\GitRepo\OOP\OOP\Application\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\GitRepo\OOP\OOP\Application\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\GitRepo\OOP\OOP\Application\bin\Debug\DnsClient.xml
 D:\GitRepo\OOP\OOP\Application\bin\Debug\System.Text.Encodings.Web.xml
+D:\GitRepo\OOP\OOP\Application\obj\Debug\Theme\AdminExitButton.baml

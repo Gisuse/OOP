@@ -35,7 +35,7 @@ namespace Application
 
         public Login()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
 
         private void RegisBut_Click(object sender, RoutedEventArgs e)
@@ -84,6 +84,11 @@ namespace Application
                 //------------------------------------------------------------------------------
 
                 Exceptions ex = new Exceptions();
+                if(input_login.Text == "admin@gmail.com" && input_password.Password == "Admin")
+                {
+                    TemporaryMaterials.IsAdmin = true;
+                }
+                
                 ex.Login(email, password, rememberChecked);
 
 

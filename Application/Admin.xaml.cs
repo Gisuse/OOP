@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace Application
 {
@@ -95,6 +96,19 @@ namespace Application
             {
                 DragMove();
             }
+        }
+
+        private void RadioButton_Checked_1(object sender, RoutedEventArgs e)
+        {
+            string fileName = System.IO.Path.GetFullPath("UserData.json");
+
+            File.Delete(fileName);
+
+            // очистка TemporaryUser не нужна, так как мы присваиваем все данные в регистрации и логине
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            Admin admin= Application.App.Current.Windows[0] as Admin;
+            admin.Close();
         }
     }
 }
