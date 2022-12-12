@@ -25,10 +25,26 @@ namespace Application.MVVW.View
     {
         DataAccess db;
         int NumberOfTheme;
+        public class MyData
+        {
+            public Button btn { get; set; }
+            public string Content { get; set; }
+            public string ToolTip { get; set; }
+            public Visibility adminVisible { get; set; }
+        }
         public EducationView()
         {
             // Обработка ошибок при поиске тестов и материалов, если возвращает пустую коллекцию
-            InitializeComponent();            
+            InitializeComponent();      
+            if(TemporaryMaterials.IsAdmin == true)
+            {
+                AddButton.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                AddButton.Visibility = Visibility.Hidden;
+            }
+
             db = new DataAccess();
             if(TemporaryMaterials.IsTest == true)
             {
@@ -88,21 +104,42 @@ namespace Application.MVVW.View
                     //tb.Text = materials[i].NumberOfTheme + ". " + (materials[i].Title.Length > 24 ? materials[i].Title.Substring(0, 24) + "..." : materials[i].Title);
 
                     //ListView.Items.Add(tb);
-                    Button tb = new Button();
+                    //Button tb = new Button();
+
+                    MyData tb = new MyData();
+                    ListViewItem itm = new ListViewItem();
 
                     //TemporaryMaterials.CurrentInfo = materials[i].MaterialContent;
                     if(materials[i].Title.Length > 24)
                     {
+                        tb.btn = new Button();
                         tb.Content = materials[i].NumberOfTheme + ". " + materials[i].Title.Substring(0, 24) + "...";
                         tb.ToolTip = materials[i].Title;
-                        
+                        if(TemporaryMaterials.IsAdmin == true)
+                        {
+                            tb.adminVisible = Visibility.Visible;
+                        }
+                        else
+                        {
+                            tb.adminVisible = Visibility.Hidden;
+                        }                        
                     }
                     else
                     {
+                        tb.btn = new Button();
                         tb.Content = materials[i].NumberOfTheme + ". " + materials[i].Title;
+                        if (TemporaryMaterials.IsAdmin == true)
+                        {
+                            tb.adminVisible = Visibility.Visible;
+                        }
+                        else
+                        {
+                            tb.adminVisible = Visibility.Hidden;
+                        }
                     }
                     //materials[i].NumberOfTheme + ". " + ( ?  + "..." : materials[i].Title);
-                    //tb.Click += new RoutedEventHandler(ForwardToInfo); 
+                    //tb.Click += new RoutedEventHandler(ForwardToInfo);
+
                     ListView.Items.Add(tb);
                 }
             }
@@ -141,17 +178,36 @@ namespace Application.MVVW.View
                     //tb.Text = tests[i].NumberOfTheme + ". " + (tests[i].Question.Length > 24 ? tests[i].Question.Substring(0, 24) + "..." : tests[i].Question);
 
                     //ListView.Items.Add(tb);
-                    Button tb = new Button();
+                    //Button tb = new Button();
+                    MyData tb = new MyData();
 
                     //TemporaryMaterials.CurrentInfo = tests[i].MaterialContent;
                     if (tests[i].Title.Length > 24)
                     {
+                        tb.btn = new Button();
                         tb.Content = tests[i].numberOfTheme + ". " + tests[i].Title.Substring(0, 24) + "...";
                         tb.ToolTip = tests[i].Title;
+                        if (TemporaryMaterials.IsAdmin == true)
+                        {
+                            tb.adminVisible = Visibility.Visible;
+                        }
+                        else
+                        {
+                            tb.adminVisible = Visibility.Hidden;
+                        }
                     }
                     else
                     {
+                        tb.btn = new Button();
                         tb.Content = tests[i].numberOfTheme + ". " + tests[i].Title;
+                        if (TemporaryMaterials.IsAdmin == true)
+                        {
+                            tb.adminVisible = Visibility.Visible;
+                        }
+                        else
+                        {
+                            tb.adminVisible = Visibility.Hidden;
+                        }
                     }
                     //tests[i].NumberOfTheme + ". " + ( ?  + "..." : tests[i].Question);
                     //tb.Click += new RoutedEventHandler(ForwardToInfo); 

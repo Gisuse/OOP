@@ -40,6 +40,8 @@
             <StackPanel Grid.Row="1">
                 <RadioButton Style="{StaticResource MenuButtonTheme}" Content="Керування" IsChecked="True"
                              Command="{Binding HomeViewCommand}"/>
+                <RadioButton Style="{StaticResource ExitMenuButtonTheme}" Content="Вихід" IsChecked="False"
+                             Command="{Binding HomeViewCommand}" Checked="RadioButton_Checked_1" />
             </StackPanel>
 
             <StackPanel Grid.Column="1" Width="500" HorizontalAlignment="Left">

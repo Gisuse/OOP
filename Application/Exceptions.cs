@@ -109,7 +109,7 @@ namespace Application
                 TemporaryUser.SName = user[0].SName;
                 TemporaryUser.AboutMe = user[0].AboutMe;
                 TemporaryUser.CompletedTests = user[0].CompletedTests;
-                MessageBox.Show(user[0].CompletedTests[0].TestClass.ToString());
+                //MessageBox.Show(user[0].CompletedTests[0].TestClass.ToString());
                 if (rememberChecked == true)
                 {
                     string fileName = Path.GetFullPath("UserData.json");
@@ -135,9 +135,18 @@ namespace Application
                 //MessageBox.Show(user.Count.ToString());
                 //NavigationService.StopLoading();
 
+                if(TemporaryMaterials.IsAdmin == true)
+                {
+                    Admin admin = new Admin();
+                    admin.Show();
+                }
+                else
+                {
+                    MainMenu mainMenu = new MainMenu();
+                    mainMenu.Show();
+                }
+               
 
-                MainMenu mainMenu = new MainMenu();
-                mainMenu.Show();
                 MainWindow mainWindow = Application.App.Current.MainWindow as MainWindow;
                 mainWindow.Close();
             }
