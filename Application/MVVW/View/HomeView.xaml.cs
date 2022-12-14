@@ -28,7 +28,7 @@ namespace Application.MVVW.View
             InitializeComponent();
             db = new DataAccess();
 
-            //getTests();
+            //Tests test = new Tests();
             //db.CreateTest(test);
         }
 

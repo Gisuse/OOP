@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Windows;
 using Application.Core;
 using Application.MVVW.View;
 
@@ -7,7 +8,6 @@ namespace Application.MVVW.ViewModel
 {
     class MainViewModel : ObservableObject
     {
-
         public RelayCommand HomeViewCommand { get; set; }
         public RelayCommand ProfileViewCommand { get; set; }
         public RelayCommand SettingsViewCommand { get; set; }
@@ -15,6 +15,8 @@ namespace Application.MVVW.ViewModel
         public RelayCommand ClassViewModel { get; set; }
         public RelayCommand EducationInfoViewModel { get; set; }
         public RelayCommand TestViewModel { get; set; }
+        public RelayCommand AdminFieldsViewCommand { get; set; }
+        public RelayCommand AdminTestsViewCommand { get; set; }
 
         public HomeViewModel HomeVM{ get; set; }
         public ProfileViewModel ProfileVM { get; set; }
@@ -23,7 +25,8 @@ namespace Application.MVVW.ViewModel
         public ClassViewModel ClassVM { get; set; }
         public EducationInfoViewModel InfoVM { get; set; }
         public TestViewModel TestVM { get; set; }
-
+        public AdminFieldsViewModel AdminVM { get; set; }
+        public AdminTestsViewModel AdminTestsVM { get; set; }
 
         private object _currentView;
 
@@ -34,7 +37,7 @@ namespace Application.MVVW.ViewModel
                 _currentView = value;
                 OnPropertyChanged();            
             }
-        }
+        }       
 
         public MainViewModel()
         {
@@ -45,6 +48,8 @@ namespace Application.MVVW.ViewModel
             ClassVM = new ClassViewModel();
             InfoVM = new EducationInfoViewModel();
             TestVM = new TestViewModel();
+            AdminVM = new AdminFieldsViewModel();
+            AdminTestsVM = new AdminTestsViewModel();
             CurrentView = HomeVM;
          
             HomeViewCommand = new RelayCommand(o =>
@@ -69,6 +74,14 @@ namespace Application.MVVW.ViewModel
 
             EducationViewCommand = new RelayCommand(o =>
             {
+                //if(TemporaryMaterials.IsAdmin == true)
+                //{
+                //    EducationVM.ButtonVisibility = true;
+                //}
+                //else
+                //{
+                //    EducationVM.ButtonVisibility = false;
+                //}
                 CurrentView = EducationVM;
 
             });
@@ -93,9 +106,22 @@ namespace Application.MVVW.ViewModel
             {
                 CurrentView = TestVM;
             });
-            TestViewModel = new RelayCommand(o =>
+
+            AdminFieldsViewCommand = new RelayCommand(o =>
             {
-                CurrentView = TestVM;
+                if (TemporaryMaterials.IsTest == false)
+                {
+                    CurrentView = AdminVM;
+                }
+                else if (TemporaryMaterials.IsTest == true)
+                {
+                    CurrentView = AdminTestsVM;
+                }
+            });
+
+            AdminTestsViewCommand = new RelayCommand(o =>
+            {
+                CurrentView = AdminTestsVM;
             });
         }
     }

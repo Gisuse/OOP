@@ -87,6 +87,9 @@ namespace Application
                 if(input_login.Text == "admin@gmail.com" && input_password.Password == "Admin")
                 {
                     TemporaryMaterials.IsAdmin = true;
+                } else
+                {
+                    TemporaryMaterials.IsAdmin = false;
                 }
                 
                 ex.Login(email, password, rememberChecked);
