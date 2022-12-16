@@ -56,6 +56,8 @@ namespace Application
                 {
                     var createdUser = await db.FindUser(email, password);
 
+                    createdUser[0].CompletedTests = null;
+
                     string fileName = Path.GetFullPath("UserData.json");
 
                     string jsonString = JsonConvert.SerializeObject(createdUser[0]);

@@ -424,3 +424,12 @@ D:\GitRepo\OOP\OOP\Application\bin\Debug\System.Runtime.CompilerServices.Unsafe.
 D:\GitRepo\OOP\OOP\Application\bin\Debug\DnsClient.xml
 D:\GitRepo\OOP\OOP\Application\bin\Debug\System.Text.Encodings.Web.xml
 D:\GitRepo\OOP\OOP\Application\obj\Debug\Theme\AdminExitButton.baml
+D:\Университет\Курсач ООП 2022-2023\OOP\Application\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\Theme\AdminExitButton.baml
+D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\Theme\TextBoxCustom.baml
+D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\Admin.g.cs
+D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\MVVW\View\AdminFieldsTestsView.g.cs
+D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\MVVW\View\AdminFieldsView.g.cs
+D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\Admin.baml
+D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\MVVW\View\AdminFieldsTestsView.baml
+D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\MVVW\View\AdminFieldsView.baml
