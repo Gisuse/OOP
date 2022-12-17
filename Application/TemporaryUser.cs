@@ -16,9 +16,13 @@ namespace Application
         public static string Password;
         public static string Login;
 
+        public static CompletedTestsModel[] CompletedTests;
+
         public static string Name;
         public static string SName;
         public static string AboutMe;
+
+        public static string ImagePath;
 
         public TemporaryUser() { }
 
@@ -31,6 +35,7 @@ namespace Application
             Name = user.Name;
             SName = user.SName;
             AboutMe = user.AboutMe;
+            CompletedTests = user.CompletedTests;
         }
     }
 }

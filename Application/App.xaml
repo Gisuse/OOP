@@ -20,6 +20,8 @@
                 <ResourceDictionary Source="Theme/ExitButton.xaml"/>
                 <ResourceDictionary Source="Theme/BackButton.xaml"/>
                 <ResourceDictionary Source="Theme/ClassButton.xaml"/>
+                <ResourceDictionary Source="Theme/TextBoxCustom.xaml"/>
+                <ResourceDictionary Source="Theme/AdminExitButton.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
                 <view:HomeView/>
@@ -35,6 +37,18 @@
             </DataTemplate>
             <DataTemplate DataType="{x:Type viewModel:ClassViewModel}">
                 <view:ClassView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:EducationInfoViewModel}">
+                <view:EducationInfoView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:TestViewModel}">
+                <view:TestView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:AdminFieldsViewModel}">
+                <view:AdminFieldsView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:AdminTestsViewModel}">
+                <view:AdminFieldsTestsView/>
             </DataTemplate>
 
         </ResourceDictionary>

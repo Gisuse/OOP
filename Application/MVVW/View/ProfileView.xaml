@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:local="clr-namespace:Application.MVVW.View"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="550">
+             d:DesignHeight="450" d:DesignWidth="600">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -38,11 +38,12 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal" Width="540">
-                            <TextBlock Text="NAME OF THEME" Foreground="White" HorizontalAlignment="Left" FontSize="40" Width="450"/>
-                            <TextBlock Text="10" Foreground="White" TextAlignment="Center" FontSize="40" Width="90"/>
+                            <TextBlock x:Name="NameOfTheme" Text="{Binding Theme}" Foreground="White" HorizontalAlignment="Left" FontSize="40" Width="450"/>
+                            <TextBlock Text="{Binding Mark}" Foreground="White" TextAlignment="Center" FontSize="40" Width="90"/>
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
+                <!--<TextBlock Text="EXAMPLE#1"/>
                 <TextBlock Text="EXAMPLE#1"/>
                 <TextBlock Text="EXAMPLE#1"/>
                 <TextBlock Text="EXAMPLE#1"/>
@@ -61,8 +62,7 @@
                 <TextBlock Text="EXAMPLE#1"/>
                 <TextBlock Text="EXAMPLE#1"/>
                 <TextBlock Text="EXAMPLE#1"/>
-                <TextBlock Text="EXAMPLE#1"/>
-                <TextBlock Text="EXAMPLE#1"/>
+                <TextBlock Text="EXAMPLE#1"/>-->
             </ListView>
         </ScrollViewer>
         <Button Style="{StaticResource AvatarButton}" Width="100" HorizontalAlignment="Left"  Command="{Binding ChangeImage}"/>

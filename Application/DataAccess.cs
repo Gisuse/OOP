@@ -38,11 +38,37 @@ namespace Application
             return UserCollection.InsertOneAsync(user);
         }
 
+        public Task CreateMaterials(Materials materials)
+        {
+            var UserCollection = ConnectToMongo<Materials>("Materials");
+            return UserCollection.InsertOneAsync(materials);
+        }
+
+        public Task CreateTest(Tests test)
+        {
+            var UserCollection = ConnectToMongo<Tests>("Tests");
+            return UserCollection.InsertOneAsync(test);
+        }
+
+        public async Task<List<Tests>> FindTests(int ClassName)
+        {
+            var UserCollection = ConnectToMongo<Tests>("Tests");
+            var tests = await UserCollection.Find(Tests => Tests.ClassName == ClassName).ToListAsync();
+            return tests;
+        }
+
         public async Task<List<User>> FindUser(string email, string password)
         {
             var UserCollection = ConnectToMongo<User>(UserConnection);
             var people = await UserCollection.Find(user => user.Email == email && user.Password == password).ToListAsync();
             return people;
+        }
+
+        public async Task<List<Materials>> FindMaterials(int className)
+        {
+            var UserCollection = ConnectToMongo<Materials>("Materials");
+            var materials = await UserCollection.Find(Materials => Materials.ClassName == className).ToListAsync();
+            return materials;
         }
 
         public Task UpdateUser(User user)

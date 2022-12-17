@@ -40,26 +40,20 @@ namespace Application.MVVW.View
             name_TextBox.Text = "";
             aboutMe_TextBox.Text = "";
             //Нормальная обработка ощибок
-            try
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            if(user.SName.Trim() != "" && user.Name.Trim() != "" && user.AboutMe.Trim() != "")
             {
-                db.UpdateUser(user);
-
-                TemporaryUser.SName = user.SName;
-                TemporaryUser.Name = user.Name;
-                TemporaryUser.AboutMe = user.AboutMe;
-
-                string fileName = Path.GetFullPath("UserData.json");
-
-                string jsonString = JsonConvert.SerializeObject(user);
-
-                File.WriteAllText(fileName, jsonString);
+                Exceptions ex = new Exceptions();
+                ex.Update_Info_User(user);
+                MessageBox.Show("Дані змінено", "Повідомлення", MessageBoxButton.OK, MessageBoxImage.Information);
             }
-            catch(Exception er)
+            else
             {
-                MessageBox.Show(er.Message);
+                MessageBox.Show("Поля повинні бути заповнені", "Попередження", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
-            
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         }
+
 
         private void sName_TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {

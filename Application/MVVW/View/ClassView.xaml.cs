@@ -27,14 +27,36 @@ namespace Application.MVVW.View
         
         private void backButton_Click(object sender, RoutedEventArgs e)
         {
-            MainMenu mainWindow = new MainMenu();
-            mainWindow.Show();
-            MainMenu mainMenu = Application.App.Current.Windows[0] as MainMenu;
-            mainMenu.Close();
+            if(TemporaryMaterials.IsAdmin == true)
+            {
+                Admin admin = new Admin();
+                admin.Show();
+                Admin adm = Application.App.Current.Windows[0] as Admin;
+                adm.Close();
+            }
+            else
+            {
+                MainMenu mainWindow = new MainMenu();
+                mainWindow.Show();
+                MainMenu mainMenu = Application.App.Current.Windows[0] as MainMenu;
+                mainMenu.Close();
+            }
+           
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            TemporaryMaterials.CurrentClass = 7;
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            TemporaryMaterials.CurrentClass = 8;
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            TemporaryMaterials.CurrentClass = 9;
         }
     }
 }

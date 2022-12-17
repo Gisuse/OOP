@@ -67,9 +67,29 @@ namespace Application
                         TemporaryUser.SName = user[0].SName;
                         TemporaryUser.AboutMe = user[0].AboutMe;
                         TemporaryUser.Id = user[0].Id;
+                        TemporaryUser.CompletedTests = user[0].CompletedTests;
 
-                        MainMenu mainMenu = new MainMenu();
-                        mainMenu.Show();
+                        if (TemporaryUser.Email == "admin@gmail.com")
+                        {
+                            TemporaryMaterials.IsAdmin = true;
+                        }
+                        else
+                        {
+                            TemporaryMaterials.IsAdmin = false;
+                        }
+
+                        if (TemporaryMaterials.IsAdmin == true)
+                        {
+                            Admin admin = new Admin();
+                            admin.Show();
+
+                        }
+                        else
+                        {
+                            MainMenu mainMenu = new MainMenu();
+                            mainMenu.Show();
+                        }
+
                         MainWindow mainWindow = Application.App.Current.MainWindow as MainWindow;
                         mainWindow.Close();
                         //Mainframe.Content = new MainMenu();

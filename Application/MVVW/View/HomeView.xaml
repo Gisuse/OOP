@@ -9,11 +9,8 @@
 
     <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left">
         <Button Style="{StaticResource WindowButtonTheme}"
-                Width="520" Height="180" Margin="0" Padding="0" Click="Button_Click_1" Cursor="Hand" Command="{Binding DataContext.ClassViewModel, RelativeSource={RelativeSource AncestorType=Window}}">
-        </Button>
+                Width="520" Height="180" Padding="0" Click="Button_Click_1" Cursor="Hand" Command="{Binding DataContext.ClassViewModel, RelativeSource={RelativeSource AncestorType={x:Type Window}}}"/>
         <Button Style="{StaticResource WindowButtonAltTheme}"
-            Width="520" Height="180" Margin="0" Padding="0" Cursor="Hand">
-            
-        </Button>
+            Width="520" Height="180" Padding="0" Cursor="Hand" Command="{Binding DataContext.ClassViewModel, RelativeSource={RelativeSource AncestorType={x:Type Window}}}" Click="Button_Click_3"/>
     </StackPanel>
 </UserControl>

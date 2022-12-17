@@ -1,0 +1,71 @@
+﻿<Window x:Class="Application.Admin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Application"
+        xmlns:view="clr-namespace:Application.MVVW.View"
+        xmlns:viewModel="clr-namespace:Application.MVVW.ViewModel"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Height="600" Width="800"
+        AllowsTransparency="True"
+        WindowStyle="none"
+        Background="Transparent"
+        WindowStartupLocation="CenterScreen"
+        Title="Home">
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    </Window.Resources>
+    <Border MouseDown="borderMainMenu_MouseDown" Name="borderMainMenu" MinWidth="800" MinHeight="600" Margin="0" VerticalAlignment="center"  CornerRadius="40" Background="#A0C1D1">
+        <Border.Effect>
+            <DropShadowEffect BlurRadius="15" Direction="-90"
+                              RenderingBias="Quality" ShadowDepth="2"/>
+        </Border.Effect>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Label x:Name="AppName" FontSize="30" HorizontalAlignment="Left" Content="ChemBase" Style="{StaticResource MaterialDesignLabel}" Height="45" Margin="25, 13" Padding="0" Foreground="White"/>
+
+            <StackPanel Grid.Row="1">
+                <RadioButton Style="{StaticResource MenuButtonTheme}" Content="Керування" IsChecked="True"
+                             Command="{Binding HomeViewCommand}"/>
+                <RadioButton Style="{StaticResource ExitMenuButtonTheme}" Content="Вихід" IsChecked="False"
+                             Command="{Binding HomeViewCommand}" Checked="RadioButton_Checked_1" />
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Width="500" HorizontalAlignment="Left">
+                <TextBox
+                    materialDesign:HintAssist.Foreground="Transparent"
+                    Style="{StaticResource ModernSearchBox}"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Width="45" Height="45" HorizontalAlignment="Right" Margin="0 0 15 0">
+                <materialDesign:PackIcon Name="CloseIcon" Kind="Close" Height="35" Width="35" Padding="0" Margin="0 0 0 0" HorizontalAlignment="Right" MouseDown="CloseIcon_MouseDown" MouseEnter="CloseIcon_MouseEnter" MouseLeave="CloseIcon_MouseLeave"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Width="45" Height="45" HorizontalAlignment="Right" Margin="0 0 50 0">
+                <materialDesign:PackIcon Name="MinimIcon" Kind="WindowMinimize" Height="35" Width="35" Padding="0" Margin="0 0 0 0" HorizontalAlignment="Right"
+                                         VerticalAlignment="Center" MouseDown="MinimIcon_MouseDown" MouseEnter="MinimIcon_MouseEnter" MouseLeave="MinimIcon_MouseLeave"/>
+            </StackPanel>
+
+
+            <ContentControl Grid.Row="1"
+                            Grid.Column="1"
+                            Content="{Binding CurrentView}"
+                            VerticalAlignment="Top"
+                            Margin="10,0,0,0">
+            </ContentControl>
+
+        </Grid>
+    </Border>
+</Window>

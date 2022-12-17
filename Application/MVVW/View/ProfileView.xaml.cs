@@ -15,6 +15,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.IO;
+using static System.Net.Mime.MediaTypeNames;
+using static Application.MVVW.View.TestView;
+using System.Linq.Expressions;
+
 namespace Application.MVVW.View
 {
     /// <summary>
@@ -22,21 +26,98 @@ namespace Application.MVVW.View
     /// </summary>
     public partial class ProfileView : UserControl
     {
+        DataAccess db;
+        public class Results
+        {
+            public string Theme { get; set; }
+            public float Mark { get; set; }
+        }
+
         public ProfileView()
         {
             InitializeComponent();
-            profile_email.Content = TemporaryUser.Email;
-            profile_login.Content = TemporaryUser.Login; 
+            db = new DataAccess();
+            if (TemporaryUser.Email.Length > 7)
+            {
+                profile_email.Content = TemporaryUser.Email.Substring(0, 7) + "...";
+                profile_email.ToolTip = TemporaryUser.Email;
+            }
+            else
+            {
+                profile_email.Content = TemporaryUser.Email;
+            }
+
+            if (TemporaryUser.Login.Length > 7)
+            {
+                profile_login.Content = TemporaryUser.Login.Substring(0, 7) + "...";
+                profile_login.ToolTip= TemporaryUser.Login;
+            }
+            else
+            {
+                profile_login.Content = TemporaryUser.Login;
+            }
 
             if (TemporaryUser.SName != "")
             {
-                profile_sname.Content = TemporaryUser.SName;
+                if (TemporaryUser.SName.Length > 7)
+                {
+                    profile_sname.Content = TemporaryUser.SName.Substring(0, 7) + "...";
+                    profile_sname.ToolTip = TemporaryUser.SName;
+                }
+                else
+                {
+                    profile_sname.Content = TemporaryUser.SName;
+                }
             }
 
             if (TemporaryUser.Name != "")
             {
-                profile_name.Content = TemporaryUser.Name;
+                if (TemporaryUser.SName.Length > 7)
+                {
+                    profile_name.Content = TemporaryUser.Name.Substring(0, 7) + "...";
+                    profile_name.ToolTip = TemporaryUser.Name;
+                }
+                else
+                {
+                    profile_name.Content = TemporaryUser.Name;
+                }
             }
+
+            showResults();
+
+        }
+
+        public void showResults()
+        {
+            Exceptions ex = new Exceptions();
+            ex.Info_Completed_Tests(LYears);
+
+
+
+
+            //var materials = await db.FindMaterials(user.CompletedTests[i].TestClass);
+            //materials.ToArray();
+            //for (int j = 0; j < materials.Count; j++)
+            //{
+            //    if (materials[j].NumberOfTheme == user.CompletedTests[i].TestTheme)
+            //    {
+            //        Results res = new Results();
+            //        if (materials[j].Title.Length > 20)
+            //        {
+            //            //tb.ToolTip = materials[i].Title;
+            //            res.Theme = materials[j].Title.Substring(0, 20) + "..."; 
+
+            //        }
+            //        else
+            //        {
+            //            res.Theme = materials[j].Title;
+            //        }
+            //        //res.Theme = materials[j].Title;
+            //        res.Mark = user.CompletedTests[i].TestMark;
+            //        LYears.Items.Add(res);
+            //        break;
+            //    }
+            //}
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

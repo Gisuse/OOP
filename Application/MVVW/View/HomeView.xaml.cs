@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Application.MVVW.View
 {
@@ -20,9 +21,29 @@ namespace Application.MVVW.View
     /// </summary>
     public partial class HomeView : UserControl
     {
+        DataAccess db;
+
         public HomeView()
         {
             InitializeComponent();
+            db = new DataAccess();
+
+            //Tests test = new Tests();
+            //db.CreateTest(test);
+        }
+
+        public async void getTests()
+        {
+            try
+            {
+                Tests test = new Tests();
+                await db.CreateTest(test);
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show(er.ToString());
+            }
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -32,7 +53,22 @@ namespace Application.MVVW.View
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            TemporaryMaterials.IsTest = false;
+        }
 
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            TemporaryMaterials.IsTest = true;
         }
     }
 }
