@@ -38,7 +38,7 @@ namespace Application.MVVW.View
             InitializeComponent();      
             if(TemporaryMaterials.IsAdmin == true)
             {
-                AddButton.Visibility = Visibility.Visible;
+                AddButton.Visibility = Visibility.Visible;                
             }
             else
             {
@@ -140,7 +140,7 @@ namespace Application.MVVW.View
                     //materials[i].NumberOfTheme + ". " + ( ?  + "..." : materials[i].Title);
                     //tb.Click += new RoutedEventHandler(ForwardToInfo);
 
-                    ListView.Items.Add(tb);
+                    ListView1.Items.Add(tb);
                 }
             }
             catch(Exception ex)
@@ -211,7 +211,7 @@ namespace Application.MVVW.View
                     }
                     //tests[i].NumberOfTheme + ". " + ( ?  + "..." : tests[i].Question);
                     //tb.Click += new RoutedEventHandler(ForwardToInfo); 
-                    ListView.Items.Add(tb);
+                    ListView1.Items.Add(tb);
                 }
             }
             catch (Exception ex)
@@ -230,10 +230,7 @@ namespace Application.MVVW.View
 
         private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if(TemporaryMaterials.IsTest == false)
-            {
-                
-            }
+            int n = 0;
         }
         private void ScrollViewer_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
         {
@@ -248,6 +245,26 @@ namespace Application.MVVW.View
             }
 
             e.Handled = true;
+        }
+        public T GetAncestorOfType<T>(FrameworkElement child) where T : FrameworkElement
+        {
+            var parent = VisualTreeHelper.GetParent(child);
+            if (parent != null && !(parent is T))
+                return (T)GetAncestorOfType<T>((FrameworkElement)parent);
+            return (T)parent;
+        }
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            //var itemToCancel = GetAncestorOfType<ListViewItem>(sender as Button);
+            ////more check to be sure if it is not null 
+            ////otherwise there is surely not any ListViewItem parent of the Button
+            //if (itemToCancel != null)
+            //{
+            //    ListView1.Items.Remove(itemToCancel);
+            //}
+
+            ListView1.Items.Remove(ListView1.SelectedItem);
         }
     }
 }
