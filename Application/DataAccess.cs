@@ -1,4 +1,5 @@
-﻿using MongoDB.Bson;
+﻿using MaterialDesignThemes.Wpf;
+using MongoDB.Bson;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media.Media3D;
 
 namespace Application
 {
@@ -36,6 +38,22 @@ namespace Application
         {
             var UserCollection = ConnectToMongo<User>(UserConnection);
             return UserCollection.InsertOneAsync(user);
+        }
+
+        //public Task DeleteMaterial(int className, int numberOfTheme)
+        public Task DeleteMaterial(string id)
+        {
+            var MaterialsCollection = ConnectToMongo<Materials>("Materials");
+
+            return MaterialsCollection.DeleteOneAsync(Materials => Materials.Id == id);
+        }
+
+        public Task UpdateMaterial(Materials material)
+        {
+            var MaterialsCollection = ConnectToMongo<Materials>("Materials");
+            var filter = Builders<Materials>.Filter.Eq("Id", material.Id);
+
+            return MaterialsCollection.ReplaceOneAsync(filter, material);
         }
 
         public Task CreateMaterials(Materials materials)
