@@ -137,7 +137,8 @@ namespace Application
                 //MessageBox.Show(user.Count.ToString());
                 //NavigationService.StopLoading();
 
-                if(TemporaryMaterials.IsAdmin == true)
+
+                if (TemporaryMaterials.IsAdmin == true)
                 {
                     Admin admin = new Admin();
                     admin.Show();

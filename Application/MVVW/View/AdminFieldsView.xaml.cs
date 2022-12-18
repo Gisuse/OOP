@@ -30,19 +30,30 @@ namespace Application.MVVW.View
             db = new DataAccess();
 
             Class_Field.Text = TemporaryMaterials.CurrentClass.ToString();
-            Name_Field.Text = TemporaryMaterials.materials[TemporaryMaterials.CurrentTheme - 1].Title;
-            Material_Field.Text = TemporaryMaterials.materials[TemporaryMaterials.CurrentTheme - 1].MaterialContent;
+            if (!TemporaryMaterials.isAddNewMaterial)
+            {
+                Name_Field.Text = TemporaryMaterials.materials[TemporaryMaterials.CurrentTheme - 1].Title;
+                Material_Field.Text = TemporaryMaterials.materials[TemporaryMaterials.CurrentTheme - 1].MaterialContent;
+            }
         }
 
         private void _SaveInfo_Click(object sender, RoutedEventArgs e)
         {
-            int id = Array.FindIndex(TemporaryMaterials.materials, element => element.ClassName == TemporaryMaterials.CurrentClass && element.NumberOfTheme == TemporaryMaterials.CurrentTheme);
-
-            Materials uMaterial = new Materials(TemporaryMaterials.materials[id].Id, Name_Field.Text, Material_Field.Text, int.Parse(Class_Field.Text), TemporaryMaterials.CurrentTheme);
-
-            TemporaryMaterials.materials[id] = uMaterial;
-
-            db.UpdateMaterial(uMaterial);
+            if (!TemporaryMaterials.isAddNewMaterial)
+            {
+                int id = Array.FindIndex(TemporaryMaterials.materials, element => element.ClassName == TemporaryMaterials.CurrentClass && element.NumberOfTheme == TemporaryMaterials.CurrentTheme);
+                Materials uMaterial = new Materials(TemporaryMaterials.materials[id].Id, Name_Field.Text, Material_Field.Text, int.Parse(Class_Field.Text), TemporaryMaterials.CurrentTheme);
+                TemporaryMaterials.materials[id] = uMaterial;
+                db.UpdateMaterial(uMaterial);
+            } 
+            else if(TemporaryMaterials.isAddNewMaterial)
+            {
+                Materials mat = new Materials(Name_Field.Text, Material_Field.Text, int.Parse(Class_Field.Text), TemporaryMaterials.materials.Length+1);
+                db.CreateMaterials(mat);
+            }
+            Class_Field.Text = "";
+            Name_Field.Text = "";
+            Material_Field.Text = "";
         }
     }
 }
