@@ -22,27 +22,27 @@
         <StackPanel Grid.Row="1">
             <StackPanel MaxHeight="100">
                 <Label FontSize="30" Foreground="white" Content="1. Клас"/>
-                <TextBox  Background="White" HorizontalAlignment="Left" 
+                <TextBox x:Name="Class_Field" Background="White" HorizontalAlignment="Left" 
                      Style="{StaticResource CustomTextBox}" Width="150" MaxHeight="50"
                           FontSize="20"/>
             </StackPanel>
             <StackPanel MaxHeight="225">
                 <Label FontSize="30" Foreground="white" Content="2. Назва теми"/>
-                <TextBox  Background="White" HorizontalAlignment="Left" 
+                <TextBox x:Name="Name_Field" Background="White" HorizontalAlignment="Left" 
                      Style="{StaticResource CustomTextBox}" Width="300"
                           FontSize="20"/>
             </StackPanel>
             <StackPanel MaxHeight="225">
                 <Label FontSize="30" Foreground="white" Content="3. Навчальний матеріал"/>
-                <TextBox  Background="White" HorizontalAlignment="Left" 
+                <TextBox x:Name="Material_Field" Background="White" HorizontalAlignment="Left" 
                      Style="{StaticResource CustomTextBox}" Width="450"
                           FontSize="20"/>
             </StackPanel>
-            
+
             <Button x:Name="_SaveInfo" Content="Зберегти" Margin="0 13"
                         Style="{StaticResource MaterialDesignRaisedDarkButton}"
                         Width="230" Height="35" HorizontalAlignment="Left" VerticalAlignment="Center"
-                         materialDesign:ButtonAssist.CornerRadius="13"/>
+                         materialDesign:ButtonAssist.CornerRadius="13" Click="_SaveInfo_Click"/>
         </StackPanel>
     </Grid>
 </UserControl>

@@ -17,7 +17,6 @@ using System.Windows.Navigation;
 using System.IO;
 using static System.Net.Mime.MediaTypeNames;
 using static Application.MVVW.View.TestView;
-using System.Linq.Expressions;
 
 namespace Application.MVVW.View
 {
@@ -87,37 +86,51 @@ namespace Application.MVVW.View
 
         }
 
-        public void showResults()
+        async void showResults()
         {
-            Exceptions ex = new Exceptions();
-            ex.Info_Completed_Tests(LYears);
+            User user = new User();
+            for (int i = 0; i < user.CompletedTests.Length; i++)
+            {
+                if (user.CompletedTests[i] != null)
+                {
+                    Results res = new Results();
+                    if (user.CompletedTests[i].ThemeTitle.Length > 20)
+                    {
+                        //tb.ToolTip = materials[i].Title;
+                        res.Theme = user.CompletedTests[i].ThemeTitle.Substring(0, 20) + "...";
 
+                    }
+                    else
+                    {
+                        res.Theme = user.CompletedTests[i].ThemeTitle;
+                    }
+                    res.Mark = user.CompletedTests[i].TestMark;
+                    LYears.Items.Add(res);
+                    //var materials = await db.FindMaterials(user.CompletedTests[i].TestClass);
+                    //materials.ToArray();
+                    //for (int j = 0; j < materials.Count; j++)
+                    //{
+                    //    if (materials[j].NumberOfTheme == user.CompletedTests[i].TestTheme)
+                    //    {
+                    //        Results res = new Results();
+                    //        if (materials[j].Title.Length > 20)
+                    //        {
+                    //            //tb.ToolTip = materials[i].Title;
+                    //            res.Theme = materials[j].Title.Substring(0, 20) + "..."; 
 
-
-
-            //var materials = await db.FindMaterials(user.CompletedTests[i].TestClass);
-            //materials.ToArray();
-            //for (int j = 0; j < materials.Count; j++)
-            //{
-            //    if (materials[j].NumberOfTheme == user.CompletedTests[i].TestTheme)
-            //    {
-            //        Results res = new Results();
-            //        if (materials[j].Title.Length > 20)
-            //        {
-            //            //tb.ToolTip = materials[i].Title;
-            //            res.Theme = materials[j].Title.Substring(0, 20) + "..."; 
-
-            //        }
-            //        else
-            //        {
-            //            res.Theme = materials[j].Title;
-            //        }
-            //        //res.Theme = materials[j].Title;
-            //        res.Mark = user.CompletedTests[i].TestMark;
-            //        LYears.Items.Add(res);
-            //        break;
-            //    }
-            //}
+                    //        }
+                    //        else
+                    //        {
+                    //            res.Theme = materials[j].Title;
+                    //        }
+                    //        //res.Theme = materials[j].Title;
+                    //        res.Mark = user.CompletedTests[i].TestMark;
+                    //        LYears.Items.Add(res);
+                    //        break;
+                    //    }
+                    //}
+                }
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
