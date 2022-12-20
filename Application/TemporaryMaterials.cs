@@ -15,5 +15,6 @@ namespace Application
         public static bool IsAdmin = false;
         public static Materials[] materials;
         public static Tests[] tests;
+        public static bool isAddNewMaterial = false;
     }
 }

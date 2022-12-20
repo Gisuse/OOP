@@ -14,7 +14,11 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Navigation;
+//using System.Text.Json;
+using System.Reflection;
+//using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace Application.MVVW.View
 {
@@ -81,7 +85,6 @@ namespace Application.MVVW.View
             try
             {
                 var materials = await db.FindMaterials(ClassValue);
-                TemporaryMaterials.materials = materials.ToArray();
                 var temp = materials[0];
 
                 for (int i = 0; i < materials.Count - 1; i++)
@@ -96,6 +99,7 @@ namespace Application.MVVW.View
                         }
                     }
                 }
+                TemporaryMaterials.materials = materials.ToArray();
 
                 for (int i = 0; i < materials.Count; i++)
                 {
@@ -256,15 +260,30 @@ namespace Application.MVVW.View
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
-            //var itemToCancel = GetAncestorOfType<ListViewItem>(sender as Button);
-            ////more check to be sure if it is not null 
-            ////otherwise there is surely not any ListViewItem parent of the Button
-            //if (itemToCancel != null)
-            //{
-            //    ListView1.Items.Remove(itemToCancel);
-            //}
+            TemporaryMaterials.CurrentTheme = int.Parse(JObject.Parse(ListView1.SelectedItem.ToJson())["Content"].ToString()[0].ToString());
+            try
+            {
+                string id = Array.Find(TemporaryMaterials.materials, element => element.ClassName == TemporaryMaterials.CurrentClass && element.NumberOfTheme == TemporaryMaterials.CurrentTheme).Id;
+
+                db.DeleteMaterial(id);
+            }
+            catch(Exception exx)
+            {
+                MessageBox.Show(exx.Message);
+            }
 
             ListView1.Items.Remove(ListView1.SelectedItem);
+        }
+
+        private void EditButton_Click(object sender, RoutedEventArgs e)
+        {
+            TemporaryMaterials.CurrentTheme = int.Parse(JObject.Parse(ListView1.SelectedItem.ToJson())["Content"].ToString()[0].ToString());
+            TemporaryMaterials.isAddNewMaterial = false;
+        }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            TemporaryMaterials.isAddNewMaterial = true;
         }
     }
 }

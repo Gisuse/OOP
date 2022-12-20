@@ -88,7 +88,11 @@ namespace Application
                 {
                     TemporaryMaterials.IsAdmin = true;
                 }
-                
+                else
+                {
+                    TemporaryMaterials.IsAdmin = false;
+                }
+
                 ex.Login(email, password, rememberChecked);
 
 

@@ -30,7 +30,7 @@
                                     <TextBlock Text="{Binding Text}" Foreground="White" HorizontalAlignment="Left" FontWeight="Normal" FontSize="30" Width="450"/>
                                 </Button>-->
                                 <Button x:Name="ListButton" ToolTip="{Binding ToolTip}" Click="ForwardToInfo" Content="{Binding Content}" Foreground="White" HorizontalAlignment="Left" HorizontalContentAlignment="Left" FontWeight="Normal" FontSize="30" Width="450" Height="50"  BorderBrush="Transparent" Background="Transparent" Command="{Binding DataContext.EducationInfoViewModel, RelativeSource={RelativeSource AncestorType=Window}}"/>
-                                <Button x:Name="EditButton" Foreground="White" FontWeight="Normal" Width="50" Height="50" Visibility="{Binding Path=adminVisible}"  BorderBrush="Transparent" Background="Transparent" Padding="0" Command="{Binding DataContext.AdminFieldsViewCommand, RelativeSource={RelativeSource AncestorType=Window}}">
+                                <Button x:Name="EditButton" Foreground="White" FontWeight="Normal" Width="50" Height="50" Visibility="{Binding Path=adminVisible}"  BorderBrush="Transparent" Background="Transparent" Padding="0" Command="{Binding DataContext.AdminFieldsViewCommand, RelativeSource={RelativeSource AncestorType=Window}}" Click="EditButton_Click">
                                     <Button.Content>
                                         <materialDesign:PackIcon Name="EditIcon" Kind="Edit" Height="35" Width="35" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Black"/>
                                     </Button.Content>
@@ -65,7 +65,7 @@
             </ScrollViewer>
         </StackPanel>
         <StackPanel Grid.Row="2" Height="55" VerticalAlignment="Bottom" HorizontalAlignment="Left" Orientation="Horizontal">
-            <Button x:Name="AddButton"  Foreground="White" FontWeight="Normal" Width="50" Height="50" Margin="15 0 0 0" BorderBrush="Transparent" Background="Transparent" Padding="0" Command="{Binding DataContext.AdminFieldsViewCommand, RelativeSource={RelativeSource AncestorType=Window}}">
+            <Button x:Name="AddButton"  Foreground="White" FontWeight="Normal" Width="50" Height="50" Margin="15 0 0 0" BorderBrush="Transparent" Background="Transparent" Padding="0" Command="{Binding DataContext.AdminFieldsViewCommand, RelativeSource={RelativeSource AncestorType=Window}}" Click="AddButton_Click">
                 <Button.Content>
                     <materialDesign:PackIcon Name="AddIcon" BorderBrush="{DynamicResource PrimaryHueDarkBrush}" Foreground="{DynamicResource PrimaryHueDarkBrush}" BorderThickness="3" Kind="Plus" Height="50" Width="50" VerticalAlignment="Center" HorizontalAlignment="Right" />
                 </Button.Content>
