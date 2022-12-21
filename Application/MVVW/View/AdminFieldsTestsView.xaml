@@ -29,25 +29,31 @@
                           FontSize="20"/>                        
                     </StackPanel>
                     <StackPanel MaxHeight="150">
-                        <Label FontSize="30" Foreground="white" Content="2 Питання"/>
+                        <Label FontSize="30" Foreground="white" Content="2. Назва теми"/>
                         <TextBox  Background="White" HorizontalAlignment="Left" 
                      Style="{StaticResource CustomTextBox}" Width="450" MaxHeight="100"
                           FontSize="20"/>
                     </StackPanel>
                     <StackPanel MaxHeight="150">
-                        <Label FontSize="30" Foreground="white" Content="3.1 Варіант 1"/>
+                        <Label FontSize="30" Foreground="white" Content="3. Питання"/>
                         <TextBox  Background="White" HorizontalAlignment="Left" 
                      Style="{StaticResource CustomTextBox}" Width="450" MaxHeight="100"
                           FontSize="20"/>
                     </StackPanel>
                     <StackPanel MaxHeight="150">
-                        <Label FontSize="30" Foreground="white" Content="3.2 Варіант 2"/>
+                        <Label FontSize="30" Foreground="white" Content="4.1 Варіант 1"/>
                         <TextBox  Background="White" HorizontalAlignment="Left" 
                      Style="{StaticResource CustomTextBox}" Width="450" MaxHeight="100"
                           FontSize="20"/>
                     </StackPanel>
                     <StackPanel MaxHeight="150">
-                        <Label FontSize="30" Foreground="white" Content="3.3 Варіант 3"/>
+                        <Label FontSize="30" Foreground="white" Content="4.2 Варіант 2"/>
+                        <TextBox  Background="White" HorizontalAlignment="Left" 
+                     Style="{StaticResource CustomTextBox}" Width="450" MaxHeight="100"
+                          FontSize="20"/>
+                    </StackPanel>
+                    <StackPanel MaxHeight="150">
+                        <Label FontSize="30" Foreground="white" Content="4.3 Варіант 3"/>
                         <TextBox  Background="White" HorizontalAlignment="Left" 
                      Style="{StaticResource CustomTextBox}" Width="450" MaxHeight="100"
                           FontSize="20"/>
