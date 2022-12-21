@@ -28,9 +28,10 @@ namespace Application.MVVW.View
             InitializeComponent();
             db = new DataAccess();
 
-            //Materials mat = new Materials();
-            //var m = db.CreateMaterials(mat);
+            Materials mat = new Materials();
+            var m = db.CreateMaterials(mat);
 
+            //getTests();
             //getTests();
             //db.CreateTest(test);
         }

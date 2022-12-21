@@ -261,18 +261,30 @@ namespace Application.MVVW.View
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
             TemporaryMaterials.CurrentTheme = int.Parse(JObject.Parse(ListView1.SelectedItem.ToJson())["Content"].ToString()[0].ToString());
+
             try
             {
-                string id = Array.Find(TemporaryMaterials.materials, element => element.ClassName == TemporaryMaterials.CurrentClass && element.NumberOfTheme == TemporaryMaterials.CurrentTheme).Id;
+                if (TemporaryMaterials.IsTest)
+                {
+                    string id = Array.Find(TemporaryMaterials.tests, element => element.ClassName == TemporaryMaterials.CurrentClass && element.numberOfTheme == TemporaryMaterials.CurrentTheme).Id;
 
-                db.DeleteMaterial(id);
+                    db.DeleteTest(id);
+
+                    ListView1.Items.Remove(ListView1.SelectedItem);
+                }
+                else
+                {
+                    string id = Array.Find(TemporaryMaterials.materials, element => element.ClassName == TemporaryMaterials.CurrentClass && element.NumberOfTheme == TemporaryMaterials.CurrentTheme).Id;
+
+                    db.DeleteMaterial(id);
+
+                    ListView1.Items.Remove(ListView1.SelectedItem);
+                }
             }
             catch(Exception exx)
             {
                 MessageBox.Show(exx.Message);
             }
-
-            ListView1.Items.Remove(ListView1.SelectedItem);
         }
 
         private void EditButton_Click(object sender, RoutedEventArgs e)
