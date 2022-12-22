@@ -22,6 +22,9 @@ namespace Application
             TestMark = testMark;
             ThemeTitle = testTitle;
         }
+        public CompletedTestsModel()
+        {
+        }
     }
 
     public class User

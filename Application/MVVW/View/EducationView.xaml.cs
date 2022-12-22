@@ -14,7 +14,11 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Navigation;
+//using System.Text.Json;
+using System.Reflection;
+//using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace Application.MVVW.View
 {
@@ -38,7 +42,7 @@ namespace Application.MVVW.View
             InitializeComponent();      
             if(TemporaryMaterials.IsAdmin == true)
             {
-                AddButton.Visibility = Visibility.Visible;
+                AddButton.Visibility = Visibility.Visible;                
             }
             else
             {
@@ -81,7 +85,6 @@ namespace Application.MVVW.View
             try
             {
                 var materials = await db.FindMaterials(ClassValue);
-                TemporaryMaterials.materials = materials.ToArray();
                 var temp = materials[0];
 
                 for (int i = 0; i < materials.Count - 1; i++)
@@ -96,6 +99,7 @@ namespace Application.MVVW.View
                         }
                     }
                 }
+                TemporaryMaterials.materials = materials.ToArray();
 
                 for (int i = 0; i < materials.Count; i++)
                 {
@@ -140,7 +144,7 @@ namespace Application.MVVW.View
                     //materials[i].NumberOfTheme + ". " + ( ?  + "..." : materials[i].Title);
                     //tb.Click += new RoutedEventHandler(ForwardToInfo);
 
-                    ListView.Items.Add(tb);
+                    ListView1.Items.Add(tb);
                 }
             }
             catch(Exception ex)
@@ -211,7 +215,7 @@ namespace Application.MVVW.View
                     }
                     //tests[i].NumberOfTheme + ". " + ( ?  + "..." : tests[i].Question);
                     //tb.Click += new RoutedEventHandler(ForwardToInfo); 
-                    ListView.Items.Add(tb);
+                    ListView1.Items.Add(tb);
                 }
             }
             catch (Exception ex)
@@ -230,10 +234,7 @@ namespace Application.MVVW.View
 
         private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if(TemporaryMaterials.IsTest == false)
-            {
-                
-            }
+            int n = 0;
         }
         private void ScrollViewer_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
         {
@@ -248,6 +249,41 @@ namespace Application.MVVW.View
             }
 
             e.Handled = true;
+        }
+        public T GetAncestorOfType<T>(FrameworkElement child) where T : FrameworkElement
+        {
+            var parent = VisualTreeHelper.GetParent(child);
+            if (parent != null && !(parent is T))
+                return (T)GetAncestorOfType<T>((FrameworkElement)parent);
+            return (T)parent;
+        }
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            TemporaryMaterials.CurrentTheme = int.Parse(JObject.Parse(ListView1.SelectedItem.ToJson())["Content"].ToString()[0].ToString());
+            try
+            {
+                string id = Array.Find(TemporaryMaterials.materials, element => element.ClassName == TemporaryMaterials.CurrentClass && element.NumberOfTheme == TemporaryMaterials.CurrentTheme).Id;
+
+                db.DeleteMaterial(id);
+            }
+            catch(Exception exx)
+            {
+                MessageBox.Show(exx.Message);
+            }
+
+            ListView1.Items.Remove(ListView1.SelectedItem);
+        }
+
+        private void EditButton_Click(object sender, RoutedEventArgs e)
+        {
+            TemporaryMaterials.CurrentTheme = int.Parse(JObject.Parse(ListView1.SelectedItem.ToJson())["Content"].ToString()[0].ToString());
+            TemporaryMaterials.isAddNewMaterial = false;
+        }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            TemporaryMaterials.isAddNewMaterial = true;
         }
     }
 }

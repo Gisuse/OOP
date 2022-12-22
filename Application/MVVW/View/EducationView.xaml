@@ -22,7 +22,7 @@
         </StackPanel>
         <StackPanel Grid.Row="1" VerticalAlignment="Top" Height="340" Width="600">
             <ScrollViewer Grid.Row="1" Height="340" Width="600" PreviewMouseWheel="ScrollViewer_PreviewMouseWheel">
-                <ListView x:Name="ListView" SelectionChanged="ListView_SelectionChanged">
+                <ListView x:Name="ListView1" SelectionChanged="ListView_SelectionChanged">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal" Width="550" Height="50" Cursor="Hand">
@@ -30,12 +30,12 @@
                                     <TextBlock Text="{Binding Text}" Foreground="White" HorizontalAlignment="Left" FontWeight="Normal" FontSize="30" Width="450"/>
                                 </Button>-->
                                 <Button x:Name="ListButton" ToolTip="{Binding ToolTip}" Click="ForwardToInfo" Content="{Binding Content}" Foreground="White" HorizontalAlignment="Left" HorizontalContentAlignment="Left" FontWeight="Normal" FontSize="30" Width="450" Height="50"  BorderBrush="Transparent" Background="Transparent" Command="{Binding DataContext.EducationInfoViewModel, RelativeSource={RelativeSource AncestorType=Window}}"/>
-                                <Button x:Name="EditButton" Foreground="White" FontWeight="Normal" Width="50" Height="50" Visibility="{Binding Path=adminVisible}"  BorderBrush="Transparent" Background="Transparent" Padding="0" Command="{Binding DataContext.AdminFieldsViewCommand, RelativeSource={RelativeSource AncestorType=Window}}">
+                                <Button x:Name="EditButton" Foreground="White" FontWeight="Normal" Width="50" Height="50" Visibility="{Binding Path=adminVisible}"  BorderBrush="Transparent" Background="Transparent" Padding="0" Command="{Binding DataContext.AdminFieldsViewCommand, RelativeSource={RelativeSource AncestorType=Window}}" Click="EditButton_Click">
                                     <Button.Content>
                                         <materialDesign:PackIcon Name="EditIcon" Kind="Edit" Height="35" Width="35" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Black"/>
                                     </Button.Content>
                                 </Button>
-                                <Button x:Name="DeleteButton" Foreground="White" FontWeight="Normal" Visibility="{Binding Path=adminVisible}" Width="50" Height="50" BorderBrush="Transparent" Background="Transparent" Padding="0" >
+                                <Button x:Name="DeleteButton"  Foreground="White" FontWeight="Normal" Visibility="{Binding Path=adminVisible}" Width="50" Height="50" BorderBrush="Transparent" Background="Transparent" Padding="0" Click="DeleteButton_Click">
                                     <Button.Content>
                                         <materialDesign:PackIcon Name="DeleteIcon" Kind="Close" Height="45" Width="45" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="#d4190b"/>
                                     </Button.Content>
@@ -48,11 +48,24 @@
                             </StackPanel>
                         </DataTemplate>
                     </ListView.ItemTemplate>
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="IsSelected" Value="True"/>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="False">
+                                    <Setter Property="IsSelected" Value="False"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                   <!--<Label Content="1"/>-->
                 </ListView>
             </ScrollViewer>
         </StackPanel>
         <StackPanel Grid.Row="2" Height="55" VerticalAlignment="Bottom" HorizontalAlignment="Left" Orientation="Horizontal">
-            <Button x:Name="AddButton"  Foreground="White" FontWeight="Normal" Width="50" Height="50" Margin="15 0 0 0" BorderBrush="Transparent" Background="Transparent" Padding="0" Command="{Binding DataContext.AdminFieldsViewCommand, RelativeSource={RelativeSource AncestorType=Window}}">
+            <Button x:Name="AddButton"  Foreground="White" FontWeight="Normal" Width="50" Height="50" Margin="15 0 0 0" BorderBrush="Transparent" Background="Transparent" Padding="0" Command="{Binding DataContext.AdminFieldsViewCommand, RelativeSource={RelativeSource AncestorType=Window}}" Click="AddButton_Click">
                 <Button.Content>
                     <materialDesign:PackIcon Name="AddIcon" BorderBrush="{DynamicResource PrimaryHueDarkBrush}" Foreground="{DynamicResource PrimaryHueDarkBrush}" BorderThickness="3" Kind="Plus" Height="50" Width="50" VerticalAlignment="Center" HorizontalAlignment="Right" />
                 </Button.Content>
