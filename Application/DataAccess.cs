@@ -96,5 +96,13 @@ namespace Application
 
             return UserCollection.ReplaceOneAsync(filter, user);
         }
+
+        public Task UpdateTest(Tests test)
+        {
+            var TestCollection = ConnectToMongo<Tests>("Tests");
+            var filter = Builders<Tests>.Filter.Eq("Id", test.Id);
+
+            return TestCollection.ReplaceOneAsync(filter, test);
+        }
     }
 }

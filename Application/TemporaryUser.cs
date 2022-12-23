@@ -21,6 +21,7 @@ namespace Application
         public static string Name;
         public static string SName;
         public static string AboutMe;
+        public static byte[] ContentImage;
 
         public static string ImagePath;
 
@@ -36,6 +37,7 @@ namespace Application
             SName = user.SName;
             AboutMe = user.AboutMe;
             CompletedTests = user.CompletedTests;
+            ContentImage = user.ContentImage;
         }
     }
 }

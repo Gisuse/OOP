@@ -60,10 +60,10 @@ namespace Application
             Question[1] = str;
             Question[2] = str;
             this.Question = Question;
-            numberOfTheme = 2;
+            numberOfTheme = 6;
             //numberOfQuestion = 2;
             ClassName = 7;
-            Title = "Як виникла і розвивалася наука хімія";
+            Title = "Важный вопрос";
             TestModel testModel = new TestModel(1, 1, "Да", false);
             TestModel testModel1 = new TestModel(1, 2, "Однозначно", true);
             TestModel testModel2 = new TestModel(1, 3, "Несомненно", false);
@@ -84,5 +84,38 @@ namespace Application
 
             this.Answers = Answers;
         }
+        String[] questions;
+        TestModel[,] answers;
+
+        public Tests(string id, int className, string title, int NumberOfTheme)
+        {
+            Id = id;
+            ClassName = className;
+            Title = title;
+            numberOfTheme = NumberOfTheme;
+            questions = new String[TemporaryMaterials.tests[TemporaryMaterials.CurrentTheme - 1].Question.Length];
+            answers = new TestModel[TemporaryMaterials.tests[TemporaryMaterials.CurrentTheme - 1].Question.Length, 3];
+        }
+
+        public void addTest(int counter, string question, string answer1, string answer2, string answer3, bool isChecked1, bool isChecked2, bool isChecked3 )
+        {
+            questions[counter] = question;
+            
+            TestModel testModel = new TestModel(1, 1, answer1, isChecked1);
+            TestModel testModel1 = new TestModel(1, 2, answer2, isChecked2);
+            TestModel testModel2 = new TestModel(1, 3, answer3, isChecked3);
+
+            answers[counter, 0] = testModel;
+            answers[counter, 1] = testModel1;
+            answers[counter, 2] = testModel2;
+        }
+
+        public void finalAdd()
+        {
+            this.Question = questions;
+            this.Answers = answers;
+        }
+
+
     }
 }

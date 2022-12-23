@@ -106,8 +106,9 @@ namespace Application
 
             // очистка TemporaryUser не нужна, так как мы присваиваем все данные в регистрации и логине
             MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-            Admin admin= Application.App.Current.Windows[0] as Admin;
+            mainWindow.Show(); 
+
+            Admin admin = Application.App.Current.Windows[0] as Admin;
             admin.Close();
         }
     }
