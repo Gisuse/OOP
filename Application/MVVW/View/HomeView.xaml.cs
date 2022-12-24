@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MongoDB.Bson;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,17 +28,17 @@ namespace Application.MVVW.View
         {
             InitializeComponent();
             db = new DataAccess();
+            //
+            //Materials mat = new Materials();
+            //var m = db.CreateMaterials(mat);
 
-            Materials mat = new Materials();
-            var m = db.CreateMaterials(mat);
-
-            //getTests();
             //getTests();
             //db.CreateTest(test);
         }
 
         public async void getTests()
         {
+
             try
             {
                 Tests test = new Tests();
@@ -45,7 +46,7 @@ namespace Application.MVVW.View
             }
             catch (Exception er)
             {
-                MessageBox.Show(er.ToString());
+                MessageBox.Show(er.Message);
             }
 
         }

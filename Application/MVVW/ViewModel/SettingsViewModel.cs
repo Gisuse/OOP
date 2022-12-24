@@ -1,11 +1,13 @@
 ﻿using Application.Core;
 using Microsoft.Win32;
+using MongoDB.Bson;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
@@ -15,6 +17,7 @@ namespace Application.MVVW.ViewModel
     {
         public RelayCommand ChangeImage { get; set; }
         private string _ImagePath;
+        DataAccess db;
         public string ImagePath
         {
             get
@@ -33,7 +36,9 @@ namespace Application.MVVW.ViewModel
 
 
         public SettingsViewModel()
-        {          
+        {
+            //MessageBox.Show(TemporaryUser.CompletedTests.GetType().ToString());
+            db = new DataAccess();
             //string imgroot = "/Application;component/Images/avatar.png";
             TemporaryUser.ImagePath = "/Application;component/Images/avatar.png";
             ImagePath = TemporaryUser.ImagePath;
@@ -53,6 +58,13 @@ namespace Application.MVVW.ViewModel
                     File.Delete(pathOldAvatar);
                     File.Copy(pathNewAvatar, pathOldAvatar);
                     ImagePath = @pathOldAvatar;
+                    //byte[] array = File.ReadAllBytes(@pathOldAvatar);
+                    TemporaryUser.ContentImage = File.ReadAllBytes(@pathOldAvatar);
+                    User user = new User();
+
+                    db.UpdateUser(user);
+                    //MessageBox.Show(user.ContentImage.ToString());
+
                 }
             });
         }

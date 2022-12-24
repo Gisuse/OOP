@@ -19,53 +19,55 @@
         <StackPanel Grid.Row="0" Height="auto" VerticalAlignment="Top" HorizontalAlignment="Center" MaxWidth="500">
             <TextBlock TextWrapping="Wrap" x:Name="ThemeTitle" Foreground="White" FontSize="35"/>
         </StackPanel>
+        
         <StackPanel Grid.Row="1">
             <ScrollViewer Height="393" PreviewMouseWheel="ScrollViewer_PreviewMouseWheel">
-                <ListView x:Name="NewQuestionsList">
+                <StackPanel>
+                    <StackPanel MaxHeight="100" Width="200" HorizontalAlignment="Left">
+                        <Label FontSize="30" Foreground="white" Content="1. Клас"/>
+                        <TextBox x:Name="numberOfClass" Background="White" HorizontalAlignment="Left" 
+                     Style="{StaticResource CustomTextBox}" Width="150" MaxHeight="50"
+                          FontSize="20"/>
+                    </StackPanel>
+                    <StackPanel MaxHeight="150">
+                        <Label FontSize="30" Foreground="white" Content="2. Назва теми"/>
+                        <TextBox x:Name="numberOfTheme" Background="White" HorizontalAlignment="Left" 
+                     Style="{StaticResource CustomTextBox}" Width="450" MaxHeight="100"
+                          FontSize="20"/>
+                    </StackPanel>
+                    <ListView x:Name="NewQuestionsList">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <StackPanel>
-                                <StackPanel MaxHeight="100" Width="200" HorizontalAlignment="Left">
-                                    <Label FontSize="30" Foreground="white" Content="1. Клас"/>
-                                    <TextBox  Background="White" HorizontalAlignment="Left" 
-                     Style="{StaticResource CustomTextBox}" Width="150" MaxHeight="50"
-                          FontSize="20"/>
-                                </StackPanel>
-                                <StackPanel MaxHeight="150">
-                                    <Label FontSize="30" Foreground="white" Content="2. Назва теми"/>
-                                    <TextBox  Background="White" HorizontalAlignment="Left" 
-                     Style="{StaticResource CustomTextBox}" Width="450" MaxHeight="100"
-                          FontSize="20"/>
-                                </StackPanel>
                                 <StackPanel MaxHeight="150">
                                     <Label FontSize="30" Foreground="white" Content="3. Питання"/>
-                                    <TextBox  Background="White" HorizontalAlignment="Left" 
-                     Style="{StaticResource CustomTextBox}" Width="450" MaxHeight="100"
-                          FontSize="20"/>
+                                    <TextBox Text="{Binding Question }" Background="White" HorizontalAlignment="Left" 
+                             Style="{StaticResource CustomTextBox}" Width="450" MaxHeight="100"
+                                  FontSize="20"/>
                                 </StackPanel>
                                 <StackPanel MaxHeight="150">
                                     <Label FontSize="30" Foreground="white" Content="4.1 Варіант 1"/>
-                                    <TextBox  Background="White" HorizontalAlignment="Left" 
-                     Style="{StaticResource CustomTextBox}" Width="450" MaxHeight="100"
-                          FontSize="20"/>
+                                    <TextBox Text="{Binding Answer1}"  Background="White" HorizontalAlignment="Left" 
+                             Style="{StaticResource CustomTextBox}" Width="450" MaxHeight="100"
+                                  FontSize="20"/>
                                 </StackPanel>
                                 <StackPanel MaxHeight="150">
                                     <Label FontSize="30" Foreground="white" Content="4.2 Варіант 2"/>
-                                    <TextBox  Background="White" HorizontalAlignment="Left" 
-                     Style="{StaticResource CustomTextBox}" Width="450" MaxHeight="100"
-                          FontSize="20"/>
+                                    <TextBox Text="{Binding Answer2}" Background="White" HorizontalAlignment="Left" 
+                             Style="{StaticResource CustomTextBox}" Width="450" MaxHeight="100"
+                                  FontSize="20"/>
                                 </StackPanel>
                                 <StackPanel MaxHeight="150">
                                     <Label FontSize="30" Foreground="white" Content="4.3 Варіант 3"/>
-                                    <TextBox  Background="White" HorizontalAlignment="Left" 
-                     Style="{StaticResource CustomTextBox}" Width="450" MaxHeight="100"
-                          FontSize="20"/>
+                                    <TextBox Text="{Binding Answer3}" Background="White" HorizontalAlignment="Left" 
+                             Style="{StaticResource CustomTextBox}" Width="450" MaxHeight="100"
+                                  FontSize="20"/>
                                 </StackPanel>
                                 <StackPanel MaxHeight="150" Orientation="Horizontal" >
                                     <Label Content="Оберіть відповідь:" Foreground="White" FontSize="25" Padding="5 0 0 0"/>
-                                    <RadioButton Width="auto" HorizontalAlignment="Left" Content="Варіант 1" Foreground="White" FontSize="15" Margin="10 5 0 0" Padding="5" Style="{StaticResource MaterialDesignRadioButton}"/>
-                                    <RadioButton Width="auto" HorizontalAlignment="Left" Content="Варіант 2" Foreground="White" FontSize="15" Margin="10 5 0 0" Padding="5" Style="{StaticResource MaterialDesignRadioButton}"/>
-                                    <RadioButton Width="auto" HorizontalAlignment="Left" Content="Варіант 3" Foreground="White" FontSize="15" Margin="10 5 0 0" Padding="5" Style="{StaticResource MaterialDesignRadioButton}"/>
+                                    <RadioButton IsChecked="{Binding isChecked1}" Width="auto" HorizontalAlignment="Left" Content="Варіант 1" Foreground="White" FontSize="15" Margin="10 5 0 0" Padding="5" Style="{StaticResource MaterialDesignRadioButton}"/>
+                                    <RadioButton IsChecked="{Binding isChecked2}" Width="auto" HorizontalAlignment="Left" Content="Варіант 2" Foreground="White" FontSize="15" Margin="10 5 0 0" Padding="5" Style="{StaticResource MaterialDesignRadioButton}"/>
+                                    <RadioButton IsChecked="{Binding isChecked3}" Width="auto" HorizontalAlignment="Left" Content="Варіант 3" Foreground="White" FontSize="15" Margin="10 5 0 0" Padding="5" Style="{StaticResource MaterialDesignRadioButton}"/>
                                 </StackPanel>
                             </StackPanel>
                         </DataTemplate>
@@ -82,9 +84,10 @@
                             </Style.Triggers>
                         </Style>
                     </ListView.ItemContainerStyle>
-                    <Label Content=""/>
-                    <Label Content=""/>
+                    <!--<Label Content=""/>
+                    <Label Content=""/>-->
                 </ListView>
+                </StackPanel>
             </ScrollViewer>
         </StackPanel>
         <!--<StackPanel MaxHeight="150" Orientation="Horizontal" >
@@ -97,9 +100,9 @@
             <Button x:Name="_SaveInfo" Content="Зберегти" Margin="0 7"
                         Style="{StaticResource MaterialDesignRaisedDarkButton}"
                         Width="230" Height="35" HorizontalAlignment="Left" VerticalAlignment="Center"
-                         materialDesign:ButtonAssist.CornerRadius="13"/>
+                         materialDesign:ButtonAssist.CornerRadius="13" Click="_SaveInfo_Click"/>
         </StackPanel>
-           
+
 
     </Grid>
 </UserControl>
