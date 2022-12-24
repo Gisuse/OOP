@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\GitRepo\OOP\OOP\Application\obj\Debug\
+D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\obj\Debug\
 Application
 none
 false
 DEBUG;TRACE
-D:\GitRepo\OOP\OOP\Application\App.xaml
-25-149004216
-21165151926
-39-646500543
-133-113733060
+D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\App.xaml
+25-569970497
+2-235815777
+39-892284545
+1341899657653
 Admin.xaml;Loading.xaml;Login.xaml;MainMenu.xaml;MainWindow.xaml;MVVW\View\AdminFieldsTestsView.xaml;MVVW\View\AdminFieldsView.xaml;MVVW\View\ClassView.xaml;MVVW\View\EducationInfoView.xaml;MVVW\View\EducationView.xaml;MVVW\View\HomeView.xaml;MVVW\View\ProfileView.xaml;MVVW\View\SettingsView.xaml;MVVW\View\TestView.xaml;Registration.xaml;Theme\AdminExitButton.xaml;Theme\AvatarImage.xaml;Theme\BackButton.xaml;Theme\ClassButton.xaml;Theme\ExitButton.xaml;Theme\MenuButton.xaml;Theme\SettingsTextBox.xaml;Theme\TextBoxCustom.xaml;Theme\TextBoxSearch.xaml;Theme\WindowButton.xaml;
 
 True

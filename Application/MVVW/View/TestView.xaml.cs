@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MongoDB.Bson;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -136,9 +137,10 @@ namespace Application.MVVW.View
                 }
 
                 mark = (float)Math.Round(mark * 12 / test.Question.Length);
-
+                MessageBox.Show(user.ContentImage.ToJson());
                 user.CompletedTests[length] = new CompletedTestsModel(TemporaryMaterials.CurrentClass, TemporaryMaterials.CurrentTheme, mark, test.Title);
                 db.UpdateUser(user);
+                TemporaryUser.CompletedTests = user.CompletedTests;
                 Mark_Message.Content = "Ваша оцінка: " + mark;
                 TestList.Items.Clear();
                 for (int i = 0; i < test.Question.Length; i++)

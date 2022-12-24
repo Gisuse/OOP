@@ -12,6 +12,10 @@ using System.Text.Json;
 using JsonSerializer = System.Text.Json.JsonSerializer;
 using System.Windows.Navigation;
 using System.Windows.Controls;
+using System.Drawing;
+using static System.Net.Mime.MediaTypeNames;
+using System.Windows.Media.Imaging;
+using System.Drawing.Imaging;
 
 namespace Application
 {
@@ -27,10 +31,10 @@ namespace Application
 
         public async void Regestrarion(string email, string password, string login, string Name, string SName, bool rememberChecked)
         {
-            User user = new User(email, password, login, Name, SName);
-
+            
             try
             {
+                User user = new User(email, password, login, Name, SName);
                 await db.CreateUser(user);
 
                 TemporaryUser.Email = user.Email;
@@ -42,6 +46,7 @@ namespace Application
                 TemporaryUser.AboutMe = user.AboutMe;
                 TemporaryUser.AboutMe = user.AboutMe;
                 TemporaryUser.CompletedTests = user.CompletedTests;
+                TemporaryUser.ContentImage = user.ContentImage;
 
                 string pathDefaultAvatar = Path.GetFullPath("Images");
                 var strIndex = pathDefaultAvatar.IndexOf("bin");
@@ -50,7 +55,7 @@ namespace Application
                 pathDefaultAvatar = pathDefaultAvatar + @"\defaultAvatar.png";
                 File.Delete(pathAvatar);
                 File.Copy(pathDefaultAvatar, pathAvatar);
-                TemporaryUser.ImagePath = pathAvatar;
+                TemporaryUser.ImagePath = @pathAvatar;
 
                 if (rememberChecked == true)
                 {
@@ -87,6 +92,7 @@ namespace Application
             }
             catch (Exception er)
             {
+                //MessageBox.Show(er.ToString());
                 MessageBox.Show("Такий email вже використовується", "Попередження", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
@@ -111,6 +117,7 @@ namespace Application
                 TemporaryUser.SName = user[0].SName;
                 TemporaryUser.AboutMe = user[0].AboutMe;
                 TemporaryUser.CompletedTests = user[0].CompletedTests;
+                TemporaryUser.ContentImage = user[0].ContentImage;
                 //MessageBox.Show(user[0].CompletedTests[0].TestClass.ToString());
                 if (rememberChecked == true)
                 {
@@ -132,6 +139,46 @@ namespace Application
                     File.WriteAllText(fileName, jsonString);
                 }
 
+
+                //foreach (var doc in user[0])
+                //{
+                //    bs = doc.GetValue("ContentImage");
+                //}
+                string pathAvatar;
+                if (TemporaryUser.ContentImage == null)
+                {
+                    //MessageBox.Show("Нет фотки");
+                    string pathDefaultAvatar = Path.GetFullPath("Images");
+                    var strIndex2 = pathDefaultAvatar.IndexOf("bin");
+                    pathDefaultAvatar = pathDefaultAvatar.Remove(strIndex2, 10);
+                    pathAvatar = pathDefaultAvatar + @"\avatar.png";
+                    pathDefaultAvatar = pathDefaultAvatar + @"\defaultAvatar.png";
+                    File.Delete(pathAvatar);
+                    File.Copy(pathDefaultAvatar, pathAvatar);
+                    TemporaryUser.ImagePath = pathAvatar;
+                }
+                else
+                {
+                    //MessageBox.Show("Есть фотка");
+
+                    BsonValue bs = TemporaryUser.ContentImage;
+                    var photoimg = bs.AsByteArray;//конвертируем из BsonValue в массив байтов
+                    MemoryStream ms = new MemoryStream(photoimg, 0, photoimg.Length);
+                    //profileimage.Image = new Bitmap(ms);// тут я присваиваю картинку пиктурбоксу
+                    //MessageBox.Show(photoimg.ToString());
+                    //MessageBox.Show(ms.ToString());
+                    pathAvatar = Path.GetFullPath("Images");
+                    var strIndex = pathAvatar.IndexOf("bin");
+                    pathAvatar = pathAvatar.Remove(strIndex, 10);
+                    pathAvatar = pathAvatar + @"\avatar.png";
+
+                    using (System.Drawing.Image image = System.Drawing.Image.FromStream(new MemoryStream(photoimg)))
+                    {
+                        image.Save(pathAvatar, ImageFormat.Png);  // Or Png
+                    }
+                    TemporaryUser.ImagePath = pathAvatar;
+                }
+
                 //Loading loading = new Loading();
                 //NavigationService.Navigate(loading);
                 //MessageBox.Show(user.Count.ToString());
@@ -148,13 +195,12 @@ namespace Application
                     MainMenu mainMenu = new MainMenu();
                     mainMenu.Show();
                 }
-               
 
                 MainWindow mainWindow = Application.App.Current.MainWindow as MainWindow;
                 mainWindow.Close();
             }
             catch (Exception er)
-            { 
+            {
                 MessageBox.Show("Такого користувача не існує", "Попередження", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }

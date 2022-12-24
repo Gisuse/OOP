@@ -159,7 +159,7 @@ namespace Application.MVVW.View
             {
                 var tests = await db.FindTests(ClassValue);
                 //string tests = JsonConvert.DeserializeObject(await db.FindTests(7).ToString());
-                TemporaryMaterials.tests = tests.ToArray();
+                
                 var temp = tests[0];
 
                 for (int i = 0; i < tests.Count - 1; i++)
@@ -174,6 +174,7 @@ namespace Application.MVVW.View
                         }
                     }
                 }
+                TemporaryMaterials.tests = tests.ToArray();
 
                 for (int i = 0; i < tests.Count; i++)
                 {

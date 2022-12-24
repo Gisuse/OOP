@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Reflection;
 
 namespace Application
 {
@@ -54,78 +56,144 @@ namespace Application
 
         public Tests()
         {
-            String str = "Указати дисперсні системи з найменшим радіусом частинок:";
-            String str2 = "Під дисперсними системами розуміють:";
-            String str3 = "При розподіленні рідких частинок у газоподібному середовищі (наприклад, повітрі), утворюється туман, який за своєю природою є:";
-            String str4 = "Ефект Тіндаля в природі:";
-            String str5 = "За розчинністю у воді речовини ділять на?";
-            String str6 = "Кристалогідрати - це хімічні речовини, що містять у складі певну кількістькристалізаційної речовини:";
-
-            String[] Question = new String[6];
+            String str = "Ян лох?";
+            String[] Question = new String[3];
             Question[0] = str;
-            Question[1] = str2;
-            Question[2] = str3;
-            Question[3] = str4;
-            Question[4] = str5;
-            Question[5] = str6;
-
+            Question[1] = str;
+            Question[2] = str;
             this.Question = Question;
-            numberOfTheme = 5;
+            numberOfTheme = 6;
             //numberOfQuestion = 2;
-            ClassName = 9;
-            Title = "Поняття про водневий зв’язок";
-            TestModel testModel = new TestModel(1, 1, "Колоїдні розчини", false);
-            TestModel testModel1 = new TestModel(1, 2, "Істинні розчини", false);
-            TestModel testModel2 = new TestModel(1, 3, "Аерозолі", true);
+            ClassName = 7;
+            Title = "Важный вопрос";
+            TestModel testModel = new TestModel(1, 1, "Да", false);
+            TestModel testModel1 = new TestModel(1, 2, "Однозначно", true);
+            TestModel testModel2 = new TestModel(1, 3, "Несомненно", false);
 
-            TestModel testModel3 = new TestModel(1, 1, "Однорідні та неоднорідні суміші", true);
-            TestModel testModel4 = new TestModel(1, 2, "Суміші, які складаються з двох та більш компонентів", false);
-            TestModel testModel5 = new TestModel(1, 3, "Суміші, у яких одна речовина рівномірно розподілена в іншій", false);
+            TestModel[,] Answers = new TestModel[3,3];
 
-            TestModel testModel6 = new TestModel(1, 1, "Аерозолем", true);
-            TestModel testModel7 = new TestModel(1, 2, "Емульсією", false);
-            TestModel testModel8 = new TestModel(1, 3, "Колоїдним розчином", false);
+            Answers[0,0] = testModel;
+            Answers[0,1] = testModel1;
+            Answers[0,2] = testModel2;
 
-            TestModel testModel9 = new TestModel(1, 1, "Світло від блискавки", false);
-            TestModel testModel10 = new TestModel(1, 2, "Веселка", false);
-            TestModel testModel11 = new TestModel(1, 3, "Промені сонця крізь хмари", true);
+            Answers[1,0] = testModel;
+            Answers[1,1] = testModel1;
+            Answers[1,2] = testModel2;
 
-            TestModel testModel12 = new TestModel(1, 1, "Розчинні", true);
-            TestModel testModel13 = new TestModel(1, 2, "Нерозчинні", false);
-            TestModel testModel14 = new TestModel(1, 3, "Погано розчинні", false);
-
-            TestModel testModel15 = new TestModel(1, 1, "Лугу", false);
-            TestModel testModel16 = new TestModel(1, 2, "Кислоти", false);
-            TestModel testModel17 = new TestModel(1, 3, "Води", true);
-
-            TestModel[,] Answers = new TestModel[6, 3];
-
-            Answers[0, 0] = testModel;
-            Answers[0, 1] = testModel1;
-            Answers[0, 2] = testModel2;
-
-            Answers[1, 0] = testModel3;
-            Answers[1, 1] = testModel4;
-            Answers[1, 2] = testModel5;
-
-            Answers[2, 0] = testModel6;
-            Answers[2, 1] = testModel7;
-            Answers[2, 2] = testModel8;
-
-            Answers[3, 0] = testModel9;
-            Answers[3, 1] = testModel10;
-            Answers[3, 2] = testModel11;
-
-            Answers[4, 0] = testModel12;
-            Answers[4, 1] = testModel13;
-            Answers[4, 2] = testModel14;
-
-            Answers[5, 0] = testModel15;
-            Answers[5, 1] = testModel16;
-            Answers[5, 2] = testModel17;
+            Answers[2,0] = testModel;
+            Answers[2,1] = testModel1;
+            Answers[2,2] = testModel2;
 
             this.Answers = Answers;
         }
-    }
 
+        public Tests(int className, string title, int questionLength, int answersLength, int index, string question, string answer1, string answer2, string answer3, bool isChecked1, bool isChecked2, bool isChecked3)
+        {
+            try
+            {
+
+
+                Id = TemporaryMaterials.tests[index].Id;
+                numberOfTheme = TemporaryMaterials.tests[index].numberOfTheme;
+                ClassName = className;
+                Title = title;
+                String[] Question = new String[questionLength + 1];
+                for (int i = 0; i < questionLength; i++)
+                {
+                    Question[i] = TemporaryMaterials.tests[index].Question[i];
+                }
+                Question[questionLength] = question;
+                this.Question = Question;
+
+                //MessageBox.Show(index.ToString());
+                TestModel[,] Answers = new TestModel[answersLength + 1, 3];
+                for (int i = 0; i < answersLength; i++)
+                {
+                    TestModel testModel = new TestModel(1, 1, TemporaryMaterials.tests[index].Answers[i, 0].value, TemporaryMaterials.tests[index].Answers[i, 0].isCorrest);
+                    TestModel testModel1 = new TestModel(1, 2, TemporaryMaterials.tests[index].Answers[i, 1].value, TemporaryMaterials.tests[index].Answers[i, 1].isCorrest);
+                    TestModel testModel2 = new TestModel(1, 3, TemporaryMaterials.tests[index].Answers[i, 2].value, TemporaryMaterials.tests[index].Answers[i, 2].isCorrest);
+                    Answers[i, 0] = testModel;
+                    Answers[i, 1] = testModel1;
+                    Answers[i, 2] = testModel2;
+                }
+                TestModel NewTestModel = new TestModel(1, 1, answer1, isChecked1);
+                TestModel NewTestModel1 = new TestModel(1, 2, answer2, isChecked2);
+                TestModel NewTestModel2 = new TestModel(1, 3, answer3, isChecked3);
+                Answers[answersLength, 0] = NewTestModel;
+                Answers[answersLength, 1] = NewTestModel1;
+                Answers[answersLength, 2] = NewTestModel2;
+                //MessageBox.Show(Answers.ToJson());
+                this.Answers = Answers;
+            }
+            catch(Exception er)
+            {
+                MessageBox.Show(er.Message);
+            }
+        }
+
+        public Tests(int testsCount, int className, string title, string question, string answer1, string answer2, string answer3, bool isChecked1, bool isChecked2, bool isChecked3)
+        {
+            try
+            {
+
+
+                String[] Question = new String[1];
+                Question[0] = question;
+                this.Question = Question;
+                numberOfTheme = testsCount + 1;
+                //numberOfQuestion = 2;
+                ClassName = className;
+                Title = title;
+
+                TestModel testModel = new TestModel(1, 1, answer1, isChecked1);
+                TestModel testModel1 = new TestModel(1, 2, answer2, isChecked2);
+                TestModel testModel2 = new TestModel(1, 3, answer3, isChecked3);
+
+                TestModel[,] Answers = new TestModel[1, 3];
+
+                Answers[0, 0] = testModel;
+                Answers[0, 1] = testModel1;
+                Answers[0, 2] = testModel2;
+                this.Answers = Answers;
+            }
+            catch(Exception er)
+            {
+                MessageBox.Show(er.Message);
+            }
+        }
+
+        String[] questions;
+        TestModel[,] answers;
+
+        public Tests(string id, int className, string title, int NumberOfTheme)
+        {
+            Id = id;
+            ClassName = className;
+            Title = title;
+            numberOfTheme = NumberOfTheme;
+            questions = new String[TemporaryMaterials.tests[TemporaryMaterials.CurrentTheme - 1].Question.Length];
+            answers = new TestModel[TemporaryMaterials.tests[TemporaryMaterials.CurrentTheme - 1].Question.Length, 3];
+        }
+
+        public void addTest(int counter, string question, string answer1, string answer2, string answer3, bool isChecked1, bool isChecked2, bool isChecked3 )
+        {
+            questions[counter] = question;
+            
+            TestModel testModel = new TestModel(1, 1, answer1, isChecked1);
+            TestModel testModel1 = new TestModel(1, 2, answer2, isChecked2);
+            TestModel testModel2 = new TestModel(1, 3, answer3, isChecked3);
+
+            answers[counter, 0] = testModel;
+            answers[counter, 1] = testModel1;
+            answers[counter, 2] = testModel2;
+        }
+
+        public void finalAdd()
+        {
+            this.Question = questions;
+            this.Answers = answers;
+        }
+
+
+    }
 }
