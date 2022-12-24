@@ -53,9 +53,9 @@ namespace Application
                 pathDefaultAvatar = pathDefaultAvatar.Remove(strIndex, 10);
                 string pathAvatar = pathDefaultAvatar + @"\avatar.png";
                 pathDefaultAvatar = pathDefaultAvatar + @"\defaultAvatar.png";
-                File.Delete(pathAvatar);
-                File.Copy(pathDefaultAvatar, pathAvatar);
-                TemporaryUser.ImagePath = @pathAvatar;
+                //File.Delete(pathAvatar);
+                File.Copy(pathDefaultAvatar, pathAvatar, true);
+                TemporaryUser.ImagePath = pathAvatar;
 
                 if (rememberChecked == true)
                 {

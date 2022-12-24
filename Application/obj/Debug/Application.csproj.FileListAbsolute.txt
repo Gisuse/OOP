@@ -320,6 +320,24 @@ D:\Документы\Никита\Универ\Курсовой проект О
 D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\obj\Debug\MVVW\View\TestView.baml
 D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\MVVW\View\TestView.g.cs
 D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\MVVW\View\TestView.baml
+D:\Университет\Курсач ООП 2022-2023\OOP\Application\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\Theme\AdminExitButton.baml
+D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\Theme\TextBoxCustom.baml
+D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\Admin.g.cs
+D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\MVVW\View\AdminFieldsTestsView.g.cs
+D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\MVVW\View\AdminFieldsView.g.cs
+D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\Admin.baml
+D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\MVVW\View\AdminFieldsTestsView.baml
+D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\MVVW\View\AdminFieldsView.baml
+D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\obj\Debug\Theme\AdminExitButton.baml
+D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\obj\Debug\Theme\TextBoxCustom.baml
+D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\obj\Debug\Admin.g.cs
+D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\obj\Debug\MVVW\View\AdminFieldsTestsView.g.cs
+D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\obj\Debug\MVVW\View\AdminFieldsView.g.cs
+D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\obj\Debug\Admin.baml
+D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\obj\Debug\MVVW\View\AdminFieldsTestsView.baml
+D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\obj\Debug\MVVW\View\AdminFieldsView.baml
 D:\GitRepo\OOP\OOP\Application\bin\Debug\Images\avatar.png
 D:\GitRepo\OOP\OOP\Application\bin\Debug\mongocrypt.dll
 D:\GitRepo\OOP\OOP\Application\bin\Debug\Application.exe.config
@@ -361,6 +379,7 @@ D:\GitRepo\OOP\OOP\Application\bin\Debug\System.Text.Json.xml
 D:\GitRepo\OOP\OOP\Application\bin\Debug\WpfAnimatedGif.pdb
 D:\GitRepo\OOP\OOP\Application\bin\Debug\WpfAnimatedGif.xml
 D:\GitRepo\OOP\OOP\Application\obj\Debug\Application.exe.config
+D:\GitRepo\OOP\OOP\Application\obj\Debug\Theme\AdminExitButton.baml
 D:\GitRepo\OOP\OOP\Application\obj\Debug\Theme\AvatarImage.baml
 D:\GitRepo\OOP\OOP\Application\obj\Debug\Theme\BackButton.baml
 D:\GitRepo\OOP\OOP\Application\obj\Debug\Theme\ClassButton.baml
@@ -413,7 +432,6 @@ D:\GitRepo\OOP\OOP\Application\obj\Debug\Application.csproj.CoreCompileInputs.ca
 D:\GitRepo\OOP\OOP\Application\obj\Debug\Application.csproj.CopyComplete
 D:\GitRepo\OOP\OOP\Application\obj\Debug\Application.exe
 D:\GitRepo\OOP\OOP\Application\obj\Debug\Application.pdb
-D:\GitRepo\OOP\OOP\Application\obj\Debug\Application.csproj.AssemblyReference.cache
 D:\GitRepo\OOP\OOP\Application\bin\Debug\System.Threading.Tasks.Extensions.dll
 D:\GitRepo\OOP\OOP\Application\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 D:\GitRepo\OOP\OOP\Application\bin\Debug\DnsClient.dll
@@ -423,22 +441,4 @@ D:\GitRepo\OOP\OOP\Application\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\GitRepo\OOP\OOP\Application\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\GitRepo\OOP\OOP\Application\bin\Debug\DnsClient.xml
 D:\GitRepo\OOP\OOP\Application\bin\Debug\System.Text.Encodings.Web.xml
-D:\GitRepo\OOP\OOP\Application\obj\Debug\Theme\AdminExitButton.baml
-D:\Университет\Курсач ООП 2022-2023\OOP\Application\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
-D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\Theme\AdminExitButton.baml
-D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\Theme\TextBoxCustom.baml
-D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\Admin.g.cs
-D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\MVVW\View\AdminFieldsTestsView.g.cs
-D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\MVVW\View\AdminFieldsView.g.cs
-D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\Admin.baml
-D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\MVVW\View\AdminFieldsTestsView.baml
-D:\Университет\Курсач ООП 2022-2023\OOP\Application\obj\Debug\MVVW\View\AdminFieldsView.baml
-D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
-D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\obj\Debug\Theme\AdminExitButton.baml
-D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\obj\Debug\Theme\TextBoxCustom.baml
-D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\obj\Debug\Admin.g.cs
-D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\obj\Debug\MVVW\View\AdminFieldsTestsView.g.cs
-D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\obj\Debug\MVVW\View\AdminFieldsView.g.cs
-D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\obj\Debug\Admin.baml
-D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\obj\Debug\MVVW\View\AdminFieldsTestsView.baml
-D:\Документы\Никита\Универ\Курсовой проект ООП\OOP\OOP\Application\obj\Debug\MVVW\View\AdminFieldsView.baml
+D:\GitRepo\OOP\OOP\Application\obj\Debug\Application.csproj.AssemblyReference.cache

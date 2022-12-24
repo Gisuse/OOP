@@ -59,11 +59,12 @@ namespace Application.MVVW.ViewModel
 
             ProfileViewCommand = new RelayCommand(o =>
             {
+                ProfileVM = new ProfileViewModel();
                 CurrentView = ProfileVM;
             });
 
             SettingsViewCommand = new RelayCommand(o =>
-            {
+            {               
                 CurrentView = SettingsVM;
                 MainMenu mainWindow = App.Current.Windows.OfType<MainMenu>().FirstOrDefault();
                 if (mainWindow != null)
