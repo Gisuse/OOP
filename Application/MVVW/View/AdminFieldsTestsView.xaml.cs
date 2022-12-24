@@ -58,6 +58,7 @@ namespace Application.MVVW.View
         {
             TestAnswers data = new TestAnswers();
             NewQuestionsList.Items.Add(data);
+            numberOfClass.Text = TemporaryMaterials.CurrentClass.ToString();
         }
 
         void changeTest()
@@ -98,7 +99,7 @@ namespace Application.MVVW.View
             e.Handled = true;
         }
 
-        private void _SaveInfo_Click(object sender, RoutedEventArgs e)
+        private async void _SaveInfo_Click(object sender, RoutedEventArgs e)
         {
             if (!TemporaryMaterials.isAddNewMaterial)
             {
@@ -122,7 +123,54 @@ namespace Application.MVVW.View
             }
             else
             {
-               // addTest();
+                //var tests = await db.FindTests(int.Parse(numberOfClass.Text));
+                //var findTest = tests.Find(test => test.Title == numberOfTheme.Text);
+                var findTest = Array.Find(TemporaryMaterials.tests, element => element.ClassName == int.Parse(numberOfClass.Text) && element.Title == numberOfTheme.Text);
+                //var index = Array.Find(TemporaryMaterials.tests, element => element.ClassName == TemporaryMaterials.CurrentClass && element.numberOfTheme == TemporaryMaterials.CurrentTheme).;
+                var index = Array.IndexOf(TemporaryMaterials.tests, findTest);
+                //MessageBox.Show(findTest.Answers[0,0].ToJson());
+                if (findTest != null)
+                {
+                    Tests test = new Tests(int.Parse(numberOfClass.Text), numberOfTheme.Text, findTest.Question.Length, findTest.Question.Length, index,
+                            JObject.Parse(NewQuestionsList.Items[0].ToJson())["Question"].ToString(),
+                        JObject.Parse(NewQuestionsList.Items[0].ToJson())["Answer1"].ToString(),
+                        JObject.Parse(NewQuestionsList.Items[0].ToJson())["Answer2"].ToString(),
+                        JObject.Parse(NewQuestionsList.Items[0].ToJson())["Answer3"].ToString(),
+                        Convert.ToBoolean(JObject.Parse(NewQuestionsList.Items[0].ToJson())["isChecked1"]),
+                        Convert.ToBoolean(JObject.Parse(NewQuestionsList.Items[0].ToJson())["isChecked2"]),
+                        Convert.ToBoolean(JObject.Parse(NewQuestionsList.Items[0].ToJson())["isChecked3"]));
+                    TemporaryMaterials.tests[index] = test;
+                    db.UpdateTest(test);
+                }
+                else
+                {
+                    int testsCount = 0;
+                    int className = int.Parse(numberOfClass.Text);
+                    for (int i = 0; i < TemporaryMaterials.tests.Length; i++)
+                    {
+                        if (TemporaryMaterials.tests[i].ClassName == className)
+                        {
+                            testsCount++;
+                        }
+                    }
+
+                    Tests test = new Tests(testsCount, className, numberOfTheme.Text, JObject.Parse(NewQuestionsList.Items[0].ToJson())["Question"].ToString(),
+                        JObject.Parse(NewQuestionsList.Items[0].ToJson())["Answer1"].ToString(),
+                        JObject.Parse(NewQuestionsList.Items[0].ToJson())["Answer2"].ToString(),
+                        JObject.Parse(NewQuestionsList.Items[0].ToJson())["Answer3"].ToString(),
+                        Convert.ToBoolean(JObject.Parse(NewQuestionsList.Items[0].ToJson())["isChecked1"]),
+                        Convert.ToBoolean(JObject.Parse(NewQuestionsList.Items[0].ToJson())["isChecked2"]),
+                        Convert.ToBoolean(JObject.Parse(NewQuestionsList.Items[0].ToJson())["isChecked3"]));
+                    
+                    //TemporaryMaterials.tests[testsCount] = test;
+                    MessageBox.Show(test.ToJson());
+                    db.CreateTest(test);
+                }
+
+                // addTest();
+
+                //Tests test = new Tests();
+                //db.CreateTest(test);
             }
         }
     }
