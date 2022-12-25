@@ -1,4 +1,5 @@
-﻿using MongoDB.Bson;
+﻿using MaterialDesignThemes.Wpf;
+using MongoDB.Bson;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media.Media3D;
 
 namespace Application
 {
@@ -36,6 +38,29 @@ namespace Application
         {
             var UserCollection = ConnectToMongo<User>(UserConnection);
             return UserCollection.InsertOneAsync(user);
+        }
+
+        //public Task DeleteMaterial(int className, int numberOfTheme)
+        public Task DeleteMaterial(string id)
+        {
+            var MaterialsCollection = ConnectToMongo<Materials>("Materials");
+
+            return MaterialsCollection.DeleteOneAsync(Materials => Materials.Id == id);
+        }
+
+        public Task DeleteTest(string id)
+        {
+            var TestsCollection = ConnectToMongo<Materials>("Tests");
+
+            return TestsCollection.DeleteOneAsync(Tests => Tests.Id == id);
+        }
+
+        public Task UpdateMaterial(Materials material)
+        {
+            var MaterialsCollection = ConnectToMongo<Materials>("Materials");
+            var filter = Builders<Materials>.Filter.Eq("Id", material.Id);
+
+            return MaterialsCollection.ReplaceOneAsync(filter, material);
         }
 
         public Task CreateMaterials(Materials materials)
@@ -77,6 +102,14 @@ namespace Application
             var filter = Builders<User>.Filter.Eq("Id", user.Id);
 
             return UserCollection.ReplaceOneAsync(filter, user);
+        }
+
+        public Task UpdateTest(Tests test)
+        {
+            var TestCollection = ConnectToMongo<Tests>("Tests");
+            var filter = Builders<Tests>.Filter.Eq("Id", test.Id);
+
+            return TestCollection.ReplaceOneAsync(filter, test);
         }
     }
 }

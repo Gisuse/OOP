@@ -59,6 +59,7 @@ namespace Application
             Name = name;
             SName = sName;
             AboutMe = AboutMe;
+
         }
 
         public User()
@@ -72,6 +73,7 @@ namespace Application
             SName = TemporaryUser.SName;
             AboutMe = TemporaryUser.AboutMe;
             CompletedTests = TemporaryUser.CompletedTests;
+            ContentImage = TemporaryUser.ContentImage;
         }
 
 

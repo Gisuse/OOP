@@ -34,15 +34,12 @@ namespace Application.MVVW.ViewModel
         {
             string imgroot = "/Application;component/Images/avatar.png";
             ImagePath = imgroot;
-            ChangeImage = new RelayCommand(o =>
-            {
-                    string pathOldAvatar = ImagePath.ToString();
-                    pathOldAvatar = Path.GetFullPath("Images");
-                    var strIndex = pathOldAvatar.IndexOf("bin");
-                    pathOldAvatar = pathOldAvatar.Remove(strIndex, 10);
-                    pathOldAvatar = pathOldAvatar + @"\avatar.png";
-                    ImagePath = @pathOldAvatar;
-            });
+            string pathOldAvatar = ImagePath.ToString();
+            pathOldAvatar = Path.GetFullPath("Images");
+            var strIndex = pathOldAvatar.IndexOf("bin");
+            pathOldAvatar = pathOldAvatar.Remove(strIndex, 10);
+            pathOldAvatar = pathOldAvatar + @"\avatar.png";
+            ImagePath = @pathOldAvatar;
         }
     }
 }
