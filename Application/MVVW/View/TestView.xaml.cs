@@ -100,65 +100,8 @@ namespace Application.MVVW.View
 
         private void _SaveInfo_Click_1(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                User user = new User();
-
-                if (user.CompletedTests == null)
-                {
-                    user.CompletedTests = new CompletedTestsModel[50];
-                }
-
-                int length = 0;
-
-                for (int i = 0; ; i++)
-                {
-                    if (i == user.CompletedTests.Length)
-                        break;
-
-                    if (user.CompletedTests[i] != null)
-                        length++;
-
-                    if (user.CompletedTests[i]?.TestTheme == TemporaryMaterials.CurrentTheme && user.CompletedTests[i]?.TestClass == TemporaryMaterials.CurrentClass)
-                    {
-                        length = i;
-                        break;
-                    }
-                }
-
-                float mark = 0;
-
-                var test = TemporaryMaterials.tests[TemporaryMaterials.CurrentTheme - 1];
-
-                for (int i = 0; i < test.Question.Length; i++)
-                {
-                    if (test.Answers[i, answersCheck[i]].isCorrest == true)
-                        mark++;
-                }
-
-                mark = (float)Math.Round(mark * 12 / test.Question.Length);
-                MessageBox.Show(user.ContentImage.ToJson());
-                user.CompletedTests[length] = new CompletedTestsModel(TemporaryMaterials.CurrentClass, TemporaryMaterials.CurrentTheme, mark, test.Title);
-                db.UpdateUser(user);
-                TemporaryUser.CompletedTests = user.CompletedTests;
-                Mark_Message.Content = "Ваша оцінка: " + mark;
-                TestList.Items.Clear();
-                for (int i = 0; i < test.Question.Length; i++)
-                {
-                    TestAnswers data = new TestAnswers();
-                    data.Answer1 = (i + 1) + ".1 " + test.Answers[i, 0].value;
-                    data.Answer2 = (i + 1) + ".2 " + test.Answers[i, 1].value;
-                    data.Answer3 = (i + 1) + ".3 " + test.Answers[i, 2].value;
-                    data.Question = (i + 1) + ". " + test.Question[i];
-
-                    TestList.Items.Add(data);
-                }
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            
+            Exceptions ex = new Exceptions();
+            ex.Save_test(answersCheck, Mark_Message, TestList);
         }
 
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
