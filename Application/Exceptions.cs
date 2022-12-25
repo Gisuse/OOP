@@ -16,6 +16,8 @@ using System.Drawing;
 using static System.Net.Mime.MediaTypeNames;
 using System.Windows.Media.Imaging;
 using System.Drawing.Imaging;
+using static Application.MVVW.View.ProfileView;
+using Application.MVVW.View;
 
 namespace Application
 {
@@ -53,9 +55,9 @@ namespace Application
                 pathDefaultAvatar = pathDefaultAvatar.Remove(strIndex, 10);
                 string pathAvatar = pathDefaultAvatar + @"\avatar.png";
                 pathDefaultAvatar = pathDefaultAvatar + @"\defaultAvatar.png";
-                File.Delete(pathAvatar);
-                File.Copy(pathDefaultAvatar, pathAvatar);
-                TemporaryUser.ImagePath = @pathAvatar;
+                //File.Delete(pathAvatar);
+                File.Copy(pathDefaultAvatar, pathAvatar, true);
+                TemporaryUser.ImagePath = pathAvatar;
 
                 if (rememberChecked == true)
                 {
@@ -204,5 +206,140 @@ namespace Application
                 MessageBox.Show("Такого користувача не існує", "Попередження", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
+
+        public void Update_Info_User(User user)
+        {
+            try
+            {
+                db.UpdateUser(user);
+
+                TemporaryUser.SName = user.SName;
+                TemporaryUser.Name = user.Name;
+                TemporaryUser.AboutMe = user.AboutMe;
+
+                string fileName = Path.GetFullPath("UserData.json");
+
+                string jsonString = JsonConvert.SerializeObject(user);
+
+                File.WriteAllText(fileName, jsonString);
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show(er.Message);
+            }
+        }
+        public void Save_test(int[] answersCheck, Label Mark_Message, ListView TestList)
+        {
+            try
+            {
+                User user = new User();
+
+                if (user.CompletedTests == null)
+                {
+                    user.CompletedTests = new CompletedTestsModel[50];
+                }
+
+                int length = 0;
+
+                for (int i = 0; ; i++)
+                {
+                    if (i == user.CompletedTests.Length)
+                        break;
+
+                    if (user.CompletedTests[i] != null)
+                        length++;
+
+                    if (user.CompletedTests[i]?.TestTheme == TemporaryMaterials.CurrentTheme && user.CompletedTests[i]?.TestClass == TemporaryMaterials.CurrentClass)
+                    {
+                        length = i;
+                        break;
+                    }
+                }
+
+                float mark = 0;
+
+                var test = TemporaryMaterials.tests[TemporaryMaterials.CurrentTheme - 1];
+
+                for (int i = 0; i < test.Question.Length; i++)
+                {
+                    if (test.Answers[i, answersCheck[i]].isCorrest == true)
+                        mark++;
+                }
+
+                mark = (float)Math.Round(mark * 12 / test.Question.Length);
+
+                user.CompletedTests[length] = new CompletedTestsModel(TemporaryMaterials.CurrentClass, TemporaryMaterials.CurrentTheme, mark, test.Title);
+                db.UpdateUser(user);
+
+                Mark_Message.Content = "Ваша оцінка: " + mark;
+                TestList.Items.Clear();
+                for (int i = 0; i < test.Question.Length; i++)
+                {
+                    TestAnswers data = new TestAnswers();
+                    data.Answer1 = (i + 1) + ".1 " + test.Answers[i, 0].value;
+                    data.Answer2 = (i + 1) + ".2 " + test.Answers[i, 1].value;
+                    data.Answer3 = (i + 1) + ".3 " + test.Answers[i, 2].value;
+                    data.Question = (i + 1) + ". " + test.Question[i];
+
+                    TestList.Items.Add(data);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void Info_Completed_Tests(ListView LYears)
+        {
+            try
+            {
+                User user = new User();
+                for (int i = 0; i < user.CompletedTests.Length; i++)
+                {
+                    if (user.CompletedTests[i] != null)
+                    {
+                        Results res = new Results();
+                        if (user.CompletedTests[i].ThemeTitle.Length > 20)
+                        {
+                            //tb.ToolTip = materials[i].Title;
+                            res.Theme = user.CompletedTests[i].ThemeTitle.Substring(0, 20) + "...";
+
+                        }
+                        else
+                        {
+                            res.Theme = user.CompletedTests[i].ThemeTitle;
+                        }
+                        res.Mark = user.CompletedTests[i].TestMark;
+                        LYears.Items.Add(res);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public async void AdminFieldsTestsView(Tests test)
+        {
+            try
+            {
+                Tests[] oldTemp = TemporaryMaterials.tests;
+                TemporaryMaterials.tests = new Tests[oldTemp.Length + 1];
+                for (int i = 0; i < oldTemp.Length; i++)
+                {
+                    TemporaryMaterials.tests[i] = oldTemp[i];
+                }
+                TemporaryMaterials.tests[oldTemp.Length] = test;
+                await db.CreateTest(test);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
     }
 }

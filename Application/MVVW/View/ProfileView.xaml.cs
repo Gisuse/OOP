@@ -89,72 +89,8 @@ namespace Application.MVVW.View
 
         async void showResults()
         {
-            //bool isHaveComletedTests = false;
-            ////try
-            ////{
-            User user = new User();
-            if (user.CompletedTests != null)
-            {
-                for (int i = 0; i < user.CompletedTests.Length; i++)
-                {
-                    if (user.CompletedTests[i] != null)
-                    {
-                        //isHaveComletedTests = true;
-                        Results res = new Results();
-                        if (user.CompletedTests[i].ThemeTitle.Length > 20)
-                        {
-                            //tb.ToolTip = materials[i].Title;
-                            res.Theme = user.CompletedTests[i].ThemeTitle.Substring(0, 20) + "...";
-
-                        }
-                        else
-                        {
-                            res.Theme = user.CompletedTests[i].ThemeTitle;
-                        }
-                        res.Mark = user.CompletedTests[i].TestMark;
-                        LYears.Items.Add(res);
-                        //var materials = await db.FindMaterials(user.CompletedTests[i].TestClass);
-                        //materials.ToArray();
-                        //for (int j = 0; j < materials.Count; j++)
-                        //{
-                        //    if (materials[j].NumberOfTheme == user.CompletedTests[i].TestTheme)
-                        //    {
-                        //        Results res = new Results();
-                        //        if (materials[j].Title.Length > 20)
-                        //        {
-                        //            //tb.ToolTip = materials[i].Title;
-                        //            res.Theme = materials[j].Title.Substring(0, 20) + "..."; 
-
-                        //        }
-                        //        else
-                        //        {
-                        //            res.Theme = materials[j].Title;
-                        //        }
-                        //        //res.Theme = materials[j].Title;
-                        //        res.Mark = user.CompletedTests[i].TestMark;
-                        //        LYears.Items.Add(res);
-                        //        break;
-                        //    }
-                        //}
-                    }
-
-                }
-            }
-            else
-            {
-                Results res = new Results();
-                res.Theme = "Ви не пройшли жодного теста";
-                LYears.Items.Add(res);
-            }
-            //if (!isHaveComletedTests)
-            //{
-            //    
-            //}
-            ////}
-            ////catch(Exception ex)
-            ////{
-            ////    MessageBox.Show(ex.Message);
-            ////}
+            Exceptions ex = new Exceptions();
+            ex.Info_Completed_Tests(LYears);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

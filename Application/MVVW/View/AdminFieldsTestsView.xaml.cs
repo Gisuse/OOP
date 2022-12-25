@@ -119,7 +119,7 @@ namespace Application.MVVW.View
                 uTests.finalAdd();
                 
                 TemporaryMaterials.tests[id] = uTests;
-                db.UpdateTest(uTests);
+                await db.UpdateTest(uTests);
             }
             else
             {
@@ -140,7 +140,7 @@ namespace Application.MVVW.View
                         Convert.ToBoolean(JObject.Parse(NewQuestionsList.Items[0].ToJson())["isChecked2"]),
                         Convert.ToBoolean(JObject.Parse(NewQuestionsList.Items[0].ToJson())["isChecked3"]));
                     TemporaryMaterials.tests[index] = test;
-                    db.UpdateTest(test);
+                    await db.UpdateTest(test);
                 }
                 else
                 {
@@ -161,10 +161,11 @@ namespace Application.MVVW.View
                         Convert.ToBoolean(JObject.Parse(NewQuestionsList.Items[0].ToJson())["isChecked1"]),
                         Convert.ToBoolean(JObject.Parse(NewQuestionsList.Items[0].ToJson())["isChecked2"]),
                         Convert.ToBoolean(JObject.Parse(NewQuestionsList.Items[0].ToJson())["isChecked3"]));
+
                     
-                    //TemporaryMaterials.tests[testsCount] = test;
-                    MessageBox.Show(test.ToJson());
-                    db.CreateTest(test);
+                    Exceptions ex = new Exceptions();
+                    ex.AdminFieldsTestsView(test);
+                    
                 }
 
                 // addTest();

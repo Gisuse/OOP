@@ -48,6 +48,13 @@ namespace Application
             return MaterialsCollection.DeleteOneAsync(Materials => Materials.Id == id);
         }
 
+        public Task DeleteTest(string id)
+        {
+            var TestsCollection = ConnectToMongo<Materials>("Tests");
+
+            return TestsCollection.DeleteOneAsync(Tests => Tests.Id == id);
+        }
+
         public Task UpdateMaterial(Materials material)
         {
             var MaterialsCollection = ConnectToMongo<Materials>("Materials");
