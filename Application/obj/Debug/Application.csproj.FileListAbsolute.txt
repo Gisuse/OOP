@@ -544,3 +544,12 @@ C:\Users\Вероника\Desktop\Учеба\2 курс\1 семестр\OOP (К
 C:\Users\Вероника\Desktop\Учеба\2 курс\1 семестр\OOP (Курсач)\OOP\Application\obj\Debug\Application.csproj.GenerateResource.cache
 C:\Users\Вероника\Desktop\Учеба\2 курс\1 семестр\OOP (Курсач)\OOP\Application\obj\Debug\Application.csproj.CoreCompileInputs.cache
 C:\Users\Вероника\Desktop\Учеба\2 курс\1 семестр\OOP (Курсач)\OOP\Application\obj\Debug\Application.csproj.CopyComplete
+D:\Универ\2 курс\1 семестр\OOP (Курсач)\OOP\Application\obj\Debug\Theme\AdminExitButton.baml
+D:\Универ\2 курс\1 семестр\OOP (Курсач)\OOP\Application\obj\Debug\Theme\TextBoxCustom.baml
+D:\Универ\2 курс\1 семестр\OOP (Курсач)\OOP\Application\obj\Debug\Admin.g.cs
+D:\Универ\2 курс\1 семестр\OOP (Курсач)\OOP\Application\obj\Debug\MVVW\View\AdminFieldsTestsView.g.cs
+D:\Универ\2 курс\1 семестр\OOP (Курсач)\OOP\Application\obj\Debug\MVVW\View\AdminFieldsView.g.cs
+D:\Универ\2 курс\1 семестр\OOP (Курсач)\OOP\Application\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Универ\2 курс\1 семестр\OOP (Курсач)\OOP\Application\obj\Debug\Admin.baml
+D:\Универ\2 курс\1 семестр\OOP (Курсач)\OOP\Application\obj\Debug\MVVW\View\AdminFieldsTestsView.baml
+D:\Универ\2 курс\1 семестр\OOP (Курсач)\OOP\Application\obj\Debug\MVVW\View\AdminFieldsView.baml
