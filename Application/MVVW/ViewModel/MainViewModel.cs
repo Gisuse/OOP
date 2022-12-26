@@ -75,14 +75,6 @@ namespace Application.MVVW.ViewModel
 
             EducationViewCommand = new RelayCommand(o =>
             {
-                //if(TemporaryMaterials.IsAdmin == true)
-                //{
-                //    EducationVM.ButtonVisibility = true;
-                //}
-                //else
-                //{
-                //    EducationVM.ButtonVisibility = false;
-                //}
                 CurrentView = EducationVM;
 
             });

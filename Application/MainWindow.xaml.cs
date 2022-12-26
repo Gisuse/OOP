@@ -1,5 +1,7 @@
-﻿using System;
+﻿using MongoDB.Bson;
+using System;
 using System.Collections.Generic;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -68,6 +70,7 @@ namespace Application
                         TemporaryUser.AboutMe = user[0].AboutMe;
                         TemporaryUser.Id = user[0].Id;
                         TemporaryUser.CompletedTests = user[0].CompletedTests;
+                        TemporaryUser.ContentImage = user[0].ContentImage;
 
                         if (TemporaryUser.Email == "admin@gmail.com")
                         {
@@ -92,7 +95,6 @@ namespace Application
 
                         MainWindow mainWindow = Application.App.Current.MainWindow as MainWindow;
                         mainWindow.Close();
-                        //Mainframe.Content = new MainMenu();
                     }
                 }
                 else

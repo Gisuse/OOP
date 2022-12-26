@@ -123,12 +123,8 @@ namespace Application.MVVW.View
             }
             else
             {
-                //var tests = await db.FindTests(int.Parse(numberOfClass.Text));
-                //var findTest = tests.Find(test => test.Title == numberOfTheme.Text);
                 var findTest = Array.Find(TemporaryMaterials.tests, element => element.ClassName == int.Parse(numberOfClass.Text) && element.Title == numberOfTheme.Text);
-                //var index = Array.Find(TemporaryMaterials.tests, element => element.ClassName == TemporaryMaterials.CurrentClass && element.numberOfTheme == TemporaryMaterials.CurrentTheme).;
                 var index = Array.IndexOf(TemporaryMaterials.tests, findTest);
-                //MessageBox.Show(findTest.Answers[0,0].ToJson());
                 if (findTest != null)
                 {
                     Tests test = new Tests(int.Parse(numberOfClass.Text), numberOfTheme.Text, findTest.Question.Length, findTest.Question.Length, index,
@@ -165,13 +161,10 @@ namespace Application.MVVW.View
                     
                     Exceptions ex = new Exceptions();
                     ex.AdminFieldsTestsView(test);
-                    
                 }
-
-                // addTest();
-
-                //Tests test = new Tests();
-                //db.CreateTest(test);
+                NewQuestionsList.Items.Clear();
+                TestAnswers emptyFields = new TestAnswers();
+                NewQuestionsList.Items.Add(emptyFields);
             }
         }
     }

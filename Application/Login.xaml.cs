@@ -72,8 +72,6 @@ namespace Application
             }
             else
             {
-                //Loading loading = new Loading();
-                //NavigationService.Navigate(loading);
 
                 //------------------------------------------------------------------------------
                 bool rememberChecked = false;
@@ -101,9 +99,6 @@ namespace Application
 
                 input_login.Text = "";
                 input_password.Password = "";
-
-                //NavigationService.StopLoading();
-
             }
         }
 
