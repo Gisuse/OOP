@@ -82,22 +82,6 @@ namespace Application.MVVW.View
             public string Question { get; set; }
         }
 
-        //private void _SaveInfo_Click(object sender, RoutedEventArgs e)
-        //{
-        //    User user = new User();
-
-        //    user.CompletedTests[user.CompletedTests.Length] = new CompletedTestsModel(TemporaryMaterials.CurrentClass, TemporaryMaterials.CurrentTheme, 10);
-        //    //MessageBox.Show("dfgdfg");
-        //    db.UpdateUser(user);
-        //    //MyData data = new MyData();
-        //    //data.Answer1 = "answer 1";
-        //    //data.Answer2 = "answer 2";
-        //    //data.Answer3 = "answer 3";
-        //    //data.Question = "Question?";
-
-        //    //TestList.Items.Add(data); 
-        //}
-
         private void _SaveInfo_Click_1(object sender, RoutedEventArgs e)
         {
             Exceptions ex = new Exceptions();

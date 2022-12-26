@@ -40,7 +40,6 @@ namespace Application
             return UserCollection.InsertOneAsync(user);
         }
 
-        //public Task DeleteMaterial(int className, int numberOfTheme)
         public Task DeleteMaterial(string id)
         {
             var MaterialsCollection = ConnectToMongo<Materials>("Materials");

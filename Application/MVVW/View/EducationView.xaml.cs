@@ -38,7 +38,6 @@ namespace Application.MVVW.View
         }
         public EducationView()
         {
-            // Обработка ошибок при поиске тестов и материалов, если возвращает пустую коллекцию
             InitializeComponent();      
             if(TemporaryMaterials.IsAdmin == true)
             {
@@ -67,9 +66,6 @@ namespace Application.MVVW.View
             {
                 findTests(TemporaryMaterials.CurrentClass);
             }
-            //findMat(TemporaryMaterials.CurrentClass);
-
-            //txb1.Text = materials.ToJson();
         }
 
         public void ForwardToInfo(object sender, RoutedEventArgs e)
@@ -103,17 +99,8 @@ namespace Application.MVVW.View
 
                 for (int i = 0; i < materials.Count; i++)
                 {
-                    //TextBlock tb = new TextBlock();
-
-                    //tb.Text = materials[i].NumberOfTheme + ". " + (materials[i].Title.Length > 24 ? materials[i].Title.Substring(0, 24) + "..." : materials[i].Title);
-
-                    //ListView.Items.Add(tb);
-                    //Button tb = new Button();
-
                     MyData tb = new MyData();
                     ListViewItem itm = new ListViewItem();
-
-                    //TemporaryMaterials.CurrentInfo = materials[i].MaterialContent;
                     if(materials[i].Title.Length > 24)
                     {
                         tb.btn = new Button();
@@ -141,9 +128,6 @@ namespace Application.MVVW.View
                             tb.adminVisible = Visibility.Hidden;
                         }
                     }
-                    //materials[i].NumberOfTheme + ". " + ( ?  + "..." : materials[i].Title);
-                    //tb.Click += new RoutedEventHandler(ForwardToInfo);
-
                     ListView1.Items.Add(tb);
                 }
             }
@@ -158,8 +142,6 @@ namespace Application.MVVW.View
             try 
             {
                 var tests = await db.FindTests(ClassValue);
-                //string tests = JsonConvert.DeserializeObject(await db.FindTests(7).ToString());
-                
                 var temp = tests[0];
 
                 for (int i = 0; i < tests.Count - 1; i++)
@@ -178,15 +160,8 @@ namespace Application.MVVW.View
 
                 for (int i = 0; i < tests.Count; i++)
                 {
-                    //TextBlock tb = new TextBlock();
-
-                    //tb.Text = tests[i].NumberOfTheme + ". " + (tests[i].Question.Length > 24 ? tests[i].Question.Substring(0, 24) + "..." : tests[i].Question);
-
-                    //ListView.Items.Add(tb);
-                    //Button tb = new Button();
                     MyData tb = new MyData();
 
-                    //TemporaryMaterials.CurrentInfo = tests[i].MaterialContent;
                     if (tests[i].Title.Length > 24)
                     {
                         tb.btn = new Button();
@@ -213,9 +188,7 @@ namespace Application.MVVW.View
                         {
                             tb.adminVisible = Visibility.Hidden;
                         }
-                    }
-                    //tests[i].NumberOfTheme + ". " + ( ?  + "..." : tests[i].Question);
-                    //tb.Click += new RoutedEventHandler(ForwardToInfo); 
+                    } 
                     ListView1.Items.Add(tb);
                 }
             }

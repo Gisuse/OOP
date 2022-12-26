@@ -27,11 +27,6 @@ namespace Application.MVVW.View
             string ThemeTitleMain = Array.Find(TemporaryMaterials.materials, element => element.ClassName == TemporaryMaterials.CurrentClass && element.NumberOfTheme == TemporaryMaterials.CurrentTheme).Title;
             ThemeTitle.Text = ThemeTitleMain;
             findMat();
-            //TextBlock tb = new TextBlock();
-
-            //tb.Text = TemporaryMaterials.CurrentInfo;
-
-            //ListView.Items.Add(tb);
         }
 
         public void findMat()
@@ -39,10 +34,6 @@ namespace Application.MVVW.View
             TextBlock tb = new TextBlock();
             tb.Text = TemporaryMaterials.materials[TemporaryMaterials.CurrentTheme - 1].MaterialContent;            
             ListView.Items.Add(tb);
-            
-            //Label tb = new Label();
-            //tb.Content = TemporaryMaterials.materials[TemporaryMaterials.CurrentTheme - 1].MaterialContent;
-            //ListView.Items.Add(tb);
         }
         private void ScrollViewer_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
         {

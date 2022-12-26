@@ -39,8 +39,6 @@ namespace Application.MVVW.View
             sName_TextBox.Text = "";
             name_TextBox.Text = "";
             aboutMe_TextBox.Text = "";
-            //Нормальная обработка ощибок
-            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             if (user.SName.Trim() != "" && user.Name.Trim() != "" && user.AboutMe.Trim() != "")
             {
                 Exceptions ex = new Exceptions();
@@ -51,7 +49,6 @@ namespace Application.MVVW.View
             {
                 MessageBox.Show("Поля повинні бути заповнені", "Попередження", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
-            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         }
 
 

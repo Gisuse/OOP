@@ -47,9 +47,6 @@ namespace Application
         public byte[] ContentImage { get; set; }
 
 
-
-        //public User() { }
-
         public User(string email, string password, string login, string name, string sName)
         {
             Email = email;

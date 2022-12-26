@@ -53,11 +53,8 @@ namespace Application
                 string pathDefaultAvatar = Path.GetFullPath("Images");
                 var strIndex = pathDefaultAvatar.IndexOf("bin");
                 pathDefaultAvatar = pathDefaultAvatar.Remove(strIndex, 10);
-                string pathAvatar = pathDefaultAvatar + @"\avatar.png";
                 pathDefaultAvatar = pathDefaultAvatar + @"\defaultAvatar.png";
-                //File.Delete(pathAvatar);
-                File.Copy(pathDefaultAvatar, pathAvatar, true);
-                TemporaryUser.ImagePath = pathAvatar;
+                TemporaryUser.ImagePath = pathDefaultAvatar;
 
                 if (rememberChecked == true)
                 {
@@ -94,7 +91,6 @@ namespace Application
             }
             catch (Exception er)
             {
-                //MessageBox.Show(er.ToString());
                 MessageBox.Show("Такий email вже використовується", "Попередження", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
@@ -120,7 +116,6 @@ namespace Application
                 TemporaryUser.AboutMe = user[0].AboutMe;
                 TemporaryUser.CompletedTests = user[0].CompletedTests;
                 TemporaryUser.ContentImage = user[0].ContentImage;
-                //MessageBox.Show(user[0].CompletedTests[0].TestClass.ToString());
                 if (rememberChecked == true)
                 {
                     string fileName = Path.GetFullPath("UserData.json");
@@ -141,50 +136,29 @@ namespace Application
                     File.WriteAllText(fileName, jsonString);
                 }
 
-
-                //foreach (var doc in user[0])
-                //{
-                //    bs = doc.GetValue("ContentImage");
-                //}
-                string pathAvatar;
                 if (TemporaryUser.ContentImage == null)
                 {
-                    //MessageBox.Show("Нет фотки");
                     string pathDefaultAvatar = Path.GetFullPath("Images");
                     var strIndex2 = pathDefaultAvatar.IndexOf("bin");
                     pathDefaultAvatar = pathDefaultAvatar.Remove(strIndex2, 10);
-                    pathAvatar = pathDefaultAvatar + @"\avatar.png";
                     pathDefaultAvatar = pathDefaultAvatar + @"\defaultAvatar.png";
-                    File.Delete(pathAvatar);
-                    File.Copy(pathDefaultAvatar, pathAvatar);
-                    TemporaryUser.ImagePath = pathAvatar;
+                    TemporaryUser.ImagePath = pathDefaultAvatar;
                 }
                 else
                 {
-                    //MessageBox.Show("Есть фотка");
-
                     BsonValue bs = TemporaryUser.ContentImage;
-                    var photoimg = bs.AsByteArray;//конвертируем из BsonValue в массив байтов
-                    MemoryStream ms = new MemoryStream(photoimg, 0, photoimg.Length);
-                    //profileimage.Image = new Bitmap(ms);// тут я присваиваю картинку пиктурбоксу
-                    //MessageBox.Show(photoimg.ToString());
-                    //MessageBox.Show(ms.ToString());
-                    pathAvatar = Path.GetFullPath("Images");
+                    var photoimg = bs.AsByteArray;
+                    string pathAvatar = Path.GetFullPath("Images");
                     var strIndex = pathAvatar.IndexOf("bin");
                     pathAvatar = pathAvatar.Remove(strIndex, 10);
                     pathAvatar = pathAvatar + @"\avatar.png";
 
                     using (System.Drawing.Image image = System.Drawing.Image.FromStream(new MemoryStream(photoimg)))
                     {
-                        image.Save(pathAvatar, ImageFormat.Png);  // Or Png
+                        image.Save(pathAvatar, ImageFormat.Png);
                     }
                     TemporaryUser.ImagePath = pathAvatar;
                 }
-
-                //Loading loading = new Loading();
-                //NavigationService.Navigate(loading);
-                //MessageBox.Show(user.Count.ToString());
-                //NavigationService.StopLoading();
 
 
                 if (TemporaryMaterials.IsAdmin == true)
@@ -269,8 +243,9 @@ namespace Application
                 mark = (float)Math.Round(mark * 12 / test.Question.Length);
 
                 user.CompletedTests[length] = new CompletedTestsModel(TemporaryMaterials.CurrentClass, TemporaryMaterials.CurrentTheme, mark, test.Title);
+                TemporaryUser.CompletedTests = user.CompletedTests;
                 db.UpdateUser(user);
-
+               
                 Mark_Message.Content = "Ваша оцінка: " + mark;
                 TestList.Items.Clear();
                 for (int i = 0; i < test.Question.Length; i++)
@@ -296,24 +271,33 @@ namespace Application
             try
             {
                 User user = new User();
-                for (int i = 0; i < user.CompletedTests.Length; i++)
+                if (user.CompletedTests != null)
                 {
-                    if (user.CompletedTests[i] != null)
+                    for (int i = 0; i < user.CompletedTests.Length; i++)
                     {
-                        Results res = new Results();
-                        if (user.CompletedTests[i].ThemeTitle.Length > 20)
+                        if (user.CompletedTests[i] != null)
                         {
-                            //tb.ToolTip = materials[i].Title;
-                            res.Theme = user.CompletedTests[i].ThemeTitle.Substring(0, 20) + "...";
+                            Results res = new Results();
+                            if (user.CompletedTests[i].ThemeTitle.Length > 37)
+                            {
+                                res.Theme = user.CompletedTests[i].ThemeTitle.Substring(0, 37) + "...";
 
+                            }
+                            else
+                            {
+                                res.Theme = user.CompletedTests[i].ThemeTitle;
+                            }
+                            res.Mark = user.CompletedTests[i].TestMark;
+                            LYears.Items.Add(res);
                         }
-                        else
-                        {
-                            res.Theme = user.CompletedTests[i].ThemeTitle;
-                        }
-                        res.Mark = user.CompletedTests[i].TestMark;
-                        LYears.Items.Add(res);
+
                     }
+                }
+                else
+                {
+                    Results res = new Results();
+                    res.Theme = "Ви не пройшли жодного теста";
+                    LYears.Items.Add(res);
                 }
             }
             catch (Exception ex)

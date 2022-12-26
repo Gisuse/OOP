@@ -28,27 +28,6 @@ namespace Application.MVVW.View
         {
             InitializeComponent();
             db = new DataAccess();
-            //
-            //Materials mat = new Materials();
-            //var m = db.CreateMaterials(mat);
-
-            //getTests();
-            //db.CreateTest(test);
-        }
-
-        public async void getTests()
-        {
-
-            try
-            {
-                Tests test = new Tests();
-                await db.CreateTest(test);
-            }
-            catch (Exception er)
-            {
-                MessageBox.Show(er.Message);
-            }
-
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

@@ -25,10 +25,10 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <StackPanel>
-                                <Label Content="{Binding Question }" Foreground="White" FontSize="35"/>
-                                <RadioButton Width="auto" HorizontalAlignment="Left" Content="{Binding Answer1}" Foreground="White" FontSize="35" Margin="4 0" Padding="5" Style="{StaticResource MaterialDesignRadioButton}" Checked="RadioButton_Checked"/>
-                                <RadioButton Width="auto" HorizontalAlignment="Left" Content="{Binding Answer2}" Foreground="White" FontSize="35" Margin="4 0" Padding="5" Style="{StaticResource MaterialDesignRadioButton}" Checked="RadioButton_Checked_1"/>
-                                <RadioButton Width="auto" HorizontalAlignment="Left" Content="{Binding Answer3}" Foreground="White" FontSize="35" Margin="4 0" Padding="5" Style="{StaticResource MaterialDesignRadioButton}" Checked="RadioButton_Checked_2"/>
+                                <Label Content="{Binding Question }" Foreground="White" FontSize="25"/>
+                                <RadioButton Width="auto" HorizontalAlignment="Left" Content="{Binding Answer1}" Foreground="White" FontSize="20" Margin="4 0" Padding="5" Style="{StaticResource MaterialDesignRadioButton}" Checked="RadioButton_Checked"/>
+                                <RadioButton Width="auto" HorizontalAlignment="Left" Content="{Binding Answer2}" Foreground="White" FontSize="20" Margin="4 0" Padding="5" Style="{StaticResource MaterialDesignRadioButton}" Checked="RadioButton_Checked_1"/>
+                                <RadioButton Width="auto" HorizontalAlignment="Left" Content="{Binding Answer3}" Foreground="White" FontSize="20" Margin="4 0" Padding="5" Style="{StaticResource MaterialDesignRadioButton}" Checked="RadioButton_Checked_2"/>
                             </StackPanel>
                         </DataTemplate>
                     </ListView.ItemTemplate>

@@ -38,8 +38,8 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal" Width="540">
-                            <TextBlock x:Name="NameOfTheme" Text="{Binding Theme}" Foreground="White" HorizontalAlignment="Left" FontSize="40" Width="450"/>
-                            <TextBlock Text="{Binding Mark}" Foreground="White" TextAlignment="Center" FontSize="40" Width="90"/>
+                            <TextBlock x:Name="NameOfTheme" Text="{Binding Theme}" Foreground="White" HorizontalAlignment="Left" FontSize="25" Width="450"/>
+                            <TextBlock Text="{Binding Mark}" Foreground="White" TextAlignment="Center" FontSize="25" Width="90"/>
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>

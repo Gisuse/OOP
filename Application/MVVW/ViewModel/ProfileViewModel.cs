@@ -32,14 +32,7 @@ namespace Application.MVVW.ViewModel
         }
         public ProfileViewModel()
         {
-            string imgroot = "/Application;component/Images/avatar.png";
-            ImagePath = imgroot;
-            string pathOldAvatar = ImagePath.ToString();
-            pathOldAvatar = Path.GetFullPath("Images");
-            var strIndex = pathOldAvatar.IndexOf("bin");
-            pathOldAvatar = pathOldAvatar.Remove(strIndex, 10);
-            pathOldAvatar = pathOldAvatar + @"\avatar.png";
-            ImagePath = @pathOldAvatar;
+            ImagePath = TemporaryUser.ImagePath;
         }
     }
 }

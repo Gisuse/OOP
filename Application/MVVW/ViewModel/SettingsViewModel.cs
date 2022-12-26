@@ -37,13 +37,22 @@ namespace Application.MVVW.ViewModel
 
         public SettingsViewModel()
         {
-            //MessageBox.Show(TemporaryUser.CompletedTests.GetType().ToString());
             db = new DataAccess();
-            //string imgroot = "/Application;component/Images/avatar.png";
-            //TemporaryUser.ImagePath = "/Application;component/Images/avatar.png";
-            if(TemporaryUser.ImagePath == null)
+            if(TemporaryUser.ContentImage == null)
             {
-                TemporaryUser.ImagePath = "/Application;component/Images/avatar.png";
+                string pathDefaultAvatar = Path.GetFullPath("Images");
+                var strIndex2 = pathDefaultAvatar.IndexOf("bin");
+                pathDefaultAvatar = pathDefaultAvatar.Remove(strIndex2, 10);
+                pathDefaultAvatar = pathDefaultAvatar + @"\defaultAvatar.png";
+                TemporaryUser.ImagePath = pathDefaultAvatar;
+            }
+            else
+            {
+                string pathAvatar = Path.GetFullPath("Images");
+                var strIndex = pathAvatar.IndexOf("bin");
+                pathAvatar = pathAvatar.Remove(strIndex, 10);
+                pathAvatar = pathAvatar + @"\avatar.png";
+                TemporaryUser.ImagePath = pathAvatar;
             }
             ImagePath = TemporaryUser.ImagePath;
             ChangeImage = new RelayCommand(o =>
@@ -53,23 +62,11 @@ namespace Application.MVVW.ViewModel
                 {
                     FileInfo fi = new FileInfo(ofd.FileName);
                     string pathNewAvatar = fi.FullName;
-                    string pathOldAvatar = ImagePath.ToString();
-
-                    pathOldAvatar = Path.GetFullPath("Images");
-                    var strIndex = pathOldAvatar.IndexOf("bin");
-                    pathOldAvatar = pathOldAvatar.Remove(strIndex, 10);
-                    pathOldAvatar = pathOldAvatar + @"\avatar.png";
-                    //File.Delete(pathOldAvatar);
-                    ImagePath = "";                    
-                    File.Copy(pathNewAvatar, pathOldAvatar, true);
-                    ImagePath = @pathOldAvatar;                     
-                    //byte[] array = File.ReadAllBytes(@pathOldAvatar);
-                    TemporaryUser.ContentImage = File.ReadAllBytes(@pathOldAvatar);
+                    TemporaryUser.ImagePath = fi.FullName;
+                    ImagePath = fi.FullName;
+                    TemporaryUser.ContentImage = File.ReadAllBytes(fi.FullName);
                     User user = new User();
-
                     db.UpdateUser(user);
-                    //MessageBox.Show(user.ContentImage.ToString());
-
                 }
             });
         }
