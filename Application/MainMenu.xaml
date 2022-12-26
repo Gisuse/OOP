@@ -44,11 +44,7 @@
 
             </StackPanel>
 
-            <StackPanel Grid.Column="1" Width="500" HorizontalAlignment="Left">
-                <TextBox
-                    materialDesign:HintAssist.Foreground="Transparent"
-                    Style="{StaticResource ModernSearchBox}"/>
-            </StackPanel>
+            <StackPanel Grid.Column="1" Width="500" HorizontalAlignment="Left"/>
 
             <StackPanel Grid.Column="1" Width="45" Height="45" HorizontalAlignment="Right" Margin="0 0 15 0">
                 <materialDesign:PackIcon Name="CloseIcon" Kind="Close" Height="35" Width="35" Padding="0" Margin="0 0 0 0" HorizontalAlignment="Right" MouseDown="CloseIcon_MouseDown" MouseEnter="CloseIcon_MouseEnter" MouseLeave="CloseIcon_MouseLeave"/>
